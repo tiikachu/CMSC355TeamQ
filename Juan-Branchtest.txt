@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 testingstill testingtesting
+=======
+testingstill testing
+testing
+>>>>>>> Juan-depaz
