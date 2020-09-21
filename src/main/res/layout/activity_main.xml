@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99C863"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-7dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/title"
+                android:text="@string/let_s_get_back_to_the_basics"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#040303"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="354dp"
+                android:layout_height="205dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/plants" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:text="@string/indoor_plants"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="359dp"
+                android:layout_height="234dp"
+                android:layout_marginTop="10dp"
+                android:text="Find the right lighting!\n\nFull Sun: Most house plants do not like the full sun and will become very damaged or will not survive very long when they receive too much direct sunlight. Bright light or full sun is experienced from a south facing window.\n\nPartial sunlight and shade: Indirect light can be found in places with an west or east facing window so the plane will receive morning or evening sun.\n\nLow light: A north facing window provides full shade, but low light can depend on the size or amount of windows in a room " />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="359dp"
+                android:layout_height="234dp"
+                android:layout_marginTop="10dp"
+                android:text="How to know if your plant is getting too much sunlight: "/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
