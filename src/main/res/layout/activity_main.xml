@@ -59,11 +59,28 @@
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="359dp"
-                android:layout_height="234dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="10dp"
-                android:text="How to know if your plant is getting too much sunlight: "/>
+                android:text="Your plant is getting too much sunlight if you notice: \n\n\t-Brown leaf edges or tips
+\n\t-Brown, dry patches on the leaves
+\n\t-Leaves turn pale or yellow
+\n\t-Leaf yellowing may not affect the leaf veins initially
+\n\t-Wilting, particularly of younger foliage"/>
 
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="190dp"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/watering_plants" />
 
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="359dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="10dp"
+                android:text= "Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. "/>
 
         </LinearLayout>
     </ScrollView>
