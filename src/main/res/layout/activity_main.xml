@@ -23,13 +23,14 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="wrap_content"
+                android:layout_width="332dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/title"
+                android:fontFamily="@font/cookie"
                 android:text="@string/let_s_get_back_to_the_basics"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="#040303"
-                android:textSize="30sp" />
+                android:textSize="40sp" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -43,10 +44,11 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/cookie"
                 android:text="@string/indoor_plants"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -54,6 +56,7 @@
                 android:layout_width="359dp"
                 android:layout_height="234dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
                 android:text="Find the right lighting!\n\nFull Sun: Most house plants do not like the full sun and will become very damaged or will not survive very long when they receive too much direct sunlight. Bright light or full sun is experienced from a south facing window.\n\nPartial sunlight and shade: Indirect light can be found in places with an west or east facing window so the plane will receive morning or evening sun.\n\nLow light: A north facing window provides full shade, but low light can depend on the size or amount of windows in a room " />
 
             <TextView
@@ -61,6 +64,7 @@
                 android:layout_width="359dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
                 android:text="Your plant is getting too much sunlight if you notice: \n\n\t-Brown leaf edges or tips
 \n\t-Brown, dry patches on the leaves
 \n\t-Leaves turn pale or yellow
@@ -80,6 +84,7 @@
                 android:layout_width="359dp"
                 android:layout_height="350dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
                 android:text= "Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. "/>
 
         </LinearLayout>
