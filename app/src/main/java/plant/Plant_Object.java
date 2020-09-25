@@ -5,7 +5,7 @@ public class Plant_Object{
 	int age;	//in days? weeks? years?
 	int interval;	//in days if in weeks convert to days
 	String[] special_needs; 	//on enter split? How should special needs be formatted?
-	//special needs include: soil type and health, leaf appearance, sun light per day, enviornment
+	//special needs include: soil type and health, leaf appearance, sun light per day, environment
 	// a lot of the stuff above can be their own String
 	boolean indoor; // by default set to true, if outdoor set to false
 	boolean potted; // by default set to potted by
