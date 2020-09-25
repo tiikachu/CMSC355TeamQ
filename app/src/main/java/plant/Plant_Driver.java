@@ -13,6 +13,7 @@ public class Plant_Driver{
 
 		Plant_Object my_plant = new Plant_Object();
 		System.out.println(my_plant.age + " : " + my_plant.num_plants);
+		System.out.println(my_plant.getName() + " : " + my_plant.name);
 
 		
 	}
