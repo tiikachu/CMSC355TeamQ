@@ -1,4 +1,11 @@
 package com.example.pocketgarden;
 
-public class PlantDisplay {
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class PlantDisplay extends AppCompatActivity{
+
+
+
 }
