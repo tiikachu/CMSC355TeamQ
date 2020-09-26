@@ -82,10 +82,20 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="359dp"
-                android:layout_height="350dp"
+                android:layout_height="340dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text= "Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. "/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="359dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Use good-quality potting soil.\n\n
+Good potting soil (never use regular garden soil in containers) promotes healthy roots by providing a balance of proper aeration, nutrition and moisture-holding capability. Nurseries and garden centers carry an excellent selection of packaged potting soils." />
+
 
         </LinearLayout>
     </ScrollView>
