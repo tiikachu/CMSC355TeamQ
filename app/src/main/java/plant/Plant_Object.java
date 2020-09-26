@@ -2,11 +2,11 @@ package plant;
 
 public class Plant_Object{
 	String name;
-	int age;	//in days? weeks? years?
+	int age;	//in months
 	int interval;	//in days if in weeks convert to days
-	String[] special_needs; 	//on enter split? How should special needs be formatted?
+	String[] special_needs; 	//on comma split
 	//special needs include: soil type and health, leaf appearance, sun light per day, environment
-	// a lot of the stuff above can be their own String
+
 	boolean indoor; // by default set to true, if outdoor set to false
 	boolean potted; // by default set to potted by
 	int num_plants = 0; //counter cannot be used in list view to get number of plants in list this would be global
