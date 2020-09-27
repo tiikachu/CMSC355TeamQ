@@ -10,4 +10,18 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="my_dashboard">My Dashboard</string>
+    <string name="plant_description">plant image for dashboard</string>
+    <string name="shovel_description">Shovel picture used in dashboard</string>
+    <string name="basics">Basics</string>
+    <string name="my_plants">My Plants</string>
+    <string name="sun_description">Sun for weather</string>
+    <string name="weather">Weather</string>
+    <string name="watering_can_description">Watering can image</string>
+    <string name="plant_care">Plant Care</string>
+    <string name="journal">Journal</string>
+    <string name="camera_description">Camera picture for library menu</string>
+    <string name="library">Library</string>
+    <string name="journal_description">Pencil for journal picture</string>
+    <string name="journal_title">Edit Journal Entries</string>
 </resources>

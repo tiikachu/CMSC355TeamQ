@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#014421"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ScrollViewCount">
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!--title- My Dashboard-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,28 +24,32 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Dashboard"
+                android:text="@string/my_dashboard"
                 android:textColor="#FFFFFF"
                 android:textSize="34sp" />
         </RelativeLayout>
 
+        <!--GridLayout to organize all tiles-->
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alignmentMode="alignMargins"
             android:columnCount="2"
-            android:columnOrderPreserved="false"
+            android:columnOrderPreserved="true"
             android:rowCount="3">
 
+            <!--My Plants button-->
             <androidx.cardview.widget.CardView
                 android:id="@+id/My_Plants"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                tools:ignore="DuplicateIds">
+                tools:ignore="DuplicateIds"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -55,53 +61,31 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:contentDescription="@string/plant_description"
                         android:src="@drawable/plant" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/my_plants"
+                        android:textColor="#014421"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
+            <!--Basics button-->
             <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            app:cardElevation="6dp"
-            app:cardCornerRadius="12dp"
-            android:layout_margin="12dp"
-            >
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:src="@drawable/shovel"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:layout_marginTop="12dp"
-                    android:textColor="#014421"
-                    android:textSize="18sp"
-                    android:text="Basics"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/Basics"
                 android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                tools:ignore="DuplicateIds">
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -113,13 +97,14 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:contentDescription="@string/shovel_description"
                         android:src="@drawable/shovel" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Basics"
+                        android:text="@string/basics"
                         android:textColor="#014421"
                         android:textSize="18sp" />
 
@@ -127,18 +112,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_marginTop="12dp"
-                android:text="My Plants"
-                android:textColor="#014421"
-                android:textSize="18sp" />
-
-        </GridLayout>
-
+            <!--Weather button-->
             <androidx.cardview.widget.CardView
                 android:id="@+id/Weather"
                 android:layout_width="wrap_content"
@@ -147,7 +121,8 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                tools:ignore="DuplicateIds">
+                tools:ignore="DuplicateIds"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -157,121 +132,16 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:src="@drawable/sun"
-
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                         />
+                        android:contentDescription="@string/sun_description"
+                        android:src="@drawable/sun" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-
-                        android:textColor="#014421"
-
-
-                        android:textSize="18sp"
-                        android:text="Weather"
-                       />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/wateringcan"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="#014421"
-                        android:textSize="18sp"
-                        android:text="Plant Care"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/camera"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="#014421"
-                        android:textSize="18sp"
-                        android:text="Library"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/journal"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="#014421"
-                        android:textSize="18sp"
-                        android:text="Journal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-=======
-                        android:text="Weather"
+                        android:text="@string/weather"
                         android:textColor="#014421"
                         android:textSize="18sp" />
 
@@ -279,15 +149,15 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!--plant care button-->
             <androidx.cardview.widget.CardView
-                android:id="@+id/Plant_Care"
                 android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                tools:ignore="DuplicateIds">
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -299,13 +169,14 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:contentDescription="@string/watering_can_description"
                         android:src="@drawable/wateringcan" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Plant Care"
+                        android:text="@string/plant_care"
                         android:textColor="#014421"
                         android:textSize="18sp" />
 
@@ -313,15 +184,15 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!--library button-->
             <androidx.cardview.widget.CardView
-                android:id="@+id/Library"
                 android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                tools:ignore="DuplicateIds">
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -333,13 +204,14 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:contentDescription="@string/camera_description"
                         android:src="@drawable/camera" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Library"
+                        android:text="@string/library"
                         android:textColor="#014421"
                         android:textSize="18sp" />
 
@@ -347,16 +219,15 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!--journal button-->
             <androidx.cardview.widget.CardView
-                android:id="@+id/Journal"
                 android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:onClick="showJournalClick"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp"
-                tools:ignore="DuplicateIds">
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -368,31 +239,29 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:contentDescription="@string/journal_description"
                         android:src="@drawable/journal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Journal"
+                        android:text="@string/journal"
                         android:textColor="#014421"
                         android:textSize="18sp" />
->>>>>>> Stashed changes
-
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-
         </GridLayout>
 
-
+        <!--navigation bar at bottom-->
         <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -409,5 +278,9 @@
                     android:textSize="34sp" />
             </RelativeLayout>
         </RelativeLayout>
+
+    </GridLayout>
+
+
 </ScrollView>
 

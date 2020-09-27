@@ -22,7 +22,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Title" />
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        android:autofillHints="Insert Text here" />
 
     <TextView
         android:id="@+id/Title"
@@ -30,7 +31,7 @@
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Edit Journal Entries"
+        android:text="@string/journal_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toTopOf="@+id/EditText"
         app:layout_constraintEnd_toEndOf="parent"
