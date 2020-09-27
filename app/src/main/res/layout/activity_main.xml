@@ -7,7 +7,7 @@
     android:background="#014421"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -57,29 +57,11 @@
                         android:layout_height="80dp"
                         android:src="@drawable/plant" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-<<<<<<< HEAD
-                        android:textColor="#014421"
-=======
-<<<<<<< Updated upstream
-                        android:textColor="#000000"
->>>>>>> notes
-                        android:textSize="18sp"
-=======
->>>>>>> Stashed changes
-                        android:text="My Plants"
-                        android:textColor="#014421"
-                        android:textSize="18sp" />
-
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-<<<<<<< HEAD
             android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -112,11 +94,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-=======
-<<<<<<< Updated upstream
-=======
                 android:id="@+id/Basics"
->>>>>>> notes
                 android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -149,9 +127,20 @@
 
             </androidx.cardview.widget.CardView>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_marginTop="12dp"
+                android:text="My Plants"
+                android:textColor="#014421"
+                android:textSize="18sp" />
+
+        </GridLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/Weather"
->>>>>>> Stashed changes
                 android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -168,32 +157,23 @@
                     android:padding="16dp">
 
                     <ImageView
-<<<<<<< HEAD
                         android:src="@drawable/sun"
-=======
-<<<<<<< Updated upstream
-                        android:src="@drawable/shovel"
-=======
->>>>>>> Stashed changes
->>>>>>> notes
+
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/sun" />
+                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-<<<<<<< HEAD
+
                         android:textColor="#014421"
-=======
-<<<<<<< Updated upstream
-                        android:textColor="#000000"
->>>>>>> notes
+
+
                         android:textSize="18sp"
                         android:text="Weather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                       />
 
                 </LinearLayout>
 
@@ -406,37 +386,28 @@
 
         </GridLayout>
 
-<<<<<<< HEAD
+
         <RelativeLayout
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-=======
-<<<<<<< Updated upstream
-=======
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp">
->>>>>>> notes
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="[Insert Navigation Bar]"
-                android:textColor="#FFFFFF"
-                android:textSize="34sp" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[Insert Navigation Bar]"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp" />
+            </RelativeLayout>
         </RelativeLayout>
-
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> notes
-    </LinearLayout>
-
 </ScrollView>
 
