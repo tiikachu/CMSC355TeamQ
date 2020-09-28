@@ -1,18 +1,13 @@
 package com.example.pocketgarden;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-public class MainActivity extends AppCompatActivity{
-
+public class MainActivity extends AppCompatActivity {
 
 
     @Override
@@ -20,14 +15,16 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
     }
 
     /**
      * Opens journal notes editor
+     *
      * @param view
      */
-    public void showJournalClick(View view){
-        Intent intent = new Intent(getApplicationContext(), ShowJournals.class);
+    public void journalClick(View view) {
+        Intent intent = new Intent(this, ShowJournals.class);
         startActivity(intent);
     }
 

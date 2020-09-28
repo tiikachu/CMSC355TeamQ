@@ -24,4 +24,5 @@
     <string name="library">Library</string>
     <string name="journal_description">Pencil for journal picture</string>
     <string name="journal_title">Edit Journal Entries</string>
+    <string name="nav_bar">[Insert Navigation Bar]</string>
 </resources>
