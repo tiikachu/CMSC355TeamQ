@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-medium"
-                android:text="@string/indoor_plants"
+                android:text="Here are some quick tips for taking care of your plants!"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -72,20 +72,28 @@
 \n\t-Wilting, particularly of younger foliage"/>
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="190dp"
-                android:layout_height="250dp"
-                android:scaleType="fitXY"
-                android:layout_gravity="center"
+            android:id="@+id/imageView3"
+            android:layout_width="190dp"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
                 app:srcCompat="@drawable/watering_plants" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="359dp"
-                android:layout_height="340dp"
+                android:layout_height="320dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text= "Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. "/>
+                android:text="Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. " />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="190dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/soil" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -104,6 +112,7 @@ Good potting soil (never use regular garden soil in containers) promotes healthy
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text="Aim to keep the plant in a warm environment with some air circulation, and rotate its face!\n\n
 Almost all houseplants need a minimum temperature of 55ºF to survive. Keep plants away from areas of cold drafts in the winter. The warmer it gets for houseplants, the happier they are!"/>
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
