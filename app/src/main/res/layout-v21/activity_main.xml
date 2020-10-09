@@ -56,7 +56,8 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/plant" />
+                        android:src="@drawable/plant"
+                        android:contentDescription="TODO" />
                 </LinearLayout>
 
 
@@ -330,7 +331,8 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/camera" />
+                        android:src="@drawable/camera"
+                        android:contentDescription="@string/todo" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -398,7 +400,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="[Insert Navigation Bar]"
+                    android:text="@string/insert_navigation_bar"
                     android:textColor="#FFFFFF"
                     android:textSize="34sp" />
             </RelativeLayout>
