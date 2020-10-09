@@ -13,6 +13,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    public boolean raining = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +28,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     private void addNotification () {
         // build notification
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .setContentTitle("Pocket Garden")
-                .setContentText("It is raining today");
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+
+        if (raining) {
+                    builder.setContentTitle("Pocket Garden")
+                    .setContentText("It is raining today");
+        }
 
         // create intent to show notification
         Intent notificationIntent = new Intent (this, MainActivity.class);
