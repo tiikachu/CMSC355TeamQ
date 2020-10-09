@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Pocket Garden</string>
+    <string name="journal_click">Opening Journal...</string>
+    <string name="title_activity_view_journals">ViewJournals</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="my_dashboard">My Dashboard</string>
+    <string name="basics">Basics</string>
+    <string name="library">Library</string>
+    <string name="insert_navigation_bar">[Insert Navigation Bar]</string>
+    <string name="todo">TODO</string>
 </resources>
