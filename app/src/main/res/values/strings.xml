@@ -13,7 +13,8 @@
     <string name="my_dashboard">My Dashboard</string>
     <string name="basics">Basics</string>
     <string name="library">Library</string>
-    <string name="library">Library</string>
+    <string name="trefle_api_url">https://trefle.io//api/v1/</string>
+    <string name="trefle_token">token=ALt0fE6yO8mIuJKrReIYktfe6eC5GDbuHTUt4zGhMS4get</string>
     <string name="insert_navigation_bar">[Insert Navigation Bar]</string>
     <string name="todo">TODO</string>
 </resources>

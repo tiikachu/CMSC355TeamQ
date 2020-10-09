@@ -7,6 +7,7 @@ public class Plant_Object{
 	String[] special_needs; 	//on comma split
 	//special needs include: soil type and health, leaf appearance, sun light per day, environment
 
+
 	boolean indoor; // by default set to true, if outdoor set to false
 	boolean potted; // by default set to potted by
 	int num_plants = 0; //counter cannot be used in list view to get number of plants in list this would be global
