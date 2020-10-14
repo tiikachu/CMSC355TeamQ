@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 displayNotification();
             }
         });
-
     }
 
     private void displayNotification() {
@@ -51,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Pocket Garden")
                 .setContentText("It is raining today")
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(MainActivity.this);
         notificationManagerCompat.notify(1, builder.build());
     }
 }
