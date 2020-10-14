@@ -16,6 +16,16 @@ public class Plant_Driver{
 		System.out.println(my_plant.getName() + " : " + my_plant.name);
 		System.out.println(my_plant.getInterval() + " : " + my_plant.interval);
 
+		Plant_List list1 = new Plant_List("Named list");
+		Plant_List list2 = new Plant_List("");
+		Plant_List list3 = new Plant_List();
+
+		System.out.println(list1.name());
+		list1.toString();
+		System.out.println("\nList2 : " + list2.name());
+		list2.toString();
+		System.out.println("\nList3 : " + list3.name());
+		list3.toString();
 		
 	}
 }
