@@ -22,7 +22,7 @@ import java.util.HashSet;
 
 public class ShowJournals extends AppCompatActivity {
 
-    static ArrayList<String> journal = new ArrayList<String>();
+    static ArrayList<String> journal = new ArrayList<>();
     static ArrayAdapter<String> arrayAdapter;
 
 @Override
@@ -30,7 +30,7 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_journals);
 
-        ListView listView = (ListView)findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
 
         /*
         add "example note" to the journal arrayList
@@ -111,6 +111,11 @@ protected void onCreate(Bundle savedInstanceState) {
         }
 
         return false;
+    }
+
+    public void goBack(View v){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
 
 }

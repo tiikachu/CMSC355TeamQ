@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 
 import java.util.HashSet;
@@ -21,8 +22,8 @@ public class JournalEditor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_editor);
 
-        EditText editText = (EditText)findViewById(R.id.EditText);
-        Intent intent = getIntent();
+        EditText editText = findViewById(R.id.EditText);
+        Intent   intent   = getIntent();
         noteID = intent.getIntExtra("noteID", -1);  //default value is -1 (in case of intent error)
 
         if(noteID != -1)
@@ -62,5 +63,10 @@ public class JournalEditor extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void goBack(View view){
+        Intent intent = new Intent(getApplicationContext(), ShowJournals.class);
+        startActivity(intent);
     }
 }
