@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="Merge remote-tracking branch 'origin/yashna_layout'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +60,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -157,6 +161,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="477" y="257" key="#PSD" timestamp="1602791606705">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="477" y="257" key="#PSD/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791606705" />
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1602639760833">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -165,6 +173,14 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="692" y="405" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640987271" />
+    <state x="258" y="59" width="1329" height="891" key="CommitChangelistDialog2" timestamp="1602791180993">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="258" y="59" width="1329" height="891" key="CommitChangelistDialog2/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791180993" />
+    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1602791122681">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791122681" />
     <state x="656" y="348" key="FileChooserDialogImpl" timestamp="1602640571707">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -185,6 +201,14 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602641491994" />
+    <state x="184" y="87" key="MergeDialog" timestamp="1602791051019">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="184" y="87" key="MergeDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791051019" />
+    <state x="672" y="241" key="MultipleFileMergeDialog" timestamp="1602791051030">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="672" y="241" key="MultipleFileMergeDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791051030" />
     <state x="461" y="205" key="SettingsEditor" timestamp="1602640862027">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -193,5 +217,13 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="776" y="338" key="chooseDestDirectoryDialog/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640698065" />
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1602791754078">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791754078" />
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602790753319">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602790753319" />
   </component>
 </project>
