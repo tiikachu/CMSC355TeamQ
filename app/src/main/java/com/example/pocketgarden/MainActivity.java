@@ -1,30 +1,41 @@
 package com.example.pocketgarden;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    public boolean raining = true;
+    private static final String CHANNEL_ID = "pocket_garden";
+    private static final String CHANNEL_NAME = "Pocket Garden";
+    private static final String CHANNEL_DESC = "Pocket Garden Notifications";
+    private Button notificationButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button notificationButton = findViewById(R.id.button);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription(CHANNEL_DESC);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+        notificationButton = (Button) findViewById(R.id.notification_button);
         notificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addNotification();
+                displayNotification();
             }
         });
 
@@ -41,24 +52,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void addNotification () {
-        // build notification
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+    private void displayNotification() {
 
-        if (raining) {
-            builder.setContentTitle("Pocket Garden")
-                    .setContentText("It is raining today");
-        }
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
 
-        // create intent to show notification
-        Intent        notificationIntent = new Intent (this, MainActivity.class);
-        PendingIntent contentIntent      = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);
+        builder.setContentTitle("Pocket Garden")
+                .setContentText("It is raining today")
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        // access device and tell it there's a notification
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(0,builder.build());
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(MainActivity.this);
+        notificationManagerCompat.notify(1, builder.build());
 
     }
 
