@@ -264,16 +264,17 @@
                 android:textColor="#FFFFFF"
                 android:textSize="34sp" />
 
-            <Button
-                android:id="@+id/notification_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/make_message"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="418dp" />
 
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/notification_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="418dp" />
 
     </GridLayout>
 </ScrollView>
