@@ -55,6 +55,16 @@ public class Plant_List{
         return this.list_name;
     }
 
+    void remove(Plant_Object plant_in){
+        for(int i =0; i < this.list_index; i++){
+            if(this.plantlist[i].equals(plant_in)){
+                for(int j = i; j < (this.list_index-1); j++){
+                    this.plantlist[i] = this.plantlist[i+1];
+                }
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Plant_List{" +
