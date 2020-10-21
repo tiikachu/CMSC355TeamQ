@@ -6,15 +6,15 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="Merge remote-tracking branch 'origin/yashna_layout'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+    <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="Updated MainActivity.java with displayNotifications() method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_30" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_21" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -62,6 +62,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.15" />
@@ -160,7 +161,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="44b0e3d6-a019-4310-8df0-84c9557c864b" name="Default Changelist" comment="" />
+      <changelist id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="Merge remote-tracking branch 'origin/yashna_layout'&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml" />
       <created>1602637436982</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -180,7 +181,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Merge remote-tracking branch 'origin/christine-branch'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/christine-branch'" />
+    <MESSAGE value="Updated MainActivity.java with displayNotifications() method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated MainActivity.java with displayNotifications() method" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -198,14 +200,16 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="692" y="405" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640987271" />
-    <state x="258" y="59" width="1329" height="891" key="CommitChangelistDialog2" timestamp="1602803671606">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="172" y="38" width="1329" height="891" key="CommitChangelistDialog2" timestamp="1602817909035">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="172" y="38" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1602817909035" />
     <state x="258" y="59" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602803671606" />
     <state x="258" y="59" width="1329" height="891" key="CommitChangelistDialog2/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791180993" />
-    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1602804544589">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="61" y="60" width="1736" height="866" key="DiffContextDialog" timestamp="1603246894036">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="61" y="60" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1603246894036" />
     <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602804544589" />
     <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791860663" />
     <state x="656" y="348" key="FileChooserDialogImpl" timestamp="1602640571707">
@@ -242,6 +246,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="461" y="205" key="SettingsEditor/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640862027" />
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2" timestamp="1602821829063">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1602821829063" />
     <state x="776" y="338" key="chooseDestDirectoryDialog" timestamp="1602640698065">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -254,5 +262,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602790753319" />
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog" timestamp="1603246829652">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1603246829652" />
   </component>
 </project>
