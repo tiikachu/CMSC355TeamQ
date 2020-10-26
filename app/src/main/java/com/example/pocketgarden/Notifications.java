@@ -2,6 +2,7 @@ package com.example.pocketgarden;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ public class Notifications extends AppCompatActivity {
     CheckBox never, every1day, every2days, every3days, every4days, every5days, every6days, every7days;
     private ArrayList<String> frequencyResult;
 
+    SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +48,8 @@ public class Notifications extends AppCompatActivity {
         });
 
         frequencyResult = new ArrayList<>();
-
-        never = (CheckBox) findViewById(R.id.never);
+        // use switch cases instead for each
+        never = findViewById(R.id.never);
         never.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +62,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        every1day = (CheckBox) findViewById(R.id.every1day);
+        every1day = findViewById(R.id.every1day);
         every1day.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +75,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        every2days = (CheckBox) findViewById(R.id.every2days);
+        every2days = findViewById(R.id.every2days);
         every2days.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +88,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        every3days = (CheckBox) findViewById(R.id.every3days);
+        every3days = findViewById(R.id.every3days);
         every3days.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +101,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        every4days = (CheckBox) findViewById(R.id.every4days);
+        every4days = findViewById(R.id.every4days);
         every4days.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,7 +114,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        every5days = (CheckBox) findViewById(R.id.every5days);
+        every5days = findViewById(R.id.every5days);
         every5days.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,7 +127,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        every6days = (CheckBox) findViewById(R.id.every6days);
+        every6days = findViewById(R.id.every6days);
         every6days.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,7 +140,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        every7days = (CheckBox) findViewById(R.id.every7days);
+        every7days = findViewById(R.id.every7days);
         every7days.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -166,6 +169,10 @@ public class Notifications extends AppCompatActivity {
 
     }
 
+    public void saveText() {
+        preferences = getPreferences(MODE_PRIVATE);
+
+    }
 
 }
 
