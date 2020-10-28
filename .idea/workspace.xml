@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_2_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_2_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603304713688</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add SharedPreferences to Notifications.java so that app will save the checked boxes from the user">
+      <created>1603683292413</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603683292413</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -211,7 +217,8 @@
     <MESSAGE value="Added CheckBox objects for choosing the frequency of receiving notifications for when to water plants. Added text and CheckBox objects to activity_notifications.xml. Update icon for notifications." />
     <MESSAGE value="Fixed styles.xml errors" />
     <MESSAGE value="Fixed styles.xml errors and changed implementation in build.gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed styles.xml errors and changed implementation in build.gradle" />
+    <MESSAGE value="Add SharedPreferences to Notifications.java so that app will save the checked boxes from the user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add SharedPreferences to Notifications.java so that app will save the checked boxes from the user" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -233,10 +240,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="222" y="96" width="836" height="476" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1603304433348" />
-    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2" timestamp="1603304712825">
+    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2" timestamp="1603855432898">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1603304712825" />
+    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1603855432898" />
     <state x="258" y="59" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602803671606" />
     <state x="258" y="59" width="1329" height="891" key="CommitChangelistDialog2/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791180993" />
     <state x="61" y="60" width="1736" height="866" key="DiffContextDialog" timestamp="1603304683013">
@@ -280,10 +287,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="461" y="205" key="SettingsEditor/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640862027" />
-    <state x="234" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603304715644">
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603683672899">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="234" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603304715644" />
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603683672899" />
     <state x="776" y="338" key="chooseDestDirectoryDialog" timestamp="1602640698065">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -304,9 +311,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="269" y="264" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1603289991186" />
-    <state x="352" y="132" key="git4idea.merge.GitPullDialog" timestamp="1603607402276">
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog" timestamp="1603854464013">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="352" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1603607402276" />
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1603854464013" />
   </component>
 </project>

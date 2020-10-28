@@ -103,4 +103,13 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="3900dp"
         android:text="Every 7 days" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="274dp"
+        android:text="Save" />
 </RelativeLayout>
