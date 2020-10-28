@@ -1,5 +1,7 @@
 package plant;
 
+import org.json.JSONArray;
+
 public class Plant_Object{
 	String name;
 	int age;	//in months
@@ -14,6 +16,18 @@ public class Plant_Object{
 
 	Plant_Object(){
 		name = "plant " + num_plants;
+		age = 0;
+		interval = 1;
+		special_needs = null;
+		indoor = true;
+		potted = true;
+		num_plants++;
+	}
+
+	//JSON constructor
+	Plant_Object(String name_in){
+		Get_Plant_Info JSON_in = new Get_Plant_Info();
+		name = JSON_in.getSciName(name_in);  //getsciname?
 		age = 0;
 		interval = 1;
 		special_needs = null;
