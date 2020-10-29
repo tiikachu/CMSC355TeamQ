@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -21,11 +22,11 @@ public class Notifications extends AppCompatActivity {
     private static final String CHANNEL_ID = "pocket_garden";
     private static final String CHANNEL_NAME = "Pocket Garden";
     private static final String CHANNEL_DESC = "Pocket Garden Notifications";
-    private Button notificationButton;
+    private final String NOTIF_PREF = "Notification References";
     CheckBox never, every1day, every2days, every3days, every4days, every5days, every6days, every7days;
     private ArrayList<String> frequencyResult;
-
-    SharedPreferences preferences;
+    private Button notificationButton, saveButton;
+    private boolean checked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +48,24 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
+        saveButton = findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveData();
+            }
+        });
+
+        loadData();
+        updateViews();
+
         frequencyResult = new ArrayList<>();
         // use switch cases instead for each
         never = findViewById(R.id.never);
         never.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (never.isChecked()) {
                     frequencyResult.add("Never");
                     displayNotification();
@@ -169,10 +182,24 @@ public class Notifications extends AppCompatActivity {
 
     }
 
-    public void saveText() {
-        preferences = getPreferences(MODE_PRIVATE);
+    public void saveData() {
+        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("never", never.isChecked());
+        editor.apply();
+        Toast.makeText(this, "Settings saved", Toast.LENGTH_SHORT).show();
 
     }
+
+    public void loadData() {
+        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
+        checked = preferences.getBoolean("checked", false);
+    }
+
+    public void updateViews() {
+        never.setChecked(checked);
+    }
+
 
 }
 
