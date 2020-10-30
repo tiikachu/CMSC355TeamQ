@@ -1,8 +1,10 @@
 package plant;
 
+import org.json.JSONException;
+
 import java.util.Scanner;
 public class Plant_Driver{
-	public static void main(String[] args){
+	public static void main(String[] args) throws JSONException {
 		Scanner in = new Scanner(System.in);
 		String name = "my plant";
 		int age = 2;
@@ -20,12 +22,21 @@ public class Plant_Driver{
 		Plant_List list2 = new Plant_List("");
 		Plant_List list3 = new Plant_List();
 
+
+
+		/*list1.add(my_plant);
+		list1.add(my_plant);
+		list1.add(my_plant);
+
 		System.out.println(list1.name());
-		list1.toString();
+		System.out.println(list1.toString());
 		System.out.println("\nList2 : " + list2.name());
 		list2.toString();
 		System.out.println("\nList3 : " + list3.name());
 		list3.toString();
+
+		 */
+
 		
 	}
 }

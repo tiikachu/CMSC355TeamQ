@@ -47,7 +47,7 @@ public class Plant_List{
     }
 
     void add(Plant_Object plant_in){
-        plantlist[this.list_index++] = plant_in;
+        this.plantlist[this.list_index] = plant_in;
         this.list_index++;
     }
 
@@ -67,8 +67,9 @@ public class Plant_List{
 
     @Override
     public String toString() {
-        return "Plant_List{" +
-                "plantlist=" + Arrays.toString(plantlist) +
-                '}';
+        for(int i = 0; i < this.list_index; i++){
+            System.out.println("Plant " + i + " : " + this.plantlist[i].getName());
+        }
+        return "end";  //note this is not good syntax
     }
 }
