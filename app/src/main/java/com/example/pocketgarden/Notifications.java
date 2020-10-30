@@ -59,112 +59,79 @@ public class Notifications extends AppCompatActivity {
         loadData();
         updateViews();
 
-        frequencyResult = new ArrayList<>();
-        // use switch cases instead for each
-        never = findViewById(R.id.never);
-        never.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
 
-                if (never.isChecked()) {
+    public void onCheckboxClicked(View view) {
+
+        frequencyResult = new ArrayList<>();
+        boolean checked = ((CheckBox) view).isChecked();
+
+        switch (view.getId()) {
+            case R.id.never:
+                if (checked) {
                     frequencyResult.add("Never");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Never");
                 }
-            }
-        });
-
-        every1day = findViewById(R.id.every1day);
-        every1day.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (every1day.isChecked()) {
+                break;
+            case R.id.every1day:
+                if (checked) {
                     frequencyResult.add("Every 1 day");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Every 1 day");
                 }
-            }
-        });
-
-        every2days = findViewById(R.id.every2days);
-        every2days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (every2days.isChecked()) {
+                break;
+            case R.id.every2days:
+                if (checked) {
                     frequencyResult.add("Every 2 days");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Every 2 days");
                 }
-            }
-        });
-
-        every3days = findViewById(R.id.every3days);
-        every3days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (every3days.isChecked()) {
+                break;
+            case R.id.every3days:
+                if (checked) {
                     frequencyResult.add("Every 3 days");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Every 3 days");
                 }
-            }
-        });
-
-        every4days = findViewById(R.id.every4days);
-        every4days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (every4days.isChecked()) {
+                break;
+            case R.id.every4days:
+                if (checked) {
                     frequencyResult.add("Every 4 days");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Every 4 days");
                 }
-            }
-        });
-
-        every5days = findViewById(R.id.every5days);
-        every5days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (every5days.isChecked()) {
+                break;
+            case R.id.every5days:
+                if (checked) {
                     frequencyResult.add("Every 5 days");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Every 5 days");
                 }
-            }
-        });
-
-        every6days = findViewById(R.id.every6days);
-        every6days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (every6days.isChecked()) {
+                break;
+            case R.id.every6days:
+                if (checked) {
                     frequencyResult.add("Every 6 days");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Every 6 days");
                 }
-            }
-        });
-
-        every7days = findViewById(R.id.every7days);
-        every7days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (every7days.isChecked()) {
+                break;
+            case R.id.every7days:
+                if (checked) {
                     frequencyResult.add("Every 7 days");
                     displayNotification();
                 } else {
                     frequencyResult.remove("Every 7 days");
                 }
-            }
-        });
+                break;
+        }
     }
 
 
@@ -196,10 +163,16 @@ public class Notifications extends AppCompatActivity {
         checked = preferences.getBoolean("checked", false);
     }
 
+    //could just pass in checkbox as a parameter
     public void updateViews() {
         never.setChecked(checked);
+        every1day.setChecked(checked);
+        every2days.setChecked(checked);
+        every3days.setChecked(checked);
+        every4days.setChecked(checked);
+        every5days.setChecked(checked);
+        every6days.setChecked(checked);
+        every7days.setChecked(checked);
     }
-
-
 }
 

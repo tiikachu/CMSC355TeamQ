@@ -6,9 +6,11 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="">
+    <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="Changed multiple if else statements to switch case and put under onCheckboxClicked() method. onClick for Checkboxes in activity_notifications.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +220,8 @@
     <MESSAGE value="Fixed styles.xml errors" />
     <MESSAGE value="Fixed styles.xml errors and changed implementation in build.gradle" />
     <MESSAGE value="Add SharedPreferences to Notifications.java so that app will save the checked boxes from the user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add SharedPreferences to Notifications.java so that app will save the checked boxes from the user" />
+    <MESSAGE value="Changed multiple if else statements to switch case and put under onCheckboxClicked() method. onClick for Checkboxes in activity_notifications.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed multiple if else statements to switch case and put under onCheckboxClicked() method. onClick for Checkboxes in activity_notifications.xml" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -240,10 +243,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="222" y="96" width="836" height="476" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1603304433348" />
-    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2" timestamp="1603855432898">
+    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2" timestamp="1604028456956">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1603855432898" />
+    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604028456956" />
     <state x="258" y="59" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602803671606" />
     <state x="258" y="59" width="1329" height="891" key="CommitChangelistDialog2/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791180993" />
     <state x="61" y="60" width="1736" height="866" key="DiffContextDialog" timestamp="1603304683013">
@@ -287,10 +290,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="461" y="205" key="SettingsEditor/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640862027" />
-    <state x="234" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603683672899">
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2" timestamp="1603855455327">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="234" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603683672899" />
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603855455327" />
     <state x="776" y="338" key="chooseDestDirectoryDialog" timestamp="1602640698065">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -303,17 +306,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602790753319" />
-    <state x="24" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1603254320021">
+    <state x="24" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1604027561750">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="24" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1603254320021" />
+    <state x="24" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1604027561750" />
     <state x="269" y="264" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603289991186">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="269" y="264" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1603289991186" />
-    <state x="352" y="132" key="git4idea.merge.GitPullDialog" timestamp="1603854464013">
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog" timestamp="1604027571351">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="352" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1603854464013" />
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1604027571351" />
   </component>
 </project>
