@@ -8,7 +8,7 @@ package plant;
 
 import java.util.Arrays;
 
-public class Plant_List{
+public class Plant_List {
 
 
     private int list_index;
@@ -18,27 +18,27 @@ public class Plant_List{
     // ArrayList<Plant_Object> plant_list;
     Plant_Object[] plantlist;
 
-    Plant_List(){
+    Plant_List() {
         this.list_index = 0;
         num_lists++;
         this.list_name = "List " + num_lists;
         this.plantlist = new Plant_Object[plant_max];
     }
 
-    Plant_List(String name_in){
+    Plant_List(String name_in) {
         this.list_index = 0;
         num_lists++;
-        if(name_in == null || name_in.equals("")){
+        if (name_in == null || name_in.equals("")) {
             this.list_name = "List " + num_lists;
         }
         this.list_name = name_in;
         this.plantlist = new Plant_Object[plant_max];
     }
 
-    Plant_List(Plant_Object plant_in, String name_in){
+    Plant_List(Plant_Object plant_in, String name_in) {
         this.list_index = 0;
         num_lists++;
-        if(name_in == null || name_in.equals("")){
+        if (name_in == null || name_in.equals("")) {
             this.list_name = "List " + num_lists;
         }
         this.list_name = name_in;
@@ -46,12 +46,12 @@ public class Plant_List{
         add(plant_in);
     }
 
-    void add(Plant_Object plant_in){
+    void add(Plant_Object plant_in) {
         plantlist[this.list_index++] = plant_in;
         this.list_index++;
     }
 
-    String name(){
+    String name() {
         return this.list_name;
     }
 

@@ -2,6 +2,7 @@ package com.example.pocketgarden;
 
 public class Database {
     private plant[] PLANTS_LIST = makePlantsList();
+
     class plant {
 
         private String type;
@@ -9,14 +10,14 @@ public class Database {
         private String scientificName;
         private int wateringFrequency;
 
-        public plant(){
+        public plant() {
             type = "n/a";
             commonName = "n/a";
             scientificName = "n/a";
             wateringFrequency = 0;
         }
 
-        public plant(String type, String commonName, String scientificName, int wateringFrequency){
+        public plant(String type, String commonName, String scientificName, int wateringFrequency) {
             this.type = type;
             this.commonName = commonName;
             this.scientificName = scientificName;
@@ -26,7 +27,7 @@ public class Database {
     }
 
 
-    private plant[] makePlantsList(){
+    private plant[] makePlantsList() {
 
         plant cactus = new plant("succulent", "cactus", "Pachycereus pringlei", 2);
 
@@ -35,7 +36,6 @@ public class Database {
         return plantList;
 
     }
-
 
 
 }

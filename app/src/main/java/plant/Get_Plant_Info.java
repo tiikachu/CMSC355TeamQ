@@ -1,40 +1,60 @@
 package plant;
 
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.util.DisplayMetrics;
 
 import com.example.pocketgarden.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
 
 //need to create your own account with
-public class Get_Plant_Info {
-    private static String apiRequest = Resources.getSystem().getString(R.string.trefle_api_url);
-    private static String token = Resources.getSystem().getString(R.string.trefle_token);
+public class Get_Plant_Info extends Resources {
+
+    private static String apiRequest;
+    private static String token;
     private static HttpsURLConnection connection;
+
+    /**
+     * Create a new Resources object on top of an existing set of assets in an
+     * AssetManager.
+     *
+     * @param assets  Previously created AssetManager.
+     * @param metrics Current display metrics to consider when
+     *                selecting/computing resource values.
+     * @param config  Desired device configuration to consider when
+     * @deprecated Resources should not be constructed by apps.
+     * See {@link Context#createConfigurationContext(Configuration)}.
+     */
+    public Get_Plant_Info(AssetManager assets, DisplayMetrics metrics, Configuration config) {
+        super(assets, metrics, config);
+        apiRequest = getString(R.string.trefle_api_url);
+        token = getString(R.string.trefle_token);
+
+    }
 
 
     //only scientific name
-    public JSONArray getPlantInfoSName(String scientificName) throws JSONException {
+    public static JSONArray getPlantInfoSName(String scientificName) throws JSONException {
         String location = apiRequest + "/species" + scientificName + "?" + token;
         String line;
-        StringBuffer responseContent = new StringBuffer();
+        StringBuilder responseContent = new StringBuilder();
         BufferedReader reader;
 
         try {
-            URL url = new URL (location);
+            URL url = new URL(location);
             connection = (HttpsURLConnection) url.openConnection();
 
             connection.setRequestMethod("GET");
@@ -43,39 +63,35 @@ public class Get_Plant_Info {
 
             int status = connection.getResponseCode();
 
-            if(status > 299){
+            if (status > 299) {
                 reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-                while((line = reader.readLine()) != null){
+                while ((line = reader.readLine()) != null) {
                     responseContent.append(line);
                 }
                 reader.close();
-            }
-
-            else{
+            } else {
                 reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                while((line = reader.readLine()) != null){
+                while ((line = reader.readLine()) != null) {
                     responseContent.append(line);
                 }
                 reader.close();
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             connection.disconnect();
             return new JSONArray(responseContent.toString());
         }
     }
 
-    public String getSciName(String commonName){
+    public static String getSciName(String commonName) {
         String location = apiRequest + "/plants/search?" + token + "&" + process(commonName);
         String line;
         StringBuffer responseContent = new StringBuffer();
         BufferedReader reader;
 
         try {
-            URL url = new URL (location);
+            URL url = new URL(location);
             connection = (HttpsURLConnection) url.openConnection();
 
             connection.setRequestMethod("GET");
@@ -84,26 +100,22 @@ public class Get_Plant_Info {
 
             int status = connection.getResponseCode();
 
-            if(status > 299){
+            if (status > 299) {
                 reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-                while((line = reader.readLine()) != null){
+                while ((line = reader.readLine()) != null) {
                     responseContent.append(line);
                 }
                 reader.close();
-            }
-
-            else{
+            } else {
                 reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                while((line = reader.readLine()) != null){
+                while ((line = reader.readLine()) != null) {
                     responseContent.append(line);
                 }
                 reader.close();
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             connection.disconnect();
         }
         JSONArray allData;
@@ -117,7 +129,7 @@ public class Get_Plant_Info {
     }
 
 
-    public JSONArray parseData(JSONArray input){
+    public JSONArray parseData(JSONArray input) {
         JSONArray output = new JSONArray();
         try {
             output.put(input.getJSONArray(27));
@@ -128,15 +140,15 @@ public class Get_Plant_Info {
         return output;
     }
 
-    public String process(String input){
+    public static String process(String input) {
         String[] words = input.split(" ");
         String output = "";
 
-        for (String word: words){
+        for (String word : words) {
             output += words + "%20";
         }
 
-        return output.substring(0, output.length()-2);
+        return output.substring(0, output.length() - 2);
     }
 
 
