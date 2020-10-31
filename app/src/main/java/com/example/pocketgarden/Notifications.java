@@ -2,6 +2,7 @@ package com.example.pocketgarden;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -9,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -22,10 +22,10 @@ public class Notifications extends AppCompatActivity {
     private static final String CHANNEL_ID = "pocket_garden";
     private static final String CHANNEL_NAME = "Pocket Garden";
     private static final String CHANNEL_DESC = "Pocket Garden Notifications";
-    private final String NOTIF_PREF = "Notification References";
-    CheckBox never, every1day, every2days, every3days, every4days, every5days, every6days, every7days;
-    private ArrayList<String> frequencyResult;
-    private Button notificationButton, saveButton;
+
+    private CheckBox never, every1day, every2days, every3days, every4days, every5days, every6days, every7days;
+    private ArrayList<String> frequencyResult = new ArrayList<String>();
+    private Button notificationButton;
     private boolean checked;
 
     @Override
@@ -48,16 +48,29 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        saveButton = findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        final SharedPreferences sharedPref = Notifications.this.getPreferences(Context.MODE_PRIVATE);
+        boolean isMyValueChecked = sharedPref.getBoolean("checkbox", false);
+        never = findViewById(R.id.never);
+        never.setChecked(isMyValueChecked);
+        never.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveData();
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("never", ((CheckBox) view).isChecked());
+                editor.commit();
             }
         });
 
-        loadData();
-        updateViews();
+        every1day = findViewById(R.id.every1day);
+        every1day.setChecked(isMyValueChecked);
+        every1day.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 1 day", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
 
     }
 
@@ -149,30 +162,30 @@ public class Notifications extends AppCompatActivity {
 
     }
 
-    public void saveData() {
-        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("never", never.isChecked());
-        editor.apply();
-        Toast.makeText(this, "Settings saved", Toast.LENGTH_SHORT).show();
-
-    }
-
-    public void loadData() {
-        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
-        checked = preferences.getBoolean("checked", false);
-    }
-
-    //could just pass in checkbox as a parameter
-    public void updateViews() {
-        never.setChecked(checked);
-        every1day.setChecked(checked);
-        every2days.setChecked(checked);
-        every3days.setChecked(checked);
-        every4days.setChecked(checked);
-        every5days.setChecked(checked);
-        every6days.setChecked(checked);
-        every7days.setChecked(checked);
-    }
+//    public void saveData() {
+//        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putBoolean("never", never.isChecked());
+//        editor.apply();
+//        Toast.makeText(this, "Settings saved", Toast.LENGTH_SHORT).show();
+//
+//    }
+//
+//    public void loadData() {
+//        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
+//        checked = preferences.getBoolean("checked", false);
+//    }
+//
+//    //could just pass in checkbox as a parameter
+//    public void updateViews() {
+//        never.setChecked(checked);
+//        every1day.setChecked(checked);
+//        every2days.setChecked(checked);
+//        every3days.setChecked(checked);
+//        every4days.setChecked(checked);
+//        every5days.setChecked(checked);
+//        every6days.setChecked(checked);
+//        every7days.setChecked(checked);
+//    }
 }
 
