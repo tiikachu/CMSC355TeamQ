@@ -55,6 +55,7 @@ public class Plant_List{
         return this.list_name;
     }
 
+    //remove by object
     void remove(Plant_Object plant_in){
         for(int i =0; i < this.list_index; i++){
             if(this.plantlist[i].equals(plant_in)){
@@ -62,7 +63,10 @@ public class Plant_List{
                     this.plantlist[i] = this.plantlist[i+1];
                 }
             }
+
         }
+        this.plantlist[this.list_index] = null;
+        this.list_index--;
     }
 
     @Override

@@ -24,18 +24,18 @@ public class Plant_Driver{
 
 
 
-		/*list1.add(my_plant);
+		list1.add(my_plant);
 		list1.add(my_plant);
 		list1.add(my_plant);
 
 		System.out.println(list1.name());
 		System.out.println(list1.toString());
-		System.out.println("\nList2 : " + list2.name());
-		list2.toString();
-		System.out.println("\nList3 : " + list3.name());
-		list3.toString();
 
-		 */
+		list1.remove(my_plant);
+		System.out.println(list1.name());
+		System.out.println(list1.toString());
+
+
 
 		
 	}
