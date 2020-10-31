@@ -6,7 +6,12 @@ import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
+
+import com.example.pocketgarden.App;
 import com.example.pocketgarden.R;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,37 +20,25 @@ import java.util.Arrays;
 import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 
 //need to create your own account with
-public class Get_Plant_Info extends Resources {
+public class Get_Plant_Info {
 
-  private static String apiRequest;
-  private static String token;
+  private static final String apiRequest = "https://trefle.io/api/v1/";
+  private static final String token = "token=ALt0fE6yO8mIuJKrReIYktfe6eC5GDbuHTUt4zGhMS4";
   private static HttpsURLConnection connection;
 
   /**
-   * Create a new Resources object on top of an existing set of assets in an
-   * AssetManager.
-   *
-   * @param assets  Previously created AssetManager.
-   * @param metrics Current display metrics to consider when
-   *                selecting/computing resource values.
-   * @param config  Desired device configuration to consider when
-   * @deprecated Resources should not be constructed by apps.
-   * See {@link Context#createConfigurationContext(Configuration)}.
+   * Gets info for plant object given a scientific name
+   * @param scientificName
+   * @return
+   * @throws JSONException
    */
-  public Get_Plant_Info(AssetManager assets, DisplayMetrics metrics, Configuration config) {
-    super(assets, metrics, config);
-    apiRequest = getString(R.string.trefle_api_url);
-    token = getString(R.string.trefle_token);
-
-  }
-
-
-  //only scientific name
-  public static JSONArray getSciNameInfo(String scientificName) throws JSONException {
-    String location = apiRequest + "/species" + scientificName + "?" + token;
+  public static String getSciNameInfo(String scientificName) throws JSONException {
+    scientificName = scientificName.replace(' ', '-');
+    String location = apiRequest + "species/" + scientificName + "?" + token;
     String line;
     StringBuilder responseContent = new StringBuilder();
     BufferedReader reader;
@@ -57,27 +50,24 @@ public class Get_Plant_Info extends Resources {
       connection.setRequestMethod("GET");
       connection.setConnectTimeout(5000);
       connection.setReadTimeout(5000);
-
+      connection.connect();
       int status = connection.getResponseCode();
 
       if (status > 299) {
         reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-        while ((line = reader.readLine()) != null) {
-          responseContent.append(line);
-        }
-        reader.close();
       } else {
         reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        while ((line = reader.readLine()) != null) {
-          responseContent.append(line);
-        }
-        reader.close();
       }
+      while ((line = reader.readLine()) != null) {
+        responseContent.append(line);
+      }
+      reader.close();
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
       connection.disconnect();
-      return new JSONArray(responseContent.toString());
+
+      return responseContent.toString();
     }
   }
 
