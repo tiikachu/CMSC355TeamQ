@@ -1,12 +1,10 @@
 package plant;
 
-import org.json.JSONArray;
-
 public class Plant_Object{
 	String name;
-	int age;	//in months
-	int interval;	//in days if in weeks convert to days
-	String[] special_needs; 	//on comma split
+	int age;    //in months
+	int interval;    //in days if in weeks convert to days
+	String[] special_needs;    //on comma split
 	//special needs include: soil type and health, leaf appearance, sun light per day, environment
 
 
@@ -14,7 +12,7 @@ public class Plant_Object{
 	boolean potted; // by default set to potted by
 	int num_plants = 0; //counter cannot be used in list view to get number of plants in list this would be global
 
-	Plant_Object(){
+	public Plant_Object() {
 		name = "plant " + num_plants;
 		age = 0;
 		interval = 1;

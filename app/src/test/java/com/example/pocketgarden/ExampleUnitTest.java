@@ -2,7 +2,9 @@ package com.example.pocketgarden;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import plant.Plant_Object;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -13,5 +15,15 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
+    }
+
+    @Test
+    public void testGetName() {
+        System.out.println("getName");
+        Plant_Object plant = new Plant_Object();
+        String expResult = "plant";
+        plant.setName(expResult);
+        String result = plant.getName();
+        assertEquals(expResult, result);
     }
 }
