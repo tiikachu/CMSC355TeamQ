@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pocket_Garden.iml" filepath="$PROJECT_DIR$/.idea/modules/Pocket_Garden.iml" group="Pocket_Garden" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Pocket Garden/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pocket_Garden.iml" filepath="$PROJECT_DIR$/.idea/modules/Pocket_Garden.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Pocket_Garden.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Pocket_Garden.app.iml" />
     </modules>
   </component>
 </project>

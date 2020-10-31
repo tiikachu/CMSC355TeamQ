@@ -1,9 +1,5 @@
 package com.example.pocketgarden;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +13,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -25,8 +25,8 @@ public class ShowJournals extends AppCompatActivity {
     static ArrayList<String> journal = new ArrayList<>();
     static ArrayAdapter<String> arrayAdapter;
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_journals);
 
@@ -44,8 +44,7 @@ protected void onCreate(Bundle savedInstanceState) {
         Create intent to jump to journal editor class
          */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), JournalEditor.class);
                 intent.putExtra("noteID", position); //to tell us which row of listView was tapped
                 startActivity(intent);
@@ -57,16 +56,14 @@ protected void onCreate(Bundle savedInstanceState) {
          */
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id)
-            {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 new AlertDialog.Builder(ShowJournals.this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setTitle("Delete?")
                         .setMessage("Are you sure you want to delete this note?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
+                            public void onClick(DialogInterface dialog, int which) {
                                 journal.remove(position);
                                 arrayAdapter.notifyDataSetChanged();
                             }
@@ -87,11 +84,10 @@ protected void onCreate(Bundle savedInstanceState) {
 
         });
 
-}
+    }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.journal_menu, menu);
 
@@ -99,12 +95,10 @@ protected void onCreate(Bundle savedInstanceState) {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item)
-    {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
 
-        if(item.getItemId() == R.id.add_note)
-        {
+        if (item.getItemId() == R.id.add_note) {
             Intent intent = new Intent(getApplicationContext(), JournalEditor.class);
             startActivity(intent);
             return true;
@@ -113,7 +107,7 @@ protected void onCreate(Bundle savedInstanceState) {
         return false;
     }
 
-    public void goBack(View v){
+    public void goBack(View v) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
