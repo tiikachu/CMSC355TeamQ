@@ -7,15 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_2_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/plant/Plant_Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/plant/Plant_Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/pocketgarden/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/pocketgarden/ExampleUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_21" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -79,7 +96,24 @@
       <recent name="C:\Users\kprat\CMSC355TeamQ\app\src\main\res\layout" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android JUnit.ExampleUnitTest.testGetName">
+    <configuration name="ExampleUnitTest.testGetName" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pocket_Garden.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.pocketgarden.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.pocketgarden" />
+      <option name="MAIN_CLASS_NAME" value="com.example.pocketgarden.ExampleUnitTest" />
+      <option name="METHOD_NAME" value="testGetName" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -87,13 +121,14 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="app" />
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="Pocket_Garden.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -129,11 +164,16 @@
       </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -153,6 +193,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.ExampleUnitTest.testGetName" />
         <item itemvalue="Application.Plant_Driver" />
       </list>
     </recent_temporary>
@@ -264,22 +305,26 @@
     </state>
     <state x="437" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603289656797" />
     <state x="656" y="348" key="FileChooserDialogImpl/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640571707" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1602641491994">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1604128171045">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602641491994" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1602641491994">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604128171045" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1604128171044">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602641491994" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1602641491994">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604128171044" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1604128171044">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602641491994" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1602641491994">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604128171044" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1604128171045">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602641491994" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1604128171044" />
     <state x="0" y="0" width="1920" height="1050" key="MergeDialog" timestamp="1602804541282">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

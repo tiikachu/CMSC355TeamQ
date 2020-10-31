@@ -14,7 +14,7 @@ public class Plant_Object{
 	boolean potted; // by default set to potted by
 	int num_plants = 0; //counter cannot be used in list view to get number of plants in list this would be global
 
-	Plant_Object(){
+	public Plant_Object(){
 		name = "plant " + num_plants;
 		age = 0;
 		interval = 1;
