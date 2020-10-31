@@ -1,45 +1,29 @@
 package com.example.pocketgarden;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
+
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String CHANNEL_ID = "pocket_garden";
-    private static final String CHANNEL_NAME = "Pocket Garden";
-    private static final String CHANNEL_DESC = "Pocket Garden Notifications";
-    private Button notificationButton;
+    private Button notificationsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription(CHANNEL_DESC);
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
-        }
-
-        notificationButton = (Button) findViewById(R.id.notification_button);
-        notificationButton.setOnClickListener(new View.OnClickListener() {
+        notificationsButton = findViewById(R.id.notification_button);
+        notificationsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                displayNotification();
+                openNotifications();
             }
         });
-
-
     }
 
     /**
@@ -52,20 +36,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    private void displayNotification() {
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
-
-        builder.setContentTitle("Pocket Garden")
-                .setContentText("It is raining today")
-                .setSmallIcon(R.drawable.ic_launcher_background)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(MainActivity.this);
-        notificationManagerCompat.notify(1, builder.build());
-
+    public void openNotifications() {
+        Intent intent = new Intent(this, Notifications.class);
+        startActivity(intent);
     }
-
 }
