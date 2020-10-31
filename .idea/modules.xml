@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pocket_Garden.iml" filepath="$PROJECT_DIR$/.idea/modules/Pocket_Garden.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Pocket_Garden.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Pocket_Garden.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Pocket Garden/app" />
     </modules>
   </component>
 </project>

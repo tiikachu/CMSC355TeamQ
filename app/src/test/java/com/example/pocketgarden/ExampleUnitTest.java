@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import plant.Plant_Object;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -18,7 +18,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void testGetName() {
+    public void testGetName(){
         System.out.println("getName");
         Plant_Object plant = new Plant_Object();
         String expResult = "plant";
