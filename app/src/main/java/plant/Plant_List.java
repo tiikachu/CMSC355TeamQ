@@ -15,7 +15,6 @@ public class Plant_List{
     public static int num_lists = 0;
     private static int plant_max = 100;
     String list_name;
-    // ArrayList<Plant_Object> plant_list;
     Plant_Object[] plantlist;
 
     Plant_List(){
