@@ -68,6 +68,21 @@ public class Plant_List{
         this.list_index--;
     }
 
+    void sort_by_name(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getName().compareTo(this.plantlist[j-1].getName()) < 0){   //compare names
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+
+            }
+
+        }
+    }
+
     @Override
     public String toString() {
         for(int i = 0; i < this.list_index; i++){

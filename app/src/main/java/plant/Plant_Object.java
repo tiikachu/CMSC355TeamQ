@@ -2,7 +2,8 @@ package plant;
 
 import org.json.JSONArray;
 
-public class Plant_Object{
+
+public class Plant_Object {
 	String name;
 	int age;	//in months
 	int interval;	//in days if in weeks convert to days
@@ -101,4 +102,7 @@ public class Plant_Object{
 	public void setNum_plants(int num_plants) {
 		this.num_plants = num_plants;
 	}
+
+
+
 }
