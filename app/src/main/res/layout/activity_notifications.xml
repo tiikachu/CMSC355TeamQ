@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/notification_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create notification"
+        tools:layout_editor_absoluteY="116dp" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="0dp"
+        android:text="How often do you want to receive notifications for watering your plants?" />
+
+    <CheckBox
+        android:id="@+id/never"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="180dp"
+        android:text="Never" />
+
+    <CheckBox
+        android:id="@+id/every1day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="210dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Every 1 day" />
+
+    <CheckBox
+        android:id="@+id/every2days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="240dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Every 2 days" />
+
+    <CheckBox
+        android:id="@+id/every3days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="270dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Every 3 days" />
+
+    <CheckBox
+        android:id="@+id/every4days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="300dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Every 4 days" />
+
+    <CheckBox
+        android:id="@+id/every5days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="330dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Every 5 days" />
+
+    <CheckBox
+        android:id="@+id/every6days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="360dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Every 6 days" />
+
+    <CheckBox
+        android:id="@+id/every7days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="3900dp"
+        android:onClick="onCheckboxClicked"
+        android:text="Every 7 days" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="274dp"
+        android:text="Save" />
+</RelativeLayout>
