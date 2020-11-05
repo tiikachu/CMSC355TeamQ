@@ -17,6 +17,7 @@ public class Plant_List{
     String list_name;
     Plant_Object[] plantlist;
 
+
     Plant_List(){
         this.list_index = 0;
         num_lists++;
@@ -113,6 +114,20 @@ public class Plant_List{
             }
         }
     }
+
+    void sort_by_age(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getAge() < this.plantlist[j-1].getAge()){
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+            }
+        }
+    }
+    
 
     @Override
     public String toString() {

@@ -19,7 +19,7 @@ public class Plant_Driver{
 		System.out.println(my_plant.getInterval() + " : " + my_plant.interval);
 
 		Plant_Object my_plant_2 = new Plant_Object("abc",1,1,null,true,true);
-		Plant_Object my_plant_3 = new Plant_Object("xyz",1,1,null,true,true);
+		Plant_Object my_plant_3 = new Plant_Object("xyz",10,1,null,true,true);
 
 
 
@@ -49,7 +49,9 @@ public class Plant_Driver{
 		list1.sort_by_name_reverse();
 		list1.toString();
 
-
+		System.out.println("\nSort by age");
+		list1.sort_by_age();
+		list1.toString();
 
 
 
