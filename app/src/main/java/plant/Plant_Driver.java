@@ -41,7 +41,12 @@ public class Plant_Driver{
 		System.out.println(list1.name());
 		System.out.println(list1.toString());
 
+		System.out.println("Sort by name: ");
 		list1.sort_by_name();
+		list1.toString();
+
+		System.out.println("\n Reverse sort by name");
+		list1.sort_by_name_reverse();
 		list1.toString();
 
 

@@ -68,6 +68,7 @@ public class Plant_List{
         this.list_index--;
     }
 
+    //ascending
     void sort_by_name(){
         Plant_Object temp;
         for(int i = 0; i < this.list_index; i++){
@@ -80,6 +81,36 @@ public class Plant_List{
 
             }
 
+        }
+    }
+
+    //descending
+    void sort_by_name_reverse(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getName().compareTo(this.plantlist[j-1].getName()) > 0){   //compare names
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+
+            }
+
+        }
+    }
+
+    //as added
+    void sort_by_id(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getNum_plants() < this.plantlist[j-1].getNum_plants()){
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+            }
         }
     }
 
