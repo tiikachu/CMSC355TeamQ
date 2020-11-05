@@ -7,39 +7,33 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class Get_Plant_InfoTest {
-/*
+
     @Test
     public void getPlantInfoSNameTest1() throws JSONException {
         String sciName = "Fragaria chiloensis";
-        String output = Get_Plant_Info.getSciNameInfo(sciName);
-        System.out.println(output.toString());
-        assertEquals(output.substring(13,19), 131974);
+        JSONArray output = Get_Plant_Info.getSciNameInfo(sciName);
+        assertEquals(output.getJSONArray(0).get(0), 137607);
     }
 
     @Test
     public void getPlantInfoSNameTest2() throws JSONException {
         String sciName = "Petunia axillaris";
-        String output = Get_Plant_Info.getSciNameInfo(sciName);
-        assertEquals(output.substring(13,19), 159170);
+        JSONArray output = Get_Plant_Info.getSciNameInfo(sciName);
+        assertEquals(output.getJSONArray(0).get(0), 164803);
     }
 
     @Test
     public void getPlantInfoSNameTest3() throws JSONException {
         String sciName = "Vaccinium corymbosum";
-        String output = Get_Plant_Info.getSciNameInfo(sciName);
-        assertEquals(output.substring(13,19), 185128);
+        JSONArray output = Get_Plant_Info.getSciNameInfo(sciName);
+        assertEquals(output.getJSONArray(0).get(0), 190761);
     }
 
     @Test
     public void getPlantInfoSNameTest4() throws JSONException {
         String sciName = "Mangifera indica";
-        String output = Get_Plant_Info.getSciNameInfo(sciName);
-        assertEquals(output.substring(13,19), 148901);
+        JSONArray output = Get_Plant_Info.getSciNameInfo(sciName);
+        assertEquals(output.getJSONArray(0).get(0), 154534);
     }
-
-    /*@Test
-    public void getSciNameTest() {
-
-    }*/
 
 }

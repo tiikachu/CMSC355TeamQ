@@ -23,16 +23,7 @@ public class Plant_Object {
     }
 
     //JSON constructor
-    Plant_Object(String name_in) {
-        Get_Plant_Info JSON_in = new Get_Plant_Info();
-        name = JSON_in.getSciName(name_in);  //getsciname?
-        age = 0;                            // user input
-        interval = 1;                        //use if else?
-        special_needs = null;                //maybe fill with ph level, and temp needs
-        indoor = true;                        //user input
-        potted = true;                        //user input
-        num_plants++;
-    }
+
 
     Plant_Object(String name_in, int age_in, int interval_in, String[] special_needs_in, boolean indoor_in, boolean potted_in) {
         name = name_in;
