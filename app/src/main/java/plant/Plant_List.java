@@ -15,8 +15,8 @@ public class Plant_List{
     public static int num_lists = 0;
     private static int plant_max = 100;
     String list_name;
-    // ArrayList<Plant_Object> plant_list;
     Plant_Object[] plantlist;
+
 
     Plant_List(){
         this.list_index = 0;
@@ -47,7 +47,7 @@ public class Plant_List{
     }
 
     void add(Plant_Object plant_in){
-        plantlist[this.list_index++] = plant_in;
+        this.plantlist[this.list_index] = plant_in;
         this.list_index++;
     }
 
@@ -55,6 +55,7 @@ public class Plant_List{
         return this.list_name;
     }
 
+    //remove by object
     void remove(Plant_Object plant_in){
         for(int i =0; i < this.list_index; i++){
             if(this.plantlist[i].equals(plant_in)){
@@ -62,13 +63,77 @@ public class Plant_List{
                     this.plantlist[i] = this.plantlist[i+1];
                 }
             }
+
+        }
+        this.plantlist[this.list_index] = null;
+        this.list_index--;
+    }
+
+    //ascending
+    void sort_by_name(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getName().compareTo(this.plantlist[j-1].getName()) < 0){   //compare names
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+
+            }
+
         }
     }
 
+    //descending
+    void sort_by_name_reverse(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getName().compareTo(this.plantlist[j-1].getName()) > 0){   //compare names
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+
+            }
+
+        }
+    }
+
+    //as added
+    void sort_by_id(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getNum_plants() < this.plantlist[j-1].getNum_plants()){
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+            }
+        }
+    }
+
+    void sort_by_age(){
+        Plant_Object temp;
+        for(int i = 0; i < this.list_index; i++){
+            for(int j = i; j > 0; j--){
+                if(this.plantlist[j].getAge() < this.plantlist[j-1].getAge()){
+                    temp = this.plantlist[j];
+                    this.plantlist[j] = this.plantlist[j-1];
+                    this.plantlist[j-1] = temp;
+                }
+            }
+        }
+    }
+    
+
     @Override
     public String toString() {
-        return "Plant_List{" +
-                "plantlist=" + Arrays.toString(plantlist) +
-                '}';
+        for(int i = 0; i < this.list_index; i++){
+            System.out.println("Plant " + i + " : " + this.plantlist[i].getName());
+        }
+        return "end";  //note this is not good syntax
     }
 }
