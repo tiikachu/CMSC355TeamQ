@@ -9,16 +9,16 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.pocketgarden.settings_fragment"
-        android:label="fragment_settings" />
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/home2"
-        android:name="com.example.pocketgarden.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/profile"
         android:name="com.example.pocketgarden.profile_fragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile_fragment" />
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>
