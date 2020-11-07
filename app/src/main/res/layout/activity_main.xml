@@ -255,15 +255,6 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nav_bar"
-                android:textColor="#FFFFFF"
-                android:textSize="34sp" />
-
-
         </RelativeLayout>
 
         <Button
