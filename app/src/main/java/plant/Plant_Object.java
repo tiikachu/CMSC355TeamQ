@@ -1,12 +1,10 @@
 package plant;
 
-import org.json.JSONArray;
-
-public class Plant_Object{
+public class Plant_Object {
 	String name;
-	int age;	//in months
-	int interval;	//in days if in weeks convert to days
-	String[] special_needs; 	//on comma split
+	int age;    //in months
+	int interval;    //in days if in weeks convert to days
+	String[] special_needs;    //on comma split
 	//special needs include: soil type and health, leaf appearance, sun light per day, environment
 
 
@@ -14,7 +12,7 @@ public class Plant_Object{
 	boolean potted; // by default set to potted by
 	int num_plants = 0; //counter cannot be used in list view to get number of plants in list this would be global
 
-	public Plant_Object(){
+	public Plant_Object() {
 		name = "plant " + num_plants;
 		age = 0;
 		interval = 1;
@@ -25,14 +23,14 @@ public class Plant_Object{
 	}
 
 	//JSON constructor
-	Plant_Object(String name_in){
+	Plant_Object(String name_in) {
 		Get_Plant_Info JSON_in = new Get_Plant_Info();
-		name = JSON_in.getSciName(name_in);  //getsciname?
-		age = 0;							// user input
-		interval = 1;						//use if else?
-		special_needs = null;				//maybe fill with ph level, and temp needs
-		indoor = true;						//user input
-		potted = true;						//user input
+		name = Get_Plant_Info.getSciName(name_in);
+		age = 0;
+		interval = 1;
+		special_needs = null;
+		indoor = true;
+		potted = true;
 		num_plants++;
 	}
 
@@ -47,7 +45,7 @@ public class Plant_Object{
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
@@ -101,4 +99,6 @@ public class Plant_Object{
 	public void setNum_plants(int num_plants) {
 		this.num_plants = num_plants;
 	}
+
+
 }
