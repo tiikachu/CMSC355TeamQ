@@ -1,12 +1,13 @@
 package com.example.pocketgarden;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         notificationsButton = findViewById(R.id.notification_button);
         notificationsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
     /**
      * Opens journal notes editor
@@ -40,4 +44,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Notifications.class);
         startActivity(intent);
     }
+
 }
