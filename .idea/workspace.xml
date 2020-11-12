@@ -9,20 +9,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/Notifications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/plant/Plant_Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/plant/Plant_Object.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/settings_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/pocketgarden/settings_fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/root_preferences.xml" beforeDir="false" />
     </list>
+=======
+    <list default="true" id="0c16e269-228f-4165-9045-b672a7549f4b" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_21]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -31,22 +33,7 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Pocket Garden" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Pocket Garden" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
+        <projects_view />
       </state>
     </system>
   </component>
@@ -70,8 +57,6 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-11-09T15:42:40.049Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -88,7 +73,7 @@
       <recent name="C:\Users\kprat\CMSC355TeamQ\app\src\main\res\layout" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.Pocket Garden.Pocket_Garden.app">
+  <component name="RunManager" selected="Android JUnit.ExampleUnitTest.testGetName">
     <configuration name="ExampleUnitTest.testGetName" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pocket_Garden.app" />
       <extension name="coverage">
@@ -109,63 +94,6 @@
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Pocket Garden.Pocket_Garden.app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="Pocket Garden.Pocket_Garden.app" />
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ALL_USERS" value="false" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
-        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
-      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -325,28 +253,28 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="477" y="257" key="#PSD/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791606705" />
-    <state x="510" y="95" key="#com.intellij.ide.util.MemberChooser" timestamp="1605149699652">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1602639760833">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="510" y="95" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1605149699652" />
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602639760833" />
+    <state x="458" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605148062668">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state x="458" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.825@0.23.1440.825" timestamp="1605148062668" />
     <state x="692" y="405" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602640987271">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="692" y="405" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.40.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1602640987271" />
-    <state x="222" y="96" width="836" height="476" key="AndroidCreateResourceFileDialog" timestamp="1604935075408">
+    <state x="222" y="96" width="836" height="476" key="AndroidCreateResourceFileDialog" timestamp="1603304433348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="222" y="96" width="836" height="476" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1604935075408" />
-    <state x="564" y="135" key="AndroidCreateXmlResourceDialog" timestamp="1604934797831">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="564" y="135" key="AndroidCreateXmlResourceDialog/0.0.1280.680@0.0.1280.680" timestamp="1604934797831" />
-    <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2" timestamp="1604028478635">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="222" y="96" width="836" height="476" key="AndroidCreateResourceFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1603304433348" />
+    <state x="0" y="24" width="1280" height="679" key="CommitChangelistDialog2" timestamp="1604613533635">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="0" y="1" width="1280" height="679" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604028478635" />
     <state x="258" y="59" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602803671606" />
+    <state x="0" y="24" key="CommitChangelistDialog2/0.23.1440.830@0.23.1440.830" timestamp="1604613533635" />
     <state x="258" y="59" width="1329" height="891" key="CommitChangelistDialog2/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791180993" />
     <state x="61" y="60" width="1736" height="866" key="DiffContextDialog" timestamp="1603304683013">
       <screen x="0" y="0" width="1280" height="680" />
@@ -389,10 +317,6 @@
     </state>
     <state x="672" y="241" key="MultipleFileMergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1602804541299" />
     <state x="672" y="241" key="MultipleFileMergeDialog/1920.80.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1602791051030" />
-    <state x="311" y="61" key="RollbackChangesDialog" timestamp="1604942623698">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="311" y="61" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1604942623698" />
     <state x="461" y="205" key="SettingsEditor" timestamp="1602640862027">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -421,9 +345,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="269" y="264" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1603289991186" />
-    <state x="352" y="132" key="git4idea.merge.GitPullDialog" timestamp="1604942729905">
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog" timestamp="1604101995513">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="352" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1604942729905" />
+    <state x="352" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1604101995513" />
   </component>
 </project>
