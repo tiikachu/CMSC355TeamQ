@@ -37,8 +37,10 @@ public class settings_fragment extends Fragment {
      * @return A new instance of fragment profile_fragment.
      */
     // TODO: Rename and change types and number of parameters
+  
     public static settings_fragment newInstance(String param1, String param2) {
         settings_fragment fragment = new settings_fragment();
+
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

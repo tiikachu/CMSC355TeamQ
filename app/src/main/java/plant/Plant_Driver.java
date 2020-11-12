@@ -34,11 +34,11 @@ public class Plant_Driver{
 		list1.add(my_plant);
 		list1.add(my_plant_2);
 
-		System.out.println(list1.name());
+		System.out.println(list1.getList_name());
 		System.out.println(list1.toString());
 
 		list1.remove(my_plant);
-		System.out.println(list1.name());
+		System.out.println(list1.getList_name());
 		System.out.println(list1.toString());
 
 		System.out.println("Sort by name: ");
@@ -52,6 +52,16 @@ public class Plant_Driver{
 		System.out.println("\nSort by age");
 		list1.sort_by_age();
 		list1.toString();
+
+		Plant_Library plant_DataBase = new Plant_Library();
+		plant_DataBase.add(list1);
+		plant_DataBase.add(list2);
+		plant_DataBase.add(list3);
+		plant_DataBase.remove(list2);
+
+		System.out.println("\nlength of plant database : " + plant_DataBase.getList_length());
+
+
 
 
 
