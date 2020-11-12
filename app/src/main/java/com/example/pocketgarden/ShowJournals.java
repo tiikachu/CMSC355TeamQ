@@ -25,8 +25,8 @@ public class ShowJournals extends AppCompatActivity {
     static ArrayList<String> journal = new ArrayList<>();
     static ArrayAdapter<String> arrayAdapter;
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_journals);
 
@@ -87,7 +87,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
         });
 
-}
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

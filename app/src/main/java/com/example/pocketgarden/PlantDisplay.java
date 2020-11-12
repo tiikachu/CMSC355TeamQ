@@ -7,5 +7,4 @@ import android.os.Bundle;
 public class PlantDisplay extends AppCompatActivity{
 
 
-
 }
