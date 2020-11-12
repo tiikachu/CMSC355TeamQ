@@ -2,7 +2,7 @@ package com.example.pocketgarden;
 
 import org.junit.Test;
 
-import plant.Plant_Object;
+import plant.PlantObject;
 
 import static org.junit.Assert.*;
 
@@ -20,7 +20,7 @@ public class ExampleUnitTest {
     @Test
     public void testGetName(){
         System.out.println("getName");
-        Plant_Object plant = new Plant_Object();
+        PlantObject plant = new PlantObject();
         String expResult = "plant";
         plant.setName(expResult);
         String result = plant.getName();

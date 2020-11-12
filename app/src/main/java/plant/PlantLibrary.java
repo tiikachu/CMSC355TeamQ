@@ -5,25 +5,25 @@ package plant;
 import java.util.Arrays;
 
 
-public class Plant_Library{
+public class PlantLibrary {
 
-    private int list_max = 100;
     private int list_length = 0;
-    private Plant_List[] plant_library;
+    private PlantList[] plant_library;
 
-    Plant_Library(){
-        this.plant_library = new Plant_List[list_max];
+    PlantLibrary(){
+        int list_max = 100;
+        this.plant_library = new PlantList[list_max];
     }
 
-    void add(Plant_List list_in){
+    public void add(PlantList list_in){
         this.plant_library[list_length] = list_in;
         list_length++;
     }
 
-    void remove(Plant_List list_in){
-        int list_id = list_in.getList_id();
+    public void remove(PlantList list_in){
+        int list_id = list_in.getListIndex();
         for(int i =0; i < list_length; i++){
-            if(plant_library[i].getList_id() == list_id){
+            if(plant_library[i].getListIndex() == list_id){
                 for(int j = i; j < (this.list_length-1); j++){
                     plant_library[i] = plant_library[i+1];
                 }
@@ -34,11 +34,11 @@ public class Plant_Library{
         list_length--;
     }
 
-    void sort_by_name(){
-        Plant_List temp;
+    public void sort_by_name(){
+        PlantList temp;
         for(int i = 0; i < this.list_length; i++){
             for(int j = i; j > 0; j--){
-                if(plant_library[j].getList_name().compareTo(plant_library[j-1].getList_name()) < 0){   //compare list id
+                if(plant_library[j].getListName().compareTo(plant_library[j-1].getListName()) < 0){   //compare list id
                     temp = plant_library[j];
                     plant_library[j] = plant_library[j-1];
                     plant_library[j-1] = temp;
@@ -49,11 +49,11 @@ public class Plant_Library{
         }
     }
 
-    void sort_by_name_reverse(){
-        Plant_List temp;
+    public void sort_by_name_reverse(){
+        PlantList temp;
         for(int i = 0; i < this.list_length; i++){
             for(int j = i; j > 0; j--){
-                if(plant_library[j].getList_name().compareTo(plant_library[j-1].getList_name()) > 0){   //compare list id
+                if(plant_library[j].getListName().compareTo(plant_library[j-1].getListName()) > 0){   //compare list id
                     temp = plant_library[j];
                     plant_library[j] = plant_library[j-1];
                     plant_library[j-1] = temp;

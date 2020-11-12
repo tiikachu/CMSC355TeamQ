@@ -3,29 +3,29 @@ package plant;
 import org.json.JSONException;
 
 import java.util.Scanner;
-public class Plant_Driver{
+
+public class PlantDriver {
 	public static void main(String[] args) throws JSONException {
 		Scanner in = new Scanner(System.in);
 		String name = "my plant";
 		int age = 2;
-		int interval = 7;	
-		String[] special_needs = {"mineral water", "extra sunlight"}; 	
-		boolean indoor = false; 
-		boolean potted = false; 
+		int interval = 7;
+		String[] special_needs = {"mineral water", "extra sunlight"};
+		boolean indoor = false;
+		boolean potted = false;
 
-		Plant_Object my_plant = new Plant_Object();
+		PlantObject my_plant = new PlantObject();
 		System.out.println(my_plant.age + " : " + my_plant.num_plants);
 		System.out.println(my_plant.getName() + " : " + my_plant.name);
 		System.out.println(my_plant.getInterval() + " : " + my_plant.interval);
 
-		Plant_Object my_plant_2 = new Plant_Object("abc",1,1,null,true,true);
-		Plant_Object my_plant_3 = new Plant_Object("xyz",10,1,null,true,true);
+		PlantObject my_plant_2 = new PlantObject("abc", 1, 1, null, true, true);
+		PlantObject my_plant_3 = new PlantObject("xyz", 10, 1, null, true, true);
 
 
-
-		Plant_List list1 = new Plant_List("Named list");
-		Plant_List list2 = new Plant_List("");
-		Plant_List list3 = new Plant_List();
+		PlantList list1 = new PlantList("Named list");
+		PlantList list2 = new PlantList("");
+		PlantList list3 = new PlantList();
 
 
 		list1.add(my_plant_3);
@@ -34,11 +34,11 @@ public class Plant_Driver{
 		list1.add(my_plant);
 		list1.add(my_plant_2);
 
-		System.out.println(list1.getList_name());
+		System.out.println(list1.getListName());
 		System.out.println(list1.toString());
 
 		list1.remove(my_plant);
-		System.out.println(list1.getList_name());
+		System.out.println(list1.getListName());
 		System.out.println(list1.toString());
 
 		System.out.println("Sort by name: ");
@@ -53,7 +53,7 @@ public class Plant_Driver{
 		list1.sort_by_age();
 		list1.toString();
 
-		Plant_Library plant_DataBase = new Plant_Library();
+		PlantLibrary plant_DataBase = new PlantLibrary();
 		plant_DataBase.add(list1);
 		plant_DataBase.add(list2);
 		plant_DataBase.add(list3);
@@ -64,7 +64,5 @@ public class Plant_Driver{
 
 
 
-
-		
 	}
 }
