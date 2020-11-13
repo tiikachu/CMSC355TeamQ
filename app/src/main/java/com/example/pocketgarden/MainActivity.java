@@ -26,10 +26,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
-
-
     /**
      * Opens journal notes editor
      *
@@ -45,4 +41,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openMyPlants () {
+        Intent intent = new Intent(this, PlantDisplay.class);
+        startActivity(intent);
+    }
 }

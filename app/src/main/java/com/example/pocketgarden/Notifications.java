@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -48,7 +49,7 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
-        final SharedPreferences sharedPref = Notifications.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = Notifications.this.getPreferences(Context.MODE_PRIVATE);
         boolean isMyValueChecked = sharedPref.getBoolean("checkbox", false);
         never = findViewById(R.id.never);
         never.setChecked(isMyValueChecked);
@@ -57,7 +58,7 @@ public class Notifications extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("never", ((CheckBox) view).isChecked());
-                editor.commit();
+                editor.apply();
             }
         });
 
@@ -68,7 +69,7 @@ public class Notifications extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("every 1 day", ((CheckBox) view).isChecked());
-                editor.commit();
+                editor.apply();
             }
         });
 
@@ -79,7 +80,7 @@ public class Notifications extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("every 2 days", ((CheckBox) view).isChecked());
-                editor.commit();
+                editor.apply();
             }
         });
 
@@ -90,19 +91,16 @@ public class Notifications extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("every 3 days", ((CheckBox) view).isChecked());
-                editor.commit();
+                editor.apply();
             }
         });
 
         every4days = findViewById(R.id.every4days);
         every4days.setChecked(isMyValueChecked);
-        every4days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putBoolean("every 4 days", ((CheckBox) view).isChecked());
-                editor.commit();
-            }
+        every4days.setOnClickListener(view -> {
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("every 4 days", ((CheckBox) view).isChecked());
+            editor.commit();
         });
 
         every5days = findViewById(R.id.every5days);
@@ -149,6 +147,7 @@ public class Notifications extends AppCompatActivity {
                 if (checked) {
                     frequencyResult.add("Never");
                     displayNotification();
+                    Toast.makeText(Notifications.this, "never clicked", Toast.LENGTH_SHORT).show();
                 } else {
                     frequencyResult.remove("Never");
                 }
