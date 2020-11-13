@@ -72,6 +72,71 @@ public class Notifications extends AppCompatActivity {
             }
         });
 
+        every2days = findViewById(R.id.every2days);
+        every2days.setChecked(isMyValueChecked);
+        every2days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 2 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
+
+        every3days = findViewById(R.id.every3days);
+        every3days.setChecked(isMyValueChecked);
+        every3days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 3 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
+
+        every4days = findViewById(R.id.every4days);
+        every4days.setChecked(isMyValueChecked);
+        every4days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 4 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
+
+        every5days = findViewById(R.id.every5days);
+        every5days.setChecked(isMyValueChecked);
+        every5days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 5 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
+
+        every6days = findViewById(R.id.every6days);
+        every6days.setChecked(isMyValueChecked);
+        every6days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 6 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
+
+        every7days = findViewById(R.id.every7days);
+        every7days.setChecked(isMyValueChecked);
+        every7days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 7 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
     }
 
     public void onCheckboxClicked(View view) {
@@ -162,30 +227,5 @@ public class Notifications extends AppCompatActivity {
 
     }
 
-//    public void saveData() {
-//        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putBoolean("never", never.isChecked());
-//        editor.apply();
-//        Toast.makeText(this, "Settings saved", Toast.LENGTH_SHORT).show();
-//
-//    }
-//
-//    public void loadData() {
-//        SharedPreferences preferences = getSharedPreferences(NOTIF_PREF, MODE_PRIVATE);
-//        checked = preferences.getBoolean("checked", false);
-//    }
-//
-//    //could just pass in checkbox as a parameter
-//    public void updateViews() {
-//        never.setChecked(checked);
-//        every1day.setChecked(checked);
-//        every2days.setChecked(checked);
-//        every3days.setChecked(checked);
-//        every4days.setChecked(checked);
-//        every5days.setChecked(checked);
-//        every6days.setChecked(checked);
-//        every7days.setChecked(checked);
-//    }
 }
 

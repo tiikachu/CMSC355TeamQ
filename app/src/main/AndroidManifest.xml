@@ -10,9 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name="com.google.android.actions"
         android:resource="@menu/bottom_menu" >
         <activity android:name=".JournalEditor" />
+        <activity android:name=".Notifications"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

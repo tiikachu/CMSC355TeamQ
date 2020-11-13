@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#014421"
     tools:context=".MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -31,3 +32,4 @@
         app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/bottom_nav_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
