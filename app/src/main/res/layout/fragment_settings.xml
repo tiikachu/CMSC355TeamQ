@@ -91,7 +91,7 @@
         android:id="@+id/notification_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create notification"
+        android:text="@string/make"
         tools:layout_editor_absoluteY="116dp" />
 
     <TextView
@@ -105,7 +105,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="0dp"
-        android:text="How often do you want to receive notifications for watering your plants?" />
+        android:text="@string/prompt" />
 
 <<<<<<< Updated upstream
     <CheckBox
@@ -116,7 +116,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="180dp"
-        android:text="Never" />
+        android:text="@string/never" />
 
     <CheckBox
         android:id="@+id/every1day"
@@ -126,7 +126,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="210dp"
-        android:text="Every 1 day" />
+        android:text="@string/daily" />
 
     <CheckBox
         android:id="@+id/every2days"
@@ -136,7 +136,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="240dp"
-        android:text="Every 2 days" />
+        android:text="@string/e_2_d" />
 
     <CheckBox
         android:id="@+id/every3days"
@@ -146,7 +146,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="270dp"
-        android:text="Every 3 days" />
+        android:text="@string/e_3_d" />
 
     <CheckBox
         android:id="@+id/every4days"
@@ -156,7 +156,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="300dp"
-        android:text="Every 4 days" />
+        android:text="@string/e_4_d" />
 
     <CheckBox
         android:id="@+id/every5days"
@@ -166,7 +166,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="330dp"
-        android:text="Every 5 days" />
+        android:text="@string/e_5_d" />
 
     <CheckBox
         android:id="@+id/every6days"
@@ -176,7 +176,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="360dp"
-        android:text="Every 6 days" />
+        android:text="@string/e_6_d" />
 
     <CheckBox
         android:id="@+id/every7days"
@@ -186,7 +186,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="3900dp"
-        android:text="Every 7 days" />
+        android:text="@string/weekly" />
 
     <Button
         android:id="@+id/saveButton"
@@ -195,7 +195,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="274dp"
-        android:text="Save" />
+        android:text="@string/save" />
 </RelativeLayout>
 =======
 </RelativeLayout>
