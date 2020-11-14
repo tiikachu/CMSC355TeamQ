@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.Library:
                 intent = new Intent (this, plant_listing.class);
             case R.id.Journal:
-                intent = new Intent (this, Basics.class);
+                intent = new Intent (this, ShowJournals.class);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + view.getId());
