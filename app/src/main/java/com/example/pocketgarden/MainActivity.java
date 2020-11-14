@@ -50,27 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.Basics:
                 intent = new Intent (this, Basics.class);
+                startActivity(intent);
+                break;
         }
     }
-    /**
-     * Opens journal notes editor
-     *
-     * @param view
-     */
-    public void journalClick(View view) {
-        Intent intent = new Intent(this, ShowJournals.class);
-        startActivity(intent);
-    }
-
-    public void openNotifications() {
-        Intent intent = new Intent(this, Notifications.class);
-        startActivity(intent);
-    }
-
-    public void openMyPlants () {
-        Intent intent = new Intent(this, PlantDisplay.class);
-        startActivity(intent);
-    }
-
-
 }
