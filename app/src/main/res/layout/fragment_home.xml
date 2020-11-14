@@ -146,6 +146,7 @@
 
                 <!--plant care button-->
                 <androidx.cardview.widget.CardView
+                    android:id= "@+id/PlantCare"
                     android:layout_width="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
@@ -181,6 +182,7 @@
 
                 <!--library button-->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/Library"
                     android:layout_width="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
@@ -215,7 +217,7 @@
 
                 <!--journal button-->
                 <androidx.cardview.widget.CardView
-                    android:id= "@+id/journal"
+                    android:id= "@+id/Journal"
                     android:layout_width="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
