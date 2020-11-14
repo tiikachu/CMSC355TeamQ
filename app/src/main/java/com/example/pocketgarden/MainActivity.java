@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.Weather:
                 intent = new Intent (this, Weather.class);
             case R.id.PlantCare:
-                intent = new Intent (this, PlantCare.class);
+                intent = new Intent (this, Notifications.class);
             case R.id.Library:
                 intent = new Intent (this, plant_listing.class);
             case R.id.Journal:
