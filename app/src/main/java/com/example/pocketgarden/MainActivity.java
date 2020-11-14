@@ -45,32 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             // connect my plants card to whatever class
             case R.id.My_Plants:
-                intent = new Intent (this, plant.class );
+                intent = new Intent (this, plant_listing.class );
                 startActivity(intent);
                 break;
             case R.id.Basics:
                 intent = new Intent (this, Basics.class);
+                startActivity(intent);
+                break;
         }
     }
-    /**
-     * Opens journal notes editor
-     *
-     * @param view
-     */
-    public void journalClick(View view) {
-        Intent intent = new Intent(this, ShowJournals.class);
-        startActivity(intent);
-    }
-
-    public void openNotifications() {
-        Intent intent = new Intent(this, Notifications.class);
-        startActivity(intent);
-    }
-
-    public void openMyPlants () {
-        Intent intent = new Intent(this, PlantDisplay.class);
-        startActivity(intent);
-    }
-
-
 }
