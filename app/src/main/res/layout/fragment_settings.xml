@@ -7,6 +7,86 @@
     android:background="#77c567"
     tools:context=".settings_fragment">
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignMargins"
+        android:columnCount="1"
+        android:columnOrderPreserved="true"
+        android:rowCount="3">
+
+        <!--My Plants button-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Basics"
+            android:layout_width="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="16dp"
+            android:layout_marginTop="130dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/my_plants"
+                    android:textColor="#014421"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every day" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every 2 days" />
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every 3 days" />
+
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every 4 days" />
+
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every 5 days" />
+
+                <CheckBox
+                    android:id="@+id/checkBox6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every 6 days" />
+
+                <CheckBox
+                    android:id="@+id/checkBox7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Every 7 days" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
     <Button
         android:id="@+id/notification_button"
         android:layout_width="wrap_content"
@@ -23,10 +103,11 @@
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="0dp"
         android:text="How often do you want to receive notifications for watering your plants?" />
 
+<<<<<<< Updated upstream
     <CheckBox
         android:id="@+id/never"
         android:layout_width="wrap_content"
@@ -116,3 +197,6 @@
         android:layout_marginBottom="274dp"
         android:text="Save" />
 </RelativeLayout>
+=======
+</RelativeLayout>
+>>>>>>> Stashed changes
