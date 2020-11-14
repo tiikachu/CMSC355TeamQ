@@ -15,6 +15,7 @@
         <activity android:name=".PlantCare" />
         <activity android:name=".Basics"/>
         <activity android:name=".Weather"/>
+        <activity android:name=".ShowJournals"/>
         <activity
             android:name=".plant_listing"
             android:label="@string/title_activity_plant_listing"
