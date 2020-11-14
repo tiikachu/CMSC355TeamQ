@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#77c567"
     tools:context=".plant">
 
     <LinearLayout
@@ -16,9 +17,8 @@
         <ImageView
             android:id="@+id/plantPhoto"
             android:layout_width="match_parent"
-            android:layout_height="234dp"
-            app:srcCompat="@drawable/plant"
-            />
+            android:layout_height="326dp"
+            app:srcCompat="@drawable/plant" />
 
         <TextView
             android:id="@+id/plantName"
@@ -29,10 +29,32 @@
             android:text="Plant Name" />
 
         <TextView
-            android:id="@+id/planeAge"
+            android:id="@+id/plantAge"
             android:layout_width="match_parent"
             android:layout_height="41dp"
+            android:textSize="26dp"
             android:text="Age" />
+
+        <TextView
+            android:id="@+id/wateringint"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:textSize="26dp"
+            android:text="Interval" />
+
+        <TextView
+            android:id="@+id/Indoor"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:textSize="26dp"
+            android:text="Indoor" />
+
+        <TextView
+            android:id="@+id/potted"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:textSize="26dp"
+            android:text="TextView" />
     </LinearLayout>
 
 
