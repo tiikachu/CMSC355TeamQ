@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             // connect my plants card to whatever class
             case R.id.My_Plants:
-                intent = new Intent (this, plant.class );
+                intent = new Intent (this, plant_listing.class );
                 startActivity(intent);
                 break;
             case R.id.Basics:

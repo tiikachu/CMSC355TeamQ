@@ -16,13 +16,13 @@
             android:id="@+id/newplant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="newplant" />
+            android:text="New Plant" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="open plant"
+            android:text="Open Plant"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="149dp"
             tools:layout_editor_absoluteY="245dp" />
