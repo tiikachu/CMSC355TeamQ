@@ -226,5 +226,10 @@ public class Notifications extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        never.setChecked(true);
+    }
 }
 
