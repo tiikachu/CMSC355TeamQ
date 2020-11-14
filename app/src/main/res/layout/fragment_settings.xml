@@ -37,7 +37,7 @@
                     android:layout_marginStart="@dimen/text_margin"
                     android:layout_marginTop="10dp"
                     android:text="@string/my_plants"
-                    android:textColor="#014421"
+                    android:textColor="#000000"
                     android:textSize="14sp" />
 
                 <CheckBox
