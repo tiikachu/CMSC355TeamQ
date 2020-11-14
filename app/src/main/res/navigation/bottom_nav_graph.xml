@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav_graph.xml"
 
-    app:startDestination="@id/home2">
+    app:startDestination="@id/home">
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.pocketgarden.settings_fragment"
+        class="com.example.pocketgarden.settings_fragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/home2"
+        android:id="@+id/home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home"
+        class="com.example.pocketgarden.Home"/>
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.pocketgarden.profile_fragment"
+        class="com.example.pocketgarden.profile_fragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 

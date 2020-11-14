@@ -54,5 +54,16 @@
     <string name="make_message">Send Notification</string>
     <string name = "trefle_token">token=ALt0fE6yO8mIuJKrReIYktfe6eC5GDbuHTUt4zGhMS4</string>
     <string name = "trefle_api_url">https://trefle.io/api/v1/</string>
+    <string name="prompt">How often do you want to receive notifications for watering your plants?</string>
+    <string name="never">Never</string>
+    <string name="daily">Every 1 day</string>
+    <string name="e_2_d">Every 2 days</string>
+    <string name="e_3_d">Every 3 days</string>
+    <string name="e_4_d">Every 4 days</string>
+    <string name="e_5_d">Every 5 days</string>
+    <string name="e_6_d">Every 6 days</string>
+    <string name="weekly">Every 7 days</string>
+    <string name="save">Save</string>
+    <string name="make">Create notification</string>
 
 </resources>
