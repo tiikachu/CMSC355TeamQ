@@ -52,8 +52,6 @@
     <string name="journal_title">Edit Journal Entries</string>
     <string name="nav_bar">[Insert Navigation Bar]</string>
     <string name="make_message">Send Notification</string>
-    <string name = "trefle_token">token=ALt0fE6yO8mIuJKrReIYktfe6eC5GDbuHTUt4zGhMS4</string>
-    <string name = "trefle_api_url">https://trefle.io/api/v1/</string>
     <string name="prompt">How often do you want to receive notifications for watering your plants?</string>
     <string name="never">Never</string>
     <string name="daily">Every 1 day</string>
@@ -65,5 +63,10 @@
     <string name="weekly">Every 7 days</string>
     <string name="save">Save</string>
     <string name="make">Create notification</string>
+    <string name="trefle_token">token=ALt0fE6yO8mIuJKrReIYktfe6eC5GDbuHTUt4zGhMS4</string>
+    <string name="trefle_api_url">https://trefle.io/api/v1/</string>
+    <string name="title_activity_plant">plant</string>
+    <string name="title_activity_make_plant">make_plant</string>
+    <string name="title_activity_plant_listing">plant_listing</string>
 
 </resources>
