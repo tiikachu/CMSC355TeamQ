@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99C863"
+    tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-7dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/title"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/let_s_get_back_to_the_basics"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#040303"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="354dp"
+                android:layout_height="205dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/plants" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Here are some quick tips for taking care of your plants!"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="359dp"
+                android:layout_height="234dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Find the right lighting!\n\nFull Sun: Most house plants do not like the full sun and will become very damaged or will not survive very long when they receive too much direct sunlight. Bright light or full sun is experienced from a south facing window.\n\nPartial sunlight and shade: Indirect light can be found in places with an west or east facing window so the plane will receive morning or evening sun.\n\nLow light: A north facing window provides full shade, but low light can depend on the size or amount of windows in a room " />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="359dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Your plant is getting too much sunlight if you notice: \n\n\t-Brown leaf edges or tips
+\n\t-Brown, dry patches on the leaves
+\n\t-Leaves turn pale or yellow
+\n\t-Leaf yellowing may not affect the leaf veins initially
+\n\t-Wilting, particularly of younger foliage"/>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="190dp"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/watering_plants" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="359dp"
+                android:layout_height="320dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. " />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="190dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/soil" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="359dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Use good-quality potting soil.\n\n
+Good potting soil (never use regular garden soil in containers) promotes healthy roots by providing a balance of proper aeration, nutrition and moisture-holding capability. Nurseries and garden centers carry an excellent selection of packaged potting soils." />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="359dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Aim to keep the plant in a warm environment with some air circulation, and rotate its face!\n\n
+Almost all houseplants need a minimum temperature of 55ºF to survive. Keep plants away from areas of cold drafts in the winter. The warmer it gets for houseplants, the happier they are!"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -68,5 +68,7 @@
     <string name="title_activity_plant">plant</string>
     <string name="title_activity_make_plant">make_plant</string>
     <string name="title_activity_plant_listing">plant_listing</string>
+    <string name="title">title</string>
+    <string name="let_s_get_back_to_the_basics">Let\'s Get Back to the Basics</string>
 
 </resources>
