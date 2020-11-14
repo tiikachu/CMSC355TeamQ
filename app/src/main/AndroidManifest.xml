@@ -12,10 +12,13 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PlantCare" />
+        <activity android:name=".Basics"/>
+        <activity android:name=".Weather"/>
         <activity
             android:name=".plant_listing"
             android:label="@string/title_activity_plant_listing"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".make_plant"
             android:label="@string/title_activity_make_plant"
@@ -24,13 +27,11 @@
             android:name=".plant"
             android:label="@string/title_activity_plant"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Basics"/>
         <activity android:name=".JournalEditor" />
         <activity android:name=".Notifications" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
