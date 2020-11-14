@@ -22,19 +22,9 @@ public class PlantObject {
 		num_plants++;
 	}
 
-	//JSON constructor
-	PlantObject(String name_in) {
-		GetPlantInfo JSON_in = new GetPlantInfo();
-		name = JSON_in.getSciName(name_in);
-		age = 0;
-		interval = 1;
-		special_needs = null;
-		indoor = true;
-		potted = true;
-		num_plants++;
-	}
 
-	PlantObject(String name_in, int age_in, int interval_in, String[] special_needs_in, boolean indoor_in, boolean potted_in){
+
+	public PlantObject(String name_in, int age_in, int interval_in, String[] special_needs_in, boolean indoor_in, boolean potted_in){
 		name = name_in;
 		age = age_in;
 		interval = interval_in;
