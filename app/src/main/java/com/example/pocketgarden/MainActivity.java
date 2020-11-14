@@ -46,31 +46,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // connect my plants card to whatever class
             case R.id.My_Plants:
                 intent = new Intent (this, plant.class );
-                startActivity(intent);
-                break;
             case R.id.Basics:
                 intent = new Intent (this, Basics.class);
+            case R.id.Weather:
+                intent = new Intent (this, Weather.class);
+            case R.id.PlantCare:
+                intent = new Intent (this, PlantCare.class);
+            case R.id.Library:
+                intent = new Intent (this, plant_listing.class);
+            case R.id.Journal:
+                intent = new Intent (this, Basics.class);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + view.getId());
         }
-    }
-    /**
-     * Opens journal notes editor
-     *
-     * @param view
-     */
-    public void journalClick(View view) {
-        Intent intent = new Intent(this, ShowJournals.class);
         startActivity(intent);
     }
-
-    public void openNotifications() {
-        Intent intent = new Intent(this, Notifications.class);
-        startActivity(intent);
-    }
-
-    public void openMyPlants () {
-        Intent intent = new Intent(this, PlantDisplay.class);
-        startActivity(intent);
-    }
-
 
 }
