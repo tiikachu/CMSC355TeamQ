@@ -70,5 +70,12 @@
     <string name="title_activity_plant_listing">plant_listing</string>
     <string name="title">title</string>
     <string name="let_s_get_back_to_the_basics">Let\'s Get Back to the Basics</string>
+    <string name="every_3_days">Every 3 days</string>
+    <string name="every_6_days">Every 6 days</string>
+    <string name="every_7_days">Every 7 days</string>
+    <string name="every_5_days">Every 5 days</string>
+    <string name="every_day">Every day</string>
+    <string name="every_2_days">Every 2 days</string>
+    <string name="every_4_days">Every 4 days</string>
 
 </resources>
