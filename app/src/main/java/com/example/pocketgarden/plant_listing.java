@@ -7,14 +7,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.Button;
 
 public class plant_listing extends AppCompatActivity {
-    private Button button;
-    private Button newplant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +25,7 @@ public class plant_listing extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        button = (Button) findViewById(R.id.button);
+        Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener((new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -37,7 +33,7 @@ public class plant_listing extends AppCompatActivity {
             }
         }));
 
-        newplant = (Button) findViewById(R.id.newplant);
+        Button newplant = (Button) findViewById(R.id.newplant);
         newplant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

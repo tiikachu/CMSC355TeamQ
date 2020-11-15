@@ -77,5 +77,13 @@
     <string name="every_day">Every day</string>
     <string name="every_2_days">Every 2 days</string>
     <string name="every_4_days">Every 4 days</string>
+    <string name="test_output">Test output</string>
+    <string name="indoor">Indoor</string>
+    <string name="potted">Potted</string>
+    <string name="input_plant_info">Input the information for your new plant. Whole numbers only. Once you\'re done click submit to test your creation.</string>
+    <string name="plant_name_notification">Plant Name:</string>
+    <string name="plant_age">Plant Age:</string>
+    <string name="watering_interval">Watering Interval:</string>
+    <string name="submit_button">submit button</string>
 
 </resources>
