@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 import java.util.ArrayList;
 
+import plant.*;
 public class Notifications extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "pocket_garden";
@@ -29,10 +31,13 @@ public class Notifications extends AppCompatActivity {
     private Button notificationButton;
     private boolean checked;
 
+    PlantObject plant;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_settings);
+
+        plant = new PlantObject("Sample Plant", 1, 1, null, true, true);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
@@ -230,6 +235,25 @@ public class Notifications extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         never.setChecked(true);
+    }
+
+    public void loadPlantObjects () {
+        PlantList plantList = new PlantList();
+        PlantObject [] plantListArray = plantList.getPlantList();
+
+        for (int i=0; i < plantListArray.length; i++) {
+            //create a card view for each plant object
+            createCardView();
+
+        }
+
+        TextView plantName = (TextView) findViewById(R.id.plant);
+        plantName.setText(plant.getName());
+
+    }
+
+    public void createCardView() {
+        
     }
 }
 
