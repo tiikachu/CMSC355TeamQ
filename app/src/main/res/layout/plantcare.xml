@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/myPlants"
-            android:rowcount="2"
+            android:rowCount="2"
             android:columnCount="2">
 
             <androidx.cardview.widget.CardView
