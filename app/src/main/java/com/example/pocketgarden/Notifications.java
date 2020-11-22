@@ -128,9 +128,9 @@ public class Notifications extends AppCompatActivity {
         every7days = findViewById(R.id.every7days);
         every7days.setChecked(isMyValueChecked);
         every7days.setOnClickListener(new View.OnClickListener() {
-            @Override
+    @Override
             public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPref.edit();
+        SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("every 7 days", ((CheckBox) view).isChecked());
                 editor.commit();
             }
@@ -231,5 +231,11 @@ public class Notifications extends AppCompatActivity {
         super.onResume();
         never.setChecked(true);
     }
+
+    public void createCardView() {
+
+    }
+
+
 }
 
