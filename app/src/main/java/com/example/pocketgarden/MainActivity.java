@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent (this, Weather.class);
                 break;
             case R.id.PlantCare:
-                intent = new Intent (this, Notifications.class);
+                intent = new Intent (this, PlantCare.class);
                 break;
             case R.id.Library:
                 intent = new Intent (this, plant_listing.class);

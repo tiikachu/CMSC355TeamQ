@@ -28,22 +28,22 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@+id/myPlants"
-            android:rowCount="2"
+            android:rowCount="4"
             android:columnCount="2"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_horizontal"
+            android:columnOrderPreserved="false"
             android:alignmentMode="alignMargins">
 
+            <!--Sample Plant 1-->
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="1"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_gravity="fill_horizontal"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-
-                android:layout_margin="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_margin="20dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                app:cardElevation="5dp"
                 >
 
                 <LinearLayout
@@ -54,8 +54,8 @@
                     android:layout_gravity="center_vertical|center_horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:src="@drawable/plant"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -67,17 +67,15 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!--Sample Plant 2-->
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="1"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_gravity="fill_horizontal"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_margin="20dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
+                app:cardElevation="5dp"
                 >
 
                 <LinearLayout
@@ -88,13 +86,77 @@
                     android:layout_gravity="center_vertical|center_horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:src="@drawable/plant"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sample Plant 2"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--Sample Plant 3-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical|center_horizontal">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/plant"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sample Plant 3"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--Sample Plant 4-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical|center_horizontal">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/plant"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sample Plant 4"
                         android:textStyle="bold"
                         android:textAlignment="center"/>
 
