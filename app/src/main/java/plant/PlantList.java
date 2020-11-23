@@ -136,4 +136,8 @@ public class PlantList{
         return "end";  //note this is not good syntax
     }
 
+    public PlantObject[] getPlantList() {
+        return plantList;
+    }
+
 }
