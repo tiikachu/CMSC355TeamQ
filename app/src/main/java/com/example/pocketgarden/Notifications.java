@@ -18,9 +18,9 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import java.util.ArrayList;
-
 import plant.*;
-public class Notifications extends AppCompatActivity implements View.OnClickListener{
+
+public class Notifications extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "pocket_garden";
     private static final String CHANNEL_NAME = "Pocket Garden";
@@ -30,7 +30,7 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
     private ArrayList<String> frequencyResult = new ArrayList<String>();
     private Button notificationButton;
     private boolean checked;
-SharedPreferences sharedPref;
+
     PlantObject plant;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ SharedPreferences sharedPref;
         setContentView(R.layout.fragment_settings);
 
         plant = new PlantObject("Sample Plant", 1, 1, null, true, true,"https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
@@ -54,57 +55,105 @@ SharedPreferences sharedPref;
             }
         });
 
-        sharedPref = Notifications.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = Notifications.this.getPreferences(Context.MODE_PRIVATE);
         boolean isMyValueChecked = sharedPref.getBoolean("checkbox", false);
+        never = findViewById(R.id.never);
+        never.setChecked(isMyValueChecked);
+        never.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("never", ((CheckBox) view).isChecked());
+                editor.apply();
+            }
+        });
 
         every1day = findViewById(R.id.every1day);
+        every1day.setChecked(isMyValueChecked);
+        every1day.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 1 day", ((CheckBox) view).isChecked());
+                editor.apply();
+            }
+        });
+
         every2days = findViewById(R.id.every2days);
+        every2days.setChecked(isMyValueChecked);
+        every2days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 2 days", ((CheckBox) view).isChecked());
+                editor.apply();
+            }
+        });
+
         every3days = findViewById(R.id.every3days);
+        every3days.setChecked(isMyValueChecked);
+        every3days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 3 days", ((CheckBox) view).isChecked());
+                editor.apply();
+            }
+        });
+
         every4days = findViewById(R.id.every4days);
+        every4days.setChecked(isMyValueChecked);
+        every4days.setOnClickListener(view -> {
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putBoolean("every 4 days", ((CheckBox) view).isChecked());
+            editor.commit();
+        });
+
         every5days = findViewById(R.id.every5days);
+        every5days.setChecked(isMyValueChecked);
+        every5days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 5 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
+
         every6days = findViewById(R.id.every6days);
+        every6days.setChecked(isMyValueChecked);
+        every6days.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 6 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
+
         every7days = findViewById(R.id.every7days);
-        never = findViewById(R.id.never);
-
-//        every1day.setChecked(isMyValueChecked);
-//        every2days.setChecked(isMyValueChecked);
-//        every3days.setChecked(isMyValueChecked);
-//        every4days.setChecked(isMyValueChecked);
-//        every5days.setChecked(isMyValueChecked);
-//        every6days.setChecked(isMyValueChecked);
-//        every7days.setChecked(isMyValueChecked);
-//        never.setChecked(isMyValueChecked);
-
-        every1day.setOnClickListener(this);
-        every2days.setOnClickListener(this);
-        every3days.setOnClickListener(this);
-        every4days.setOnClickListener(this);
-        every5days.setOnClickListener(this);
-        every6days.setOnClickListener(this);
-        every7days.setOnClickListener(this);
-        never.setOnClickListener(this);
-
-        loadPlantObjects();
+        every7days.setChecked(isMyValueChecked);
+        every7days.setOnClickListener(new View.OnClickListener() {
+    @Override
+            public void onClick(View view) {
+        SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("every 7 days", ((CheckBox) view).isChecked());
+                editor.commit();
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("checkbox", ((CheckBox) v).isChecked());
-        editor.apply();
+    public void onCheckboxClicked(View view) {
 
         frequencyResult = new ArrayList<>();
-        boolean checked = ((CheckBox) v).isChecked();
+        boolean checked = ((CheckBox) view).isChecked();
 
-        switch (v.getId()) {
+        switch (view.getId()) {
             case R.id.never:
                 if (checked) {
                     frequencyResult.add("Never");
                     displayNotification();
-                    Toast.makeText(Notifications.this, frequencyResult.toString(), Toast.LENGTH_SHORT).show();
-                    editor.putBoolean("checkbox", ((CheckBox) v).isChecked());
-                    editor.apply();
+                    Toast.makeText(Notifications.this, "never clicked", Toast.LENGTH_SHORT).show();
                 } else {
                     frequencyResult.remove("Never");
                 }
@@ -113,7 +162,6 @@ SharedPreferences sharedPref;
                 if (checked) {
                     frequencyResult.add("Every 1 day");
                     displayNotification();
-                    Toast.makeText(Notifications.this, frequencyResult.toString(), Toast.LENGTH_SHORT).show();
                 } else {
                     frequencyResult.remove("Every 1 day");
                 }
@@ -170,9 +218,7 @@ SharedPreferences sharedPref;
     }
 
 
-
     private void displayNotification() {
-
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setContentTitle("Pocket Garden")
@@ -185,20 +231,6 @@ SharedPreferences sharedPref;
         notificationManagerCompat.notify(1, builder.build());
 
     }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//        every1day.setChecked(every1day.isChecked());
-//        every2days.setChecked(every2days.isChecked());
-//        every3days.setChecked(every3days.isChecked());
-//        every4days.setChecked(every4days.isChecked());
-//        every5days.setChecked(every5days.isChecked());
-//        every6days.setChecked(every6days.isChecked());
-//        every7days.setChecked(every7days.isChecked());
-//        never.setChecked(never.isChecked());
-//    }
 
     public void loadPlantObjects () {
         PlantList plantList = new PlantList();
@@ -213,6 +245,11 @@ SharedPreferences sharedPref;
         TextView plantName = (TextView) findViewById(R.id.plant);
         plantName.setText(plant.getName());
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        never.setChecked(true);
     }
 
     public void createCardView() {

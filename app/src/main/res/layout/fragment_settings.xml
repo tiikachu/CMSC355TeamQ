@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="20dp"
-            android:layout_marginTop="200dp">
+            android:layout_margin="16dp"
+            android:layout_marginTop="130dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,11 +32,11 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/plant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/text_margin"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/plant"
                     android:text="@string/my_plants"
                     android:textColor="#014421"
                     android:textSize="14sp" />
@@ -91,7 +91,6 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-
     </GridLayout>
 
     <Button
@@ -122,17 +121,4 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="200dp"
         android:text="@string/save" />
-
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="238dp"
-        android:text="Switch"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
 </RelativeLayout>
