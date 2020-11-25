@@ -3,7 +3,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -11,13 +13,23 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.module.LibraryGlideModule;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import plant.*;
 
-public class plant extends AppCompatActivity {
+public class plant extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,45 +66,66 @@ public class plant extends AppCompatActivity {
         }
 
 
-//        HandlerThread handlerThread = new HandlerThread("MyHandlerThread");
-//        handlerThread.start();
-//        Looper looper = handlerThread.getLooper();
-//        Handler handler = new Handler(looper);
-//
-//        handler.post(DownloadImageFromPath(my_plant_2.getImgURL()));
-//
-//
+        getImg(my_plant_2.getImgURL());
+
+        //Drawable myDrawable = getResources().getDrawable(R.drawable.plant);
+        //ImageView iv = (ImageView) findViewById(R.id.plantPhoto);
+        //iv.setImageDrawable(myDrawable);
+
+
 
 
     }
 
-    public void DownloadImageFromPath(String url_in){
 
-        InputStream in =null;
-        Bitmap bmp=null;
-        ImageView iv = (ImageView)findViewById(R.id.plantPhoto);
-        int responseCode = -1;
-        try{
+    public void getImg(String imageURL){
 
-            URL url = new URL(url_in);
-            HttpURLConnection con = (HttpURLConnection)url.openConnection();
-            con.setDoInput(true);
-            con.connect();
-            responseCode = con.getResponseCode();
-            if(responseCode == HttpURLConnection.HTTP_OK)
-            {
-                //download
-                in = con.getInputStream();
-                bmp = BitmapFactory.decodeStream(in);
-                in.close();
-                iv.setImageBitmap(bmp);
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+
+
+                URL urlConnection = null;
+                try {
+                    urlConnection = new URL(imageURL);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                HttpURLConnection connection = null;
+                try {
+                    connection = (HttpURLConnection) urlConnection.openConnection();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                connection.setDoInput(true);
+                try {
+                    connection.connect();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                InputStream input = null;
+                try {
+                    input = connection.getInputStream();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                InputStream finalInput = input;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Bitmap myBitmap = BitmapFactory.decodeStream(finalInput);
+                        ImageView iv = (ImageView) findViewById(R.id.plantPhoto);
+                        iv.setImageBitmap(myBitmap);
+
+
+                    }
+                });
+
+
             }
-
-        }
-        catch(Exception ex){
-            Log.e("Exception",ex.toString());
-        }
+        }; new Thread(runnable).start();
     }
+
 
 
 
