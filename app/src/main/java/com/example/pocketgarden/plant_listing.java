@@ -8,23 +8,36 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class plant_listing extends AppCompatActivity {
+
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_listing);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        listView = (ListView) findViewById(R.id.listView);
+
+        ArrayList<String> namelist = new ArrayList<>();
+
+        //These names need to be added in a for loop length master list
+        namelist.add("1");
+
+
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,namelist);
+
+        listView.setAdapter(adapter);
+
+        //Make an onclick for each one that goes to that list
+
+
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener((new View.OnClickListener(){
             @Override

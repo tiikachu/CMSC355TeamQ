@@ -1,11 +1,29 @@
 package plant;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.widget.TextView;
+
+import com.example.pocketgarden.R;
+import com.google.gson.Gson;
+
 import org.json.JSONException;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
+
+
 public class PlantDriver {
-	public static void main(String[] args) throws JSONException {
+
+
+	public static File file = new File("Plant.txt");
+	public static void main(String[] args) throws JSONException, FileNotFoundException {
 		Scanner in = new Scanner(System.in);
 		String name = "my plant";
 		int age = 2;
@@ -19,8 +37,8 @@ public class PlantDriver {
 		System.out.println(my_plant.getName() + " : " + my_plant.name);
 		System.out.println(my_plant.getInterval() + " : " + my_plant.interval);
 
-		PlantObject my_plant_2 = new PlantObject("abc", 1, 1, null, true, true);
-		PlantObject my_plant_3 = new PlantObject("xyz", 10, 1, null, true, true);
+		PlantObject my_plant_2 = new PlantObject("abc", 1, 1, null, true, true, "https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
+		PlantObject my_plant_3 = new PlantObject("xyz", 10, 1, null, true, true,"https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
 
 
 		PlantList list1 = new PlantList("Named list");
@@ -64,5 +82,12 @@ public class PlantDriver {
 
 
 
+
+
 	}
+
+
+
+
+
 }

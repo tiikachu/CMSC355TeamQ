@@ -129,4 +129,27 @@ public class GetPlantInfo {
     return getSciNameInfo(input.substring(sciNameIndex, endIndex));
   }
 
+  /**
+   *
+   * @param JSON output from getCommonNameInfo in a string format
+   * @return a String array of length 3, array[0] is the common name, array[1] a range of min-max precipitation in mm (e.g. "140-500 mm"), array[2] is a url to an image of the plant
+   */
+  public String[] parseJSON(String JSON){
+    String[] output = new String[3];
+    int[] commonNameIndex = {JSON.indexOf("common_name") + 14, JSON.indexOf("slug")-3};
+    output[0] = JSON.substring(commonNameIndex[0], commonNameIndex[1]);
+
+    int[] wateringIndices = new int[4];
+    wateringIndices[0] = JSON.indexOf("minimum_precipitation") + 29;
+    wateringIndices[1] = JSON.indexOf("}",wateringIndices[0]);
+    wateringIndices[2] = wateringIndices[1] + 32;
+    wateringIndices[3] = JSON.indexOf("}", wateringIndices[2]);
+    output[1] = JSON.substring(wateringIndices[0],wateringIndices[1]) + "-" + JSON.substring(wateringIndices[2],wateringIndices[3]) + " mm";
+
+    int[] urlIndex = {JSON.indexOf("image_url") + 12, JSON.indexOf("genus") - 3};
+    output[2] = JSON.substring(urlIndex[0], urlIndex[1]);
+
+    return output;
+  }
+
 }
