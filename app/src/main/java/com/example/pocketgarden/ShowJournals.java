@@ -33,12 +33,16 @@ public class ShowJournals extends AppCompatActivity {
         ListView listView = findViewById(R.id.listView);
 
         /*
-        add "example note" to the journal arrayList
+        add "example note" to the journal arrayList if there are none there
         create an ArrayAdapter to tie listView contents to elements of the journal arrayList
          */
-        journal.add("Example Note");
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, journal);
         listView.setAdapter(arrayAdapter);
+        if(journal.size() == 0) {
+            journal.add("");
+
+        }
+
 
         /*
         Create intent to jump to journal editor class
@@ -89,32 +93,13 @@ public class ShowJournals extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.journal_menu, menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item)
-    {
-        super.onOptionsItemSelected(item);
-
-        if(item.getItemId() == R.id.add_note)
-        {
-            Intent intent = new Intent(getApplicationContext(), JournalEditor.class);
-            startActivity(intent);
-            return true;
-        }
-
-        return false;
-    }
-
     public void goBack(View v){
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void makeNewNote(View v){
+        Intent intent = new Intent(getApplicationContext(), JournalEditor.class);
         startActivity(intent);
     }
 

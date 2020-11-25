@@ -89,5 +89,7 @@
     <string name="not_potted_msg">This plant is not potted.</string>
     <string name="outdoor_plant_msg">This is a outdoor plant.</string>
     <string name="Indoor_plant_msg">This is a indoor plant.</string>
+    <string name="add_new_note">add new note</string>
+    <string name="add_new">Button to add new note</string>
 
 </resources>
