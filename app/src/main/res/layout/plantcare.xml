@@ -59,6 +59,7 @@
                         android:layout_height="100dp"
                         android:src="@drawable/plant"/>
                     <TextView
+                        android:id="@+id/plant1text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sample Plant 1"
@@ -92,6 +93,7 @@
                         android:layout_height="100dp"
                         android:src="@drawable/plant"/>
                     <TextView
+                        android:id="@+id/plant2text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sample Plant 2"
@@ -125,6 +127,7 @@
                         android:layout_height="100dp"
                         android:src="@drawable/plant"/>
                     <TextView
+                        android:id="@+id/plant3text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sample Plant 3"
@@ -158,6 +161,7 @@
                         android:layout_height="100dp"
                         android:src="@drawable/plant"/>
                     <TextView
+                        android:id="@+id/plant4text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sample Plant 4"

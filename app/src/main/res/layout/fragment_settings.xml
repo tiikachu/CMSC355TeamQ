@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/text_margin"
                     android:layout_marginTop="10dp"
-                    android:text="@string/my_plants"
+                    android:text="My plant"
                     android:textColor="#014421"
                     android:textSize="14sp" />
 
@@ -93,13 +93,17 @@
         </androidx.cardview.widget.CardView>
     </GridLayout>
 
-    <Button
-        android:id="@+id/notification_button"
+    <TextView
+        android:id="@+id/notifSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/make"
-        tools:layout_editor_absoluteY="116dp" />
-
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Notification Settings"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
