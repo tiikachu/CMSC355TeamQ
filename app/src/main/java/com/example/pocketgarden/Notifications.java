@@ -37,7 +37,7 @@ SharedPreferences sharedPref;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_settings);
 
-        plant = new PlantObject("Sample Plant", 1, 1, null, true, true);
+        plant = new PlantObject("Sample Plant", 1, 1, null, true, true,"https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);

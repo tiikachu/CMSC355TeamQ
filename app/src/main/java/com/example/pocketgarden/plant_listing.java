@@ -29,7 +29,7 @@ public class plant_listing extends AppCompatActivity {
 
         //These names need to be added in a for loop length master list
         namelist.add("1");
-        
+
 
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,namelist);
 

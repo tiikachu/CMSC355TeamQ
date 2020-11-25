@@ -79,7 +79,7 @@ public class make_plant extends AppCompatActivity {
                 indoorInput = indoor.isChecked();
                 pottedInput = potted.isChecked();
 
-                PlantObject newPlant = new PlantObject(nameInput, ageInput, intervalInput, null, indoorInput, pottedInput);
+                PlantObject newPlant = new PlantObject(nameInput, ageInput, intervalInput, null, indoorInput, pottedInput, "https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
                 saveData(newPlant);
                 loadData();
 

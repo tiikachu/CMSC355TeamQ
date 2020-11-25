@@ -1,11 +1,15 @@
 package plant;
 
-public class PlantObject {
+
+import java.io.Serializable;
+
+public class PlantObject implements Serializable {
 	String name;
 	int age;    //in months
 	int interval;    //in days if in weeks convert to days
 	String[] special_needs;    //on comma split
 	//special needs include: soil type and health, leaf appearance, sun light per day, environment
+	String imgURL;
 
 
 	boolean indoor; // by default set to true, if outdoor set to false
@@ -19,18 +23,20 @@ public class PlantObject {
 		special_needs = null;
 		indoor = true;
 		potted = true;
+		imgURL = "";
 		num_plants++;
 	}
 
 
 
-	public PlantObject(String name_in, int age_in, int interval_in, String[] special_needs_in, boolean indoor_in, boolean potted_in){
+	public PlantObject(String name_in, int age_in, int interval_in, String[] special_needs_in, boolean indoor_in, boolean potted_in, String url_in){
 		name = name_in;
 		age = age_in;
 		interval = interval_in;
 		special_needs = special_needs_in;
 		indoor = indoor_in;
 		potted = potted_in;
+		imgURL = url_in;
 		num_plants++;
 	}
 
@@ -90,5 +96,10 @@ public class PlantObject {
 		this.num_plants = num_plants;
 	}
 
+	public void setImgURL(String url_in){ this.imgURL = url_in; }
+
+	public String getImgURL(){
+		return this.imgURL;
+	}
 
 }
