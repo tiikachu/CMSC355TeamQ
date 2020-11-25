@@ -39,29 +39,29 @@ public class plant extends AppCompatActivity {
 
         TextView plantIn = (TextView) findViewById(R.id.Indoor);
         if(my_plant_2.isIndoor()){
-            plantIn.setText("This is a indoor plant.");
+            plantIn.setText(R.string.Indoor_plant_msg);
         }
         else{
-            plantIn.setText("This is a outdoor plant.");
+            plantIn.setText(R.string.outdoor_plant_msg);
         }
 
         TextView planted = (TextView) findViewById(R.id.potted);
         if(my_plant_2.isPotted()){
-            planted.setText("This plant has been potted.");
+            planted.setText(R.string.potted_msg);
         }
         else {
-            planted.setText("This plant is not potted.");
+            planted.setText(R.string.not_potted_msg);
         }
 
 
-        HandlerThread handlerThread = new HandlerThread("MyHandlerThread");
-        handlerThread.start();
-        Looper looper = handlerThread.getLooper();
-        Handler handler = new Handler(looper);
-
-        handler.post(DownloadImageFromPath(my_plant_2.getImgURL()));
-
-
+//        HandlerThread handlerThread = new HandlerThread("MyHandlerThread");
+//        handlerThread.start();
+//        Looper looper = handlerThread.getLooper();
+//        Handler handler = new Handler(looper);
+//
+//        handler.post(DownloadImageFromPath(my_plant_2.getImgURL()));
+//
+//
 
 
     }

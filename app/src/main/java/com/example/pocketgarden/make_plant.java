@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -36,6 +34,7 @@ public class make_plant extends AppCompatActivity {
     private boolean indoorInput;
     private boolean pottedInput;
     private String nameInput;
+    private String imageURL;
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT = "text";
@@ -70,16 +69,12 @@ public class make_plant extends AppCompatActivity {
                     ageInput = 0;
                 }
 
-                if (Integer.parseInt(interval.getText().toString()) > 0) {
-                    intervalInput = Integer.parseInt(interval.getText().toString());
-                } else {
-                    intervalInput = 0;
-                }
+                getData(nameInput);
 
                 indoorInput = indoor.isChecked();
                 pottedInput = potted.isChecked();
 
-                PlantObject newPlant = new PlantObject(nameInput, ageInput, intervalInput, null, indoorInput, pottedInput, "https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
+                PlantObject newPlant = new PlantObject(nameInput, ageInput, intervalInput, null, indoorInput, pottedInput,  imageURL);
                 saveData(newPlant);
                 loadData();
 
@@ -91,6 +86,42 @@ public class make_plant extends AppCompatActivity {
 
 
     }
+
+    public void getData(String nameInput){
+        Runnable runnable = new Runnable(){
+            @Override
+            public void run() {
+                GetPlantInfo request = new GetPlantInfo(getApplicationContext());
+                String JSON = request.getCommonNameInfo(nameInput);
+                String[] makePlantInfo = request.parseJSON(JSON);
+                String[] precipRange = makePlantInfo[1].split("-");
+                int[] precips = {Integer.parseInt(precipRange[0], Integer.parseInt(precipRange[1]))};
+                decideRange(precips);
+                imageURL = makePlantInfo[2];
+            }
+        };
+    }
+
+    private void decideRange(int[] precips){
+        int avg = (precips[0] + precips[1]) / 2;
+        double inchAvg = avg / 25.4 / 365;
+
+        if(inchAvg > 1)
+            intervalInput = 1;
+        else if(inchAvg > 0.75)
+            intervalInput = 2;
+        else if(inchAvg > 0.6)
+            intervalInput = 3;
+        else if(inchAvg > 0.5)
+            intervalInput = 4;
+        else if(inchAvg > 0.4)
+            intervalInput = 5;
+        else if(inchAvg > 0.3)
+            intervalInput = 6;
+        else
+            intervalInput = 7;
+    }
+
 
     public void saveData(PlantObject plantIn){
         SharedPreferences mPref = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);

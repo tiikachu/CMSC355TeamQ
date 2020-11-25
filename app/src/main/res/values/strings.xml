@@ -85,5 +85,9 @@
     <string name="plant_age">Plant Age:</string>
     <string name="watering_interval">Watering Interval:</string>
     <string name="submit_button">submit button</string>
+    <string name="potted_msg">This plant has been potted.</string>
+    <string name="not_potted_msg">This plant is not potted.</string>
+    <string name="outdoor_plant_msg">This is a outdoor plant.</string>
+    <string name="Indoor_plant_msg">This is a indoor plant.</string>
 
 </resources>

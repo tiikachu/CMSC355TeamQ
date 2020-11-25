@@ -144,9 +144,9 @@ public class GetPlantInfo {
     wateringIndices[1] = JSON.indexOf("}",wateringIndices[0]);
     wateringIndices[2] = wateringIndices[1] + 32;
     wateringIndices[3] = JSON.indexOf("}", wateringIndices[2]);
-    output[1] = JSON.substring(wateringIndices[0],wateringIndices[1]) + "-" + JSON.substring(wateringIndices[2],wateringIndices[3]) + " mm";
+    output[1] = JSON.substring(wateringIndices[0],wateringIndices[1]) + "-" + JSON.substring(wateringIndices[2],wateringIndices[3]);
 
-    int[] urlIndex = {JSON.indexOf("image_url") + 12, JSON.indexOf("genus") - 3};
+    int[] urlIndex = {JSON.indexOf("image_url") + 12, JSON.indexOf("genus", JSON.indexOf("genus") + 1) - 3};
     output[2] = JSON.substring(urlIndex[0], urlIndex[1]);
 
     return output;

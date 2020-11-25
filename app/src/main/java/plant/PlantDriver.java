@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.widget.TextView;
 
 import com.example.pocketgarden.R;
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 
