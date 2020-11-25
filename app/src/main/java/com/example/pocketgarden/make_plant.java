@@ -100,6 +100,7 @@ public class make_plant extends AppCompatActivity {
                 imageURL = makePlantInfo[2];
             }
         };
+        new Thread(runnable).start();
     }
 
     private void decideRange(int[] precips){

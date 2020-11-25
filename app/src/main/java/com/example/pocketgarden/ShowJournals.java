@@ -19,6 +19,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Set;
 
 public class ShowJournals extends AppCompatActivity {
 
@@ -32,17 +33,16 @@ public class ShowJournals extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
 
-        /*
-        add "example note" to the journal arrayList if there are none there
-        create an ArrayAdapter to tie listView contents to elements of the journal arrayList
-         */
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
+        Set<String> tempSet = sharedPref.getStringSet("notes", null);
+
+        if(tempSet != null && tempSet.size() != journal.size()){
+            journal.addAll(tempSet);}
+        else if(journal.size() == 0){
+            journal.add("");
+        }
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, journal);
         listView.setAdapter(arrayAdapter);
-        if(journal.size() == 0) {
-            journal.add("");
-
-        }
-
 
         /*
         Create intent to jump to journal editor class
@@ -81,7 +81,7 @@ public class ShowJournals extends AppCompatActivity {
                 /*
                 save changes
                  */
-                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.tanay.thunderbird.notes", Context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
                 HashSet<String> set = new HashSet<>(ShowJournals.journal);
                 sharedPreferences.edit().putStringSet("notes", set).apply();
 

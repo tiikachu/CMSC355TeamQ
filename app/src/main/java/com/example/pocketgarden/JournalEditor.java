@@ -52,9 +52,9 @@ public class JournalEditor extends AppCompatActivity {
                 ShowJournals.journal.set(noteID, String.valueOf(s));
                 ShowJournals.arrayAdapter.notifyDataSetChanged();
 
-                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.tanay.thunderbird.notes", Context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
                 HashSet<String> set = new HashSet<>(ShowJournals.journal);
-                sharedPreferences.edit().putStringSet("notes", set).apply();
+                sharedPreferences.edit().putStringSet("notes", set).commit();
             }
 
             @Override
