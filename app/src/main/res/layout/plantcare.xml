@@ -37,6 +37,7 @@
 
             <!--Sample Plant 1-->
             <androidx.cardview.widget.CardView
+                android:id="@+id/plant1"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_gravity="fill_horizontal"
@@ -69,6 +70,7 @@
 
             <!--Sample Plant 2-->
             <androidx.cardview.widget.CardView
+                android:id="@+id/plant2"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_gravity="fill_horizontal"
@@ -101,6 +103,7 @@
 
             <!--Sample Plant 3-->
             <androidx.cardview.widget.CardView
+                android:id="@+id/plant3"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_gravity="fill_horizontal"
@@ -133,6 +136,7 @@
 
             <!--Sample Plant 4-->
             <androidx.cardview.widget.CardView
+                android:id="@+id/plant4"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_gravity="fill_horizontal"
