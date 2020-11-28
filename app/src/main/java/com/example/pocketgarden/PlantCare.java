@@ -49,7 +49,7 @@ public class PlantCare extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.plant1:
                 Toast.makeText(this, getPlantId(textView1), Toast.LENGTH_SHORT).show();
-                intent = new Intent(this, Notifications.class);
+                intent = new Intent(this, Settings.class);
                 //plantId = getPlantId(textView1);
                 break;
             case R.id.plant2:
