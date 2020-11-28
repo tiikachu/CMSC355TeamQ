@@ -2,7 +2,7 @@ package plant;
 
 //one masterlist
 //other lists for each room or how have you
-//list will be made of plant objects
+//list will be made of Plant objects
 //lists will need list identifier?
 //list will need master length
 

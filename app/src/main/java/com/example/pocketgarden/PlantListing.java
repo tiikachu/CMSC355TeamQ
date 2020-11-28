@@ -3,9 +3,6 @@ package com.example.pocketgarden;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class plant_listing extends AppCompatActivity {
+public class PlantListing extends AppCompatActivity {
 
     ListView listView;
 
@@ -25,13 +22,13 @@ public class plant_listing extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listView);
 
-        ArrayList<String> namelist = new ArrayList<>();
+        ArrayList<String> nameList = new ArrayList<>();
 
         //These names need to be added in a for loop length master list
-        namelist.add("1");
+        nameList.add("1");
 
 
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,namelist);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,nameList);
 
         listView.setAdapter(adapter);
 
@@ -46,8 +43,8 @@ public class plant_listing extends AppCompatActivity {
             }
         }));
 
-        Button newplant = (Button) findViewById(R.id.newplant);
-        newplant.setOnClickListener(new View.OnClickListener() {
+        Button newPlant = (Button) findViewById(R.id.newplant);
+        newPlant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openMakePlant();
@@ -56,12 +53,12 @@ public class plant_listing extends AppCompatActivity {
     }
 
     public void openPlant(){
-        Intent intent = new Intent(this, plant.class);
+        Intent intent = new Intent(this, Plant.class);
         startActivity(intent);
     }
 
     public void openMakePlant(){
-        Intent intent = new Intent(this, make_plant.class);
+        Intent intent = new Intent(this, MakePlant.class);
         startActivity(intent);
     }
 

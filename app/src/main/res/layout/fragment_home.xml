@@ -144,7 +144,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <!--plant care button-->
+                <!--Plant care button-->
                 <androidx.cardview.widget.CardView
                     android:id= "@+id/PlantCare"
                     android:layout_width="wrap_content"

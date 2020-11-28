@@ -20,12 +20,11 @@ import java.util.Scanner;
 
 import plant.*;
 
-public class make_plant extends AppCompatActivity {
+public class MakePlant extends AppCompatActivity {
 
     private Button submit;
     private EditText plantName;
     private EditText plantAge;
-    private EditText interval;
     private CheckBox indoor;
     private CheckBox potted;
 
@@ -54,7 +53,7 @@ public class make_plant extends AppCompatActivity {
         submit = (Button) findViewById(R.id.submit);
         plantName = (EditText) findViewById(R.id.plantName);
         plantAge = (EditText) findViewById(R.id.plantAge);
-        interval = (EditText) findViewById(R.id.wateringint);
+        EditText interval = (EditText) findViewById(R.id.wateringint);
         indoor = (CheckBox) findViewById(R.id.indoorcheck);
         potted = (CheckBox) findViewById(R.id.potted);
 
@@ -73,14 +72,14 @@ public class make_plant extends AppCompatActivity {
 
                 indoorInput = indoor.isChecked();
                 pottedInput = potted.isChecked();
+                String inputtedInterval = interval.getText().toString();
+                if(isInteger(inputtedInterval)){
+                    intervalInput = Integer.parseInt(inputtedInterval);
+                }
 
                 PlantObject newPlant = new PlantObject(nameInput, ageInput, intervalInput, null, indoorInput, pottedInput,  imageURL);
                 saveData(newPlant);
                 loadData();
-
-
-                //TextView textView = (TextView) findViewById(R.id.textView);
-                //textView.setText("Plant name: " + newPlant.getName() + "\nPlant age:" + newPlant.getAge() + "\nWatering interval: " + newPlant.getInterval() + "\nIndoor: " + indoorInput + "\nPotted: " + pottedInput);
             }
         });
 
@@ -88,17 +87,14 @@ public class make_plant extends AppCompatActivity {
     }
 
     public void getData(String nameInput){
-        Runnable runnable = new Runnable(){
-            @Override
-            public void run() {
-                GetPlantInfo request = new GetPlantInfo(getApplicationContext());
-                String JSON = request.getCommonNameInfo(nameInput);
-                String[] makePlantInfo = request.parseJSON(JSON);
-                String[] precipRange = makePlantInfo[1].split("-");
-                int[] precips = {Integer.parseInt(precipRange[0], Integer.parseInt(precipRange[1]))};
-                decideRange(precips);
-                imageURL = makePlantInfo[2];
-            }
+        Runnable runnable = () -> {
+            GetPlantInfo request = new GetPlantInfo(getApplicationContext());
+            String JSON = request.getCommonNameInfo(nameInput);
+            String[] makePlantInfo = request.parseJSON(JSON);
+            String[] precipRange = makePlantInfo[1].split("-");
+            int[] precips = {Integer.parseInt(precipRange[0], Integer.parseInt(precipRange[1]))};
+            decideRange(precips);
+            imageURL = makePlantInfo[2];
         };new Thread(runnable).start();
     }
 
@@ -122,7 +118,6 @@ public class make_plant extends AppCompatActivity {
             intervalInput = 7;
     }
 
-
     public void saveData(PlantObject plantIn){
         SharedPreferences mPref = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor edit = mPref.edit();
@@ -144,6 +139,30 @@ public class make_plant extends AppCompatActivity {
     public void updateView(){
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(name);
+    }
+
+    public boolean isInteger(String str) {
+        if (str == null) {
+            return false;
+        }
+        int length = str.length();
+        if (length == 0) {
+            return false;
+        }
+        int i = 0;
+        if (str.charAt(0) == '-') {
+            if (length == 1) {
+                return false;
+            }
+            i = 1;
+        }
+        for (; i < length; i++) {
+            char c = str.charAt(i);
+            if (c < '0' || c > '9') {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

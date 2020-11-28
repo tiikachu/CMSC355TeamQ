@@ -24,7 +24,7 @@ public class PlantDriver {
 	public static File file = new File("Plant.txt");
 	public static void main(String[] args) throws JSONException, FileNotFoundException {
 		Scanner in = new Scanner(System.in);
-		String name = "my plant";
+		String name = "my Plant";
 		int age = 2;
 		int interval = 7;
 		String[] special_needs = {"mineral water", "extra sunlight"};
@@ -76,7 +76,7 @@ public class PlantDriver {
 		plant_DataBase.add(list3);
 		plant_DataBase.remove(list2);
 
-		System.out.println("\nlength of plant database : " + plant_DataBase.getList_length());
+		System.out.println("\nlength of Plant database : " + plant_DataBase.getList_length());
 
 
 

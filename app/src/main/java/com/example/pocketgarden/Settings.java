@@ -11,16 +11,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Settings extends AppCompatActivity implements View.OnClickListener {
     private CheckBox never, everyday;
-    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-
         never = ((CheckBox)findViewById(R.id.never));
         everyday = ((CheckBox)findViewById(R.id.everyday));
-        button = ((Button)findViewById(R.id.button2));
+        Button button = ((Button) findViewById(R.id.button2));
         button.setOnClickListener(this);
         load();
     }
@@ -33,12 +32,7 @@ public class Settings extends AppCompatActivity implements View.OnClickListener 
     private void load () {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         boolean cbValue = sp.getBoolean("CHECKBOX", false);
-        if (cbValue) {
-            never.setChecked(true);
-        }
-        else {
-            never.setChecked(false);
-        }
+        never.setChecked(cbValue);
 
     }
 

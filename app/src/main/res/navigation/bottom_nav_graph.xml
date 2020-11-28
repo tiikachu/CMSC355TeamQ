@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        class="com.example.pocketgarden.settings_fragment"
+        class="com.example.pocketgarden.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
@@ -18,7 +18,7 @@
         class="com.example.pocketgarden.Home"/>
     <fragment
         android:id="@+id/profile"
-        class="com.example.pocketgarden.profile_fragment"
+        class="com.example.pocketgarden.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 

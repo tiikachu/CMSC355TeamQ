@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             // connect my plants card to whatever class
             case R.id.My_Plants:
-                intent = new Intent (this, plant.class );
+                intent = new Intent (this, Plant.class );
                 break;
             case R.id.Basics:
                 intent = new Intent (this, Basics.class);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent (this, PlantCare.class);
                 break;
             case R.id.Library:
-                intent = new Intent (this, plant_listing.class);
+                intent = new Intent (this, PlantListing.class);
                 break;
             case R.id.Journal:
                 intent = new Intent (this, ShowJournals.class);

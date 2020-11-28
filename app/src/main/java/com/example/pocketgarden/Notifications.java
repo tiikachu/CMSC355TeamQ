@@ -164,7 +164,7 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setContentTitle("Pocket Garden")
-                .setContentText("Water your plant!")
+                .setContentText("Water your Plant!")
                 .setSmallIcon(R.mipmap.logo_round)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.logo_round))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
@@ -179,7 +179,7 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
         PlantObject [] plantListArray = plantList.getPlantList();
 
         for (int i=0; i < plantListArray.length; i++) {
-            //create a card view for each plant object
+            //create a card view for each Plant object
             createCardView();
 
         }
@@ -201,17 +201,17 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
 
 //    @SuppressLint("SetTextI18n")
 //    public void updateText () {
-//        PlantCare plant = new PlantCare();
-//        if (plant.id.equals("p1")) {
+//        PlantCare Plant = new PlantCare();
+//        if (Plant.id.equals("p1")) {
 //            textView.setText("Sample Plant 1");
 //        }
-//        else if (plant.id.equals("p2")) {
+//        else if (Plant.id.equals("p2")) {
 //            textView.setText("Sample Plant 2");
 //        }
-//        else if (plant.id.equals("p3")) {
+//        else if (Plant.id.equals("p3")) {
 //            textView.setText("Sample Plant 3");
 //        }
-//        else if (plant.id.equals("p4")) {
+//        else if (Plant.id.equals("p4")) {
 //            textView.setText("Sample Plant 4");
 //        }
 //

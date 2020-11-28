@@ -71,7 +71,7 @@ public class GetPlantInfo {
 
 
   /**
-   * @param commonName common name for a plant, e.g. strawberry
+   * @param commonName common name for a Plant, e.g. strawberry
    * @return scientific name, e.g. Fragaria chiloensis
    */
   public String getCommonNameInfo(String commonName) {
@@ -89,7 +89,7 @@ public class GetPlantInfo {
   }
 
   /**
-   * @param commonName text input of a plant's common name, e.g. strawberry
+   * @param commonName text input of a Plant's common name, e.g. strawberry
    * @return a link to a trefle API query searching for the common name
    */
   private String makeUrlCommon(String commonName) {
@@ -132,7 +132,7 @@ public class GetPlantInfo {
   /**
    *
    * @param JSON output from getCommonNameInfo in a string format
-   * @return a String array of length 3, array[0] is the common name, array[1] a range of min-max precipitation in mm (e.g. "140-500 mm"), array[2] is a url to an image of the plant
+   * @return a String array of length 3, array[0] is the common name, array[1] a range of min-max precipitation in mm (e.g. "140-500 mm"), array[2] is a url to an image of the Plant
    */
   public String[] parseJSON(String JSON){
     String[] output = new String[3];

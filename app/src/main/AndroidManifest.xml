@@ -3,7 +3,6 @@
     package="com.example.pocketgarden">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
     <application
@@ -19,15 +18,15 @@
         <activity android:name=".Weather"/>
         <activity android:name=".ShowJournals"/>
         <activity
-            android:name=".plant_listing"
+            android:name=".PlantListing"
             android:label="@string/title_activity_plant_listing"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".make_plant"
+            android:name=".MakePlant"
             android:label="@string/title_activity_make_plant"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".plant"
+            android:name=".Plant"
             android:label="@string/title_activity_plant"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".JournalEditor" />
