@@ -24,6 +24,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             throw e;
         }
 
+        initialize();
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+        int id = view.getId();
+
+        if(id == R.id.My_Plants)
+            intent = new Intent(this, Plant.class);
+        else if(id == R.id.Basics)
+            intent = new Intent(this, Basics.class);
+        else if(id== R.id.Weather)
+            intent = new Intent(this, Weather.class);
+        else if(id== R.id.PlantCare)
+            intent = new Intent(this, PlantCare.class);
+        else if(id== R.id.Library)
+            intent = new Intent(this, PlantListing.class);
+        else if(id== R.id.Journal)
+            intent = new Intent(this, ShowJournals.class);
+        else
+            throw new IllegalStateException("Unexpected value: " + view.getId());
+
+        startActivity(intent);
+    }
+
+    public void initialize(){
         myPlants = (CardView) findViewById(R.id.My_Plants);
         basics = (CardView) findViewById(R.id.Basics);
         weather = (CardView) findViewById(R.id.Weather);
@@ -38,34 +66,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         library.setOnClickListener(this);
         journal.setOnClickListener(this);
     }
-
-    @Override
-    public void onClick(View view) {
-        Intent intent;
-        switch (view.getId()) {
-            // connect my plants card to whatever class
-            case R.id.My_Plants:
-                intent = new Intent (this, Plant.class );
-                break;
-            case R.id.Basics:
-                intent = new Intent (this, Basics.class);
-                break;
-            case R.id.Weather:
-                intent = new Intent (this, Weather.class);
-                break;
-            case R.id.PlantCare:
-                intent = new Intent (this, PlantCare.class);
-                break;
-            case R.id.Library:
-                intent = new Intent (this, PlantListing.class);
-                break;
-            case R.id.Journal:
-                intent = new Intent (this, ShowJournals.class);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + view.getId());
-        }
-        startActivity(intent);
-    }
-
 }

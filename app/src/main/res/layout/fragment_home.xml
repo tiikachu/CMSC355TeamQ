@@ -48,6 +48,7 @@
                     android:layout_margin="12dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
+                    android:tag="@+id/My_Plants"
                     tools:ignore="DuplicateIds">
 
                     <LinearLayout
@@ -81,6 +82,7 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
+                    android:tag="@+id/Basics"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
 
@@ -116,6 +118,7 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
+                    android:tag="@+id/Weather"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
 
@@ -151,6 +154,7 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
+                    android:tag= "@+id/PlantCare"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
                     tools:targetApi="lollipop">
@@ -187,6 +191,7 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
+                    android:tag="@+id/Library"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
                     tools:ignore="DuplicateIds">
@@ -225,6 +230,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
+                    android:tag= "@+id/Journal"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp"
                     tools:targetApi="lollipop">

@@ -16,7 +16,6 @@ import com.bumptech.glide.module.LibraryGlideModule;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import plant.*;
@@ -58,39 +57,50 @@ public class Plant extends AppCompatActivity{
         }
 
 
-        getImg(my_plant_2.getImgURL());
+
 
         //Drawable myDrawable = getResources().getDrawable(R.drawable.Plant);
         //ImageView iv = (ImageView) findViewById(R.id.plantPhoto);
         //iv.setImageDrawable(myDrawable);
+        imgReqs imgReq = new imgReqs();
+        Thread thread = new Thread(imgReq);
+        imgReq.setImageURL(my_plant_2.getImgURL());
+        thread.start();
 
-
-
+        ImageView iv = (ImageView) findViewById(R.id.plantPhoto);
+        iv.setImageBitmap(imgReq.getMyBitmap());
 
     }
 
+    static class imgReqs implements Runnable{
+        Bitmap myBitmap;
+        String imageURL;
 
-    public void getImg(String imageURL){
+        @Override
+        public void run() {
+            URL urlConnection;
+            HttpURLConnection connection;
+            InputStream finalInput = null;
+            try {
+                urlConnection = new URL(imageURL);
+                connection = (HttpURLConnection) urlConnection.openConnection();
+                InputStream input;
+                input = connection.getInputStream();
+                finalInput = input;
+            } catch (IOException e) { e.printStackTrace(); }
 
-        Runnable runnable = () -> {
-                URL urlConnection;
-                HttpURLConnection connection;
-                InputStream finalInput = null;
-                try {
-                    urlConnection = new URL(imageURL);
-                    connection = (HttpURLConnection) urlConnection.openConnection();
-                    connection.connect();
-                    connection.setDoInput(true);
-                    InputStream input;
-                    input = connection.getInputStream();
-                    finalInput = input;
-                } catch (IOException e) { e.printStackTrace(); }
+            myBitmap = BitmapFactory.decodeStream(finalInput);
+        }
 
-                Bitmap myBitmap = BitmapFactory.decodeStream(finalInput);
-                ImageView iv = (ImageView) findViewById(R.id.plantPhoto);
-                iv.setImageBitmap(myBitmap);
-        }; new Thread(runnable).start();
+        public Bitmap getMyBitmap(){
+            return myBitmap;
+        }
+        public void setImageURL(String s){
+            imageURL = s;
+        }
     }
+
+
 
 
 

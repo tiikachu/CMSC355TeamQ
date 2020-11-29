@@ -15,58 +15,81 @@ import java.util.HashSet;
 
 public class JournalEditor extends AppCompatActivity {
 
-    int noteID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_editor);
 
-        EditText editText = findViewById(R.id.EditText);
-        Intent   intent   = getIntent();
-        noteID = intent.getIntExtra("noteID", -1);  //default value is -1 (in case of intent error)
-
-        if(noteID != -1)
-        {
-            editText.setText(ShowJournals.journal.get(noteID));
-        }
-
-        else
-        {
-            ShowJournals.journal.add("");                // as initially, the note is empty
-            noteID = ShowJournals.journal.size() - 1;
-            ShowJournals.arrayAdapter.notifyDataSetChanged();
-        }
-
-        editText.addTextChangedListener(new TextWatcher()
-        {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after)
-            {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count)
-            {
-                ShowJournals.journal.set(noteID, String.valueOf(s));
-                ShowJournals.arrayAdapter.notifyDataSetChanged();
-
-                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
-                HashSet<String> set = new HashSet<>(ShowJournals.journal);
-                sharedPreferences.edit().putStringSet("notes", set).commit();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s)
-            {
-
-            }
-        });
+        ProcessThread p = new ProcessThread();
+        p.setEditText(getApplicationContext());
+        Thread thread = new Thread(p);
+        thread.start();
     }
 
     public void goBack(View view){
         Intent intent = new Intent(getApplicationContext(), ShowJournals.class);
         startActivity(intent);
+    }
+
+    class ProcessThread implements Runnable{
+        private EditText editText;
+        private int noteID;
+
+        @Override
+        public void run() {
+            editText = initialize();
+            save(editText);
+        }
+
+        public EditText initialize(){
+            Intent   intent   = getIntent();
+            noteID = intent.getIntExtra("noteID", -1);  //default value is -1 (in case of intent error)
+
+            if(noteID != -1) {
+                editText.setText(ShowJournals.journal.get(noteID));
+            }
+
+            else
+            {
+                ShowJournals.journal.add("");                // as initially, the note is empty
+                noteID = ShowJournals.journal.size() - 1;
+                ShowJournals.arrayAdapter.notifyDataSetChanged();
+            }
+
+            return editText;
+        }
+
+        public void save(EditText editText){
+            editText.addTextChangedListener(new TextWatcher()
+            {
+
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+                @Override
+                public void afterTextChanged(Editable s)
+                {
+                    ShowJournals.journal.set(noteID, String.valueOf(s));
+                    ShowJournals.arrayAdapter.notifyDataSetChanged();
+
+                    SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
+                    HashSet<String> set = new HashSet<>(ShowJournals.journal);
+                    sharedPreferences.edit().putStringSet("notes", set).apply();
+                }
+            });
+        }
+
+        public EditText getEditText(int ID){
+            return editText;
+        }
+
+        public void setEditText(Context c){
+            editText = new EditText(c);
+        }
     }
 }

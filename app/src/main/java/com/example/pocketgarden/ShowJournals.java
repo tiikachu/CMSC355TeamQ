@@ -1,19 +1,13 @@
 package com.example.pocketgarden;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -33,6 +27,14 @@ public class ShowJournals extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
 
+        initialize(listView);
+        setOnClick(listView);
+        setLongClick(listView);
+
+    }
+
+    public void initialize(ListView listView){
+        Runnable runnable = () -> {
         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
         Set<String> tempSet = sharedPref.getStringSet("notes", null);
 
@@ -41,56 +43,42 @@ public class ShowJournals extends AppCompatActivity {
         else if(journal.size() == 0){
             journal.add("");
         }
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, journal);
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, journal);
         listView.setAdapter(arrayAdapter);
+        }; new Thread(runnable).start();
+    }
 
-        /*
-        Create intent to jump to journal editor class
-         */
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
-                Intent intent = new Intent(getApplicationContext(), JournalEditor.class);
-                intent.putExtra("noteID", position); //to tell us which row of listView was tapped
-                startActivity(intent);
-            }
+    public void setOnClick(ListView listView){
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(getApplicationContext(), JournalEditor.class);
+            intent.putExtra("noteID", position); //to tell us which row of listView was tapped
+            startActivity(intent);
         });
+    }
 
-        /*
-        Create intent to delete arrayAdapter
-         */
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id)
-            {
-                new AlertDialog.Builder(ShowJournals.this)
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("Delete?")
-                        .setMessage("Are you sure you want to delete this note?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                journal.remove(position);
-                                arrayAdapter.notifyDataSetChanged();
-                            }
-                        })
+    public void setLongClick(ListView listView){
+        listView.setOnItemLongClickListener((parent, view, position, id) -> {
 
-                        .setNegativeButton("No", null)
-                        .show();
-                /*
-                save changes
-                 */
-                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
-                HashSet<String> set = new HashSet<>(ShowJournals.journal);
-                sharedPreferences.edit().putStringSet("notes", set).apply();
+            new AlertDialog.Builder(ShowJournals.this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Delete?")
+                    .setMessage("Are you sure you want to delete this note?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        journal.remove(position);
+                        arrayAdapter.notifyDataSetChanged();
+                    })
 
-                return true;
-            }
+                    .setNegativeButton("No", null)
+                    .show();
 
+            Runnable runnable = () ->{
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
+            HashSet<String> set = new HashSet<>(ShowJournals.journal);
+            sharedPreferences.edit().putStringSet("notes", set).apply();};
+            new Thread(runnable).start();
 
+            return true;
         });
-
     }
 
     public void goBack(View v){
