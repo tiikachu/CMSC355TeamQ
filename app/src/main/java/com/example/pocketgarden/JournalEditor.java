@@ -22,10 +22,13 @@ public class JournalEditor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_editor);
 
+        EditText e = (EditText) findViewById(R.id.EditText);
+
         ProcessThread p = new ProcessThread();
-        p.setEditText(getApplicationContext());
+        p.setEditText(e);
         Thread thread = new Thread(p);
         thread.start();
+        e.setText(p.getEditText());
     }
 
     public void goBack(View view){
@@ -48,15 +51,14 @@ public class JournalEditor extends AppCompatActivity {
             noteID = intent.getIntExtra("noteID", -1);  //default value is -1 (in case of intent error)
 
             if(noteID != -1) {
-                editText.setText(ShowJournals.journal.get(noteID));
-            }
+                editText.setText(ShowJournals.journal.get(noteID)); }
 
-            else
-            {
-                ShowJournals.journal.add("");                // as initially, the note is empty
-                noteID = ShowJournals.journal.size() - 1;
-                ShowJournals.arrayAdapter.notifyDataSetChanged();
-            }
+            else   {
+                runOnUiThread(() -> {
+                    ShowJournals.journal.add("");                // as initially, the note is empty
+                    noteID = ShowJournals.journal.size() - 1;
+                    ShowJournals.arrayAdapter.notifyDataSetChanged();
+                });  }
 
             return editText;
         }
@@ -84,12 +86,13 @@ public class JournalEditor extends AppCompatActivity {
             });
         }
 
-        public EditText getEditText(int ID){
-            return editText;
+        public Editable getEditText(){
+            return editText.getText();
         }
 
-        public void setEditText(Context c){
-            editText = new EditText(c);
+        public void setEditText(EditText e){
+            editText = new EditText(getApplicationContext());
+            editText.setText(e.getText());
         }
     }
 }
