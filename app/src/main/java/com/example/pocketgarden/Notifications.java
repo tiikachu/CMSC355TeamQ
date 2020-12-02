@@ -30,7 +30,7 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
     private static final String CHANNEL_DESC = "Pocket Garden Notifications";
 
     private CheckBox never, every1day, every2days, every3days, every4days, every5days, every6days, every7days;
-    private ArrayList<String> frequencyResult = new ArrayList<String>();
+    public static ArrayList<String> frequencyResult = new ArrayList<String>();
     private TextView textView;
 //    private boolean checkedOnOff;
 //    private Button saveButton;
