@@ -1,9 +1,12 @@
 package com.example.pocketgarden;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -21,6 +24,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+
 import plant.*;
 
 public class Notifications extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener
@@ -101,6 +106,7 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
             case R.id.never:
                 editor.putBoolean("neverChecked", never.isChecked());
                 editor.apply();
+                createAlarm();
                 break;
             case R.id.every1day:
                 editor.putBoolean("1checked", every1day.isChecked());
@@ -249,6 +255,18 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
     public void createCardView() {
     }
 
+    public void createAlarm () {
+        Intent intent = new Intent (getApplicationContext(), NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 19);
+        calendar.set(Calendar.MINUTE, 19);
+        calendar.set(Calendar.SECOND, 30);
+
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
 
 
 
