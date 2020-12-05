@@ -27,6 +27,12 @@ jobs:
     # Execute unit tests
     - name: Unit Test
       run: ./gradlew testDebugUnitTest
+    - name: Send Push Notification
+      uses: techulus/push-github-action@1.0.0
+      env:
+        API_KEY: ${{ 0a0a8157-b81e-432a-b1d4-39ad038fffbc}}
+        MESSAGE: "Hey, Christine Angeles, there's a new build."
+
 
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0

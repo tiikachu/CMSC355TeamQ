@@ -17,7 +17,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.NotificationCompat;
@@ -105,38 +104,30 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
         switch (buttonView.getId()) {
             case R.id.never:
                 editor.putBoolean("neverChecked", never.isChecked());
-                editor.apply();
-                createAlarm();
                 break;
             case R.id.every1day:
                 editor.putBoolean("1checked", every1day.isChecked());
-                editor.apply();
                 break;
             case R.id.every2days:
                 editor.putBoolean("2checked", every2days.isChecked());
-                editor.apply();
                 break;
             case R.id.every3days:
                 editor.putBoolean("3checked", every3days.isChecked());
-                editor.apply();
                 break;
             case R.id.every4days:
                 editor.putBoolean("4checked", every4days.isChecked());
-                editor.apply();
                 break;
             case R.id.every5days:
                 editor.putBoolean("5checked", every5days.isChecked());
-                editor.apply();
                 break;
             case R.id.every6days:
                 editor.putBoolean("6checked", every6days.isChecked());
-                editor.apply();
                 break;
             case R.id.every7days:
                 editor.putBoolean("7checked", every7days.isChecked());
-                editor.apply();
                 break;
         }
+        editor.apply();
         displayNotification();
     }
 
