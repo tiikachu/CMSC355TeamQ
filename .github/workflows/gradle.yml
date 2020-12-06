@@ -27,11 +27,6 @@ jobs:
     # Execute unit tests
     - name: Unit Test
       run: ./gradlew testDebugUnitTest
-    - name: Send Push Notification
-      uses: techulus/push-github-action@1.0.0
-      env:
-        API_KEY: cad2a49c-2964-4724-8d93-f7df2f3398a1
-        MESSAGE: "Hey Yashna Nainani, there's a new build!"
 
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0
