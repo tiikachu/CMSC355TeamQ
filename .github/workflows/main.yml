@@ -25,7 +25,7 @@ jobs:
       - name: Send Push Notification
           uses: techulus/push-github-action@1.0.0
           env:
-            API_KEY: ${{ secrets.cad2a49c-2964-4724-8d93-f7df2f3398a1 }}
+            API_KEY: secrets.cad2a49c-2964-4724-8d93-f7df2f3398a1
             MESSAGE: "Hey Yashna Nainani, there's a new build!"
             
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
