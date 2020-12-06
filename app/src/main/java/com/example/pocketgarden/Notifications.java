@@ -31,9 +31,6 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
 {
 
     Context context;
-    private static final String CHANNEL_ID = "pocket_garden";
-    private static final String CHANNEL_NAME = "Pocket Garden";
-    private static final String CHANNEL_DESC = "Pocket Garden Notifications";
 
     private CheckBox never, every1day, every2days, every3days, every4days, every5days, every6days, every7days;
     public static ArrayList<String> frequencyResult = new ArrayList<String>();
@@ -52,8 +49,6 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.fragment_settings);
 
         plant = new PlantObject("Sample Plant", 1, 1, null, true, true,"https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
-
-        buildNotification();
 
         never = findViewById(R.id.never);
         every1day = findViewById(R.id.every1day);
@@ -100,7 +95,6 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
         switch (buttonView.getId()) {
             case R.id.never:
                 editor.putBoolean("neverChecked", never.isChecked());
@@ -128,7 +122,6 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
                 break;
         }
         editor.apply();
-        displayNotification();
     }
 
     // Could I merge this method with onCheckedChange?
@@ -202,25 +195,7 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void buildNotification () {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription(CHANNEL_DESC);
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
-        }
-    }
-    private void displayNotification() {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
-        builder.setContentTitle("Pocket Garden")
-                .setContentText("Water your Plant!")
-                .setSmallIcon(R.mipmap.logo_round)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.logo_round))
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(Notifications.this);
-        notificationManagerCompat.notify(1, builder.build());
-    }
 
     public void loadPlantObjects () {
         PlantList plantList = new PlantList();
