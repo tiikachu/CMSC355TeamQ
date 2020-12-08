@@ -2,14 +2,10 @@ package com.example.pocketgarden;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,29 +14,26 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 
 import plant.*;
 
-public class Notifications extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener
-{
+public class Notifications extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
-    Context context;
-
-    private CheckBox never, every1day, every2days, every3days, every4days, every5days, every6days, every7days;
+    Button button;
+    Toast toast;
+    private CheckBox sunday, monday, tuesday, wednesday, thursday, friday, saturday;
     public static ArrayList<String> frequencyResult = new ArrayList<String>();
     private TextView textView;
-
+    Calendar calendar;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     public static final String SHARED_PREFS = "com.pocketgarden.settings";
 
     PlantObject plant;
+
+    NotificationReceiver notificationReceiver = new NotificationReceiver();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -48,160 +41,100 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_settings);
 
-        plant = new PlantObject("Sample Plant", 1, 1, null, true, true,"https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
+        plant = new PlantObject("Sample Plant", 1, 1, null, true, true, "https://bs.floristic.org/image/o/473e2ed33e13f12e5424fff21996c7476520dc4d");
 
-        never = findViewById(R.id.never);
-        every1day = findViewById(R.id.every1day);
-        every2days = findViewById(R.id.every2days);
-        every3days = findViewById(R.id.every3days);
-        every4days = findViewById(R.id.every4days);
-        every5days = findViewById(R.id.every5days);
-        every6days = findViewById(R.id.every6days);
-        every7days = findViewById(R.id.every7days);
-        textView  = findViewById(R.id.plant);
+        notificationReceiver.buildNotification(getApplicationContext());
 
-        never.setOnClickListener(this);
-        every1day.setOnClickListener(this);
-        every2days.setOnClickListener(this);
-        every3days.setOnClickListener(this);
-        every4days.setOnClickListener(this);
-        every5days.setOnClickListener(this);
-        every6days.setOnClickListener(this);
-        every7days.setOnClickListener(this);
+        sunday = findViewById(R.id.sunday);
+        monday = findViewById(R.id.monday);
+        tuesday = findViewById(R.id.tuesday);
+        wednesday = findViewById(R.id.wednesday);
+        thursday = findViewById(R.id.thursday);
+        friday = findViewById(R.id.friday);
+        saturday = findViewById(R.id.saturday);
+
+        textView = findViewById(R.id.plant);
+
+
+//
+//        never.setOnClickListener(this);
+//        every1day.setOnClickListener(this);
+//        every2days.setOnClickListener(this);
+//        every3days.setOnClickListener(this);
+//        every4days.setOnClickListener(this);
+//        every5days.setOnClickListener(this);
+//        every6days.setOnClickListener(this);
+//        every7days.setOnClickListener(this);
 
         preferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         editor = preferences.edit();
 
-        never.setChecked(preferences.contains("neverChecked") && preferences.getBoolean("neverChecked", false));
-        every1day.setChecked(preferences.contains("1checked") && preferences.getBoolean("1checked", false));
-        every2days.setChecked(preferences.contains("2checked") && preferences.getBoolean("2checked", false));
-        every3days.setChecked(preferences.contains("3checked") && preferences.getBoolean("3checked", false));
-        every4days.setChecked(preferences.contains("4checked") && preferences.getBoolean("4checked", false));
-        every5days.setChecked(preferences.contains("5checked") && preferences.getBoolean("5checked", false));
-        every6days.setChecked(preferences.contains("6checked") && preferences.getBoolean("6checked", false));
-        every7days.setChecked(preferences.contains("7checked") && preferences.getBoolean("7checked", false));
+        sunday.setChecked(preferences.contains("sunday") && preferences.getBoolean("sunday", false));
+        monday.setChecked(preferences.contains("monday") && preferences.getBoolean("monday", false));
+        tuesday.setChecked(preferences.contains("tuesday") && preferences.getBoolean("tuesday", false));
+        wednesday.setChecked(preferences.contains("wednesday") && preferences.getBoolean("wednesday", false));
+        thursday.setChecked(preferences.contains("thursday") && preferences.getBoolean("thursday", false));
+        friday.setChecked(preferences.contains("friday") && preferences.getBoolean("friday", false));
+        saturday.setChecked(preferences.contains("saturday") && preferences.getBoolean("saturday", false));
 
-        never.setOnCheckedChangeListener(this);
-        every1day.setOnCheckedChangeListener(this);
-        every2days.setOnCheckedChangeListener(this);
-        every3days.setOnCheckedChangeListener(this);
-        every4days.setOnCheckedChangeListener(this);
-        every5days.setOnCheckedChangeListener(this);
-        every6days.setOnCheckedChangeListener(this);
-        every7days.setOnCheckedChangeListener(this);
+        sunday.setOnCheckedChangeListener(this);
+        monday.setOnCheckedChangeListener(this);
+        tuesday.setOnCheckedChangeListener(this);
+        wednesday.setOnCheckedChangeListener(this);
+        thursday.setOnCheckedChangeListener(this);
+        friday.setOnCheckedChangeListener(this);
+        saturday.setOnCheckedChangeListener(this);
+
+        button = findViewById(R.id.saveButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), editor.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+        // frequencyResult = new ArrayList<>();
         switch (buttonView.getId()) {
-            case R.id.never:
-                editor.putBoolean("neverChecked", never.isChecked());
+            case R.id.sunday:
+                editor.putBoolean("sunday", sunday.isChecked());
+                String value = preferences.toString();
+                //    Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.every1day:
-                editor.putBoolean("1checked", every1day.isChecked());
+            case R.id.monday:
+                editor.putBoolean("monday", monday.isChecked());
                 break;
-            case R.id.every2days:
-                editor.putBoolean("2checked", every2days.isChecked());
+            case R.id.tuesday:
+                editor.putBoolean("tuesday", tuesday.isChecked());
                 break;
-            case R.id.every3days:
-                editor.putBoolean("3checked", every3days.isChecked());
+            case R.id.wednesday:
+                editor.putBoolean("wednesday", wednesday.isChecked());
                 break;
-            case R.id.every4days:
-                editor.putBoolean("4checked", every4days.isChecked());
+            case R.id.thursday:
+                editor.putBoolean("thursday", thursday.isChecked());
                 break;
-            case R.id.every5days:
-                editor.putBoolean("5checked", every5days.isChecked());
+            case R.id.friday:
+                editor.putBoolean("friday", friday.isChecked());
                 break;
-            case R.id.every6days:
-                editor.putBoolean("6checked", every6days.isChecked());
-                break;
-            case R.id.every7days:
-                editor.putBoolean("7checked", every7days.isChecked());
+            case R.id.saturday:
+                editor.putBoolean("saturday", saturday.isChecked());
                 break;
         }
         editor.apply();
+        createAlarm();
+        notificationReceiver.displayNotification(getApplicationContext());
     }
 
-    // Could I merge this method with onCheckedChange?
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View view) {
-        frequencyResult = new ArrayList<>();
-        boolean checked = ((CheckBox) view).isChecked();
-        switch (view.getId()) {
-            case R.id.never:
-                if (checked) {
-                    frequencyResult.add("Never");
-                } else {
-                    frequencyResult.remove("Never");
-                }
-                break;
-            case R.id.every1day:
-                if (checked) {
-                    frequencyResult.add("Every 1 day");
-                } else {
-                    frequencyResult.remove("Every 1 day");
-                }
-                break;
-            case R.id.every2days:
-                if (checked) {
-                    frequencyResult.add("Every 2 days");
-                } else {
-                    frequencyResult.remove("Every 2 days");
-                }
-                break;
-            case R.id.every3days:
-                if (checked) {
-                    frequencyResult.add("Every 3 days");
-                } else {
-                    frequencyResult.remove("Every 3 days");
-                }
-                break;
-            case R.id.every4days:
-                if (checked) {
-                    frequencyResult.add("Every 4 days");
-                } else {
-                    frequencyResult.remove("Every 4 days");
-                }
-                break;
-            case R.id.every5days:
-                if (checked) {
-                    frequencyResult.add("Every 5 days");
-
-                } else {
-                    frequencyResult.remove("Every 5 days");
-                }
-                break;
-            case R.id.every6days:
-                if (checked) {
-                    frequencyResult.add("Every 6 days");
-
-                } else {
-                    frequencyResult.remove("Every 6 days");
-                }
-                break;
-            case R.id.every7days:
-                if (checked) {
-                    frequencyResult.add("Every 7 days");
-
-                } else {
-                    frequencyResult.remove("Every 7 days");
-                }
-                break;
-        }
-      //  displayNotification();
-
-    }
-
-
-
-    public void loadPlantObjects () {
+    public void loadPlantObjects() {
         PlantList plantList = new PlantList();
-        PlantObject [] plantListArray = plantList.getPlantList();
+        PlantObject[] plantListArray = plantList.getPlantList();
 
-        for (int i=0; i < plantListArray.length; i++) {
+        for (int i = 0; i < plantListArray.length; i++) {
             //create a card view for each Plant object
             createCardView();
 
@@ -212,47 +145,41 @@ public class Notifications extends AppCompatActivity implements View.OnClickList
 
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        never.setChecked(never.isChecked());
-//    }
-
     public void createCardView() {
     }
 
-    public void createAlarm () {
-        Intent intent = new Intent (getApplicationContext(), NotificationReceiver.class);
+    public void createAlarm() {
+        calendar = Calendar.getInstance();
+        // If it is Sunday and user checked "every sunday" then set calendar to build notification
+        if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY && preferences.getBoolean("sunday", true)) {
+            setCalendar(1);
+        } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY && preferences.getBoolean("monday", true)) {
+            setCalendar(2);
+        } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY && preferences.getBoolean("tuesday", true)) {
+            setCalendar(3);
+        } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY && preferences.getBoolean("wednesday", true)) {
+            setCalendar(4);
+        } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY && preferences.getBoolean("thursday", true)) {
+            setCalendar(5);
+        } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && preferences.getBoolean("friday", true)) {
+            setCalendar(6);
+        } else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY && preferences.getBoolean("saturday", true)) {
+            setCalendar(7);
+        }
+
+        Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY * 7, pendingIntent);
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 19);
-        calendar.set(Calendar.MINUTE, 19);
-        calendar.set(Calendar.SECOND, 30);
-
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
-
-
-//    @SuppressLint("SetTextI18n")
-//    public void updateText () {
-//        PlantCare Plant = new PlantCare();
-//        if (Plant.id.equals("p1")) {
-//            textView.setText("Sample Plant 1");
-//        }
-//        else if (Plant.id.equals("p2")) {
-//            textView.setText("Sample Plant 2");
-//        }
-//        else if (Plant.id.equals("p3")) {
-//            textView.setText("Sample Plant 3");
-//        }
-//        else if (Plant.id.equals("p4")) {
-//            textView.setText("Sample Plant 4");
-//        }
-//
-//    }
+    public void setCalendar(int weekNumber) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_WEEK, weekNumber);
+        calendar.set(Calendar.HOUR_OF_DAY, 7);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+    }
 }
-
 

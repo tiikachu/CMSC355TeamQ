@@ -29,7 +29,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         displayNotification(context);
     }
 
-    private void buildNotification (Context context) {
+    public void buildNotification (Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription(CHANNEL_DESC);
@@ -37,7 +37,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             manager.createNotificationChannel(channel);
         }
     }
-    private void displayNotification(Context context) {
+    public void displayNotification(Context context) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         builder.setContentTitle("Pocket Garden")
                 .setContentText("Water your Plant!")
