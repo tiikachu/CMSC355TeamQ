@@ -47,9 +47,7 @@ public class JournalEditor extends AppCompatActivity {
     }
 
     public void save(){
-        editText.addTextChangedListener(new TextWatcher()
-        {
-            {
+        editText.addTextChangedListener(new TextWatcher() {
             @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
@@ -70,7 +68,4 @@ public class JournalEditor extends AppCompatActivity {
                 }
             });
         }
-
-
-
 }
