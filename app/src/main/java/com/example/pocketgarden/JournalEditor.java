@@ -14,21 +14,17 @@ import android.widget.EditText;
 import java.util.HashSet;
 
 public class JournalEditor extends AppCompatActivity {
-
-
+    private EditText editText;
+    private int noteID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_editor);
 
-        EditText e = (EditText) findViewById(R.id.EditText);
-
-        ProcessThread p = new ProcessThread();
-        p.setEditText(e);
-        Thread thread = new Thread(p);
-        thread.start();
-        e.setText(p.getEditText());
+        editText = (EditText) findViewById(R.id.EditText);
+        initialize();
+        save();
     }
 
     public void goBack(View view){
@@ -36,63 +32,45 @@ public class JournalEditor extends AppCompatActivity {
         startActivity(intent);
     }
 
-    class ProcessThread implements Runnable{
-        private EditText editText;
-        private int noteID;
+    public void initialize(){
+        Intent   intent   = getIntent();
+        noteID = intent.getIntExtra("noteID", -1);  //default value is -1 (in case of intent error)
 
-        @Override
-        public void run() {
-            editText = initialize();
-            save(editText);
+        if(noteID != -1) {
+            editText.setText(ShowJournals.journal.get(noteID));
         }
 
-        public EditText initialize(){
-            Intent   intent   = getIntent();
-            noteID = intent.getIntExtra("noteID", -1);  //default value is -1 (in case of intent error)
-
-            if(noteID != -1) {
-                editText.setText(ShowJournals.journal.get(noteID)); }
-
-            else   {
-                runOnUiThread(() -> {
-                    ShowJournals.journal.add("");                // as initially, the note is empty
-                    noteID = ShowJournals.journal.size() - 1;
-                    ShowJournals.arrayAdapter.notifyDataSetChanged();
-                });  }
-
-            return editText;
+        else {
+            noteID = ShowJournals.journal.size() - 1;
+            ShowJournals.arrayAdapter.notifyDataSetChanged();
         }
+    }
 
-        public void save(EditText editText){
-            editText.addTextChangedListener(new TextWatcher()
+    public void save(){
+        editText.addTextChangedListener(new TextWatcher()
+        {
             {
-
-                @Override
+            @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-                @Override
-                public void afterTextChanged(Editable s)
-                {
-                    ShowJournals.journal.set(noteID, String.valueOf(s));
-                    ShowJournals.arrayAdapter.notifyDataSetChanged();
-
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                ShowJournals.journal.set(noteID, String.valueOf(s));
+                ShowJournals.arrayAdapter.notifyDataSetChanged();
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                Runnable r = () -> {
                     SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
                     HashSet<String> set = new HashSet<>(ShowJournals.journal);
                     sharedPreferences.edit().putStringSet("notes", set).apply();
+                };
+                new Thread(r).start();
+
                 }
             });
         }
 
-        public Editable getEditText(){
-            return editText.getText();
-        }
 
-        public void setEditText(EditText e){
-            editText = new EditText(getApplicationContext());
-            editText.setText(e.getText());
-        }
-    }
+
 }
