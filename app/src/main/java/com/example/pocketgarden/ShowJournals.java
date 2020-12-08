@@ -2,7 +2,6 @@ package com.example.pocketgarden;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -35,16 +33,14 @@ public class ShowJournals extends AppCompatActivity {
 
     public void initialize(ListView listView){
         Runnable runnable = () -> {
-        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
-        Set<String> tempSet = sharedPref.getStringSet("notes", null);
+            SharedPreferences sp = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
+            Set<String> tempSet = sp.getStringSet("notes", null);
+            if(tempSet != null && journal.size() != tempSet.size()){
+                journal.addAll(tempSet);
+            }
 
-        if(tempSet != null && tempSet.size() != journal.size()){
-            journal.addAll(tempSet);}
-        else if(journal.size() == 0){
-            journal.add("");
-        }
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, journal);
-        listView.setAdapter(arrayAdapter);
+            arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, journal);
+            listView.setAdapter(arrayAdapter);
         }; new Thread(runnable).start();
     }
 

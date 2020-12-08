@@ -22,7 +22,7 @@ public class JournalEditor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_editor);
 
-        editText = (EditText) findViewById(R.id.EditText);
+        editText = findViewById(R.id.EditText);
         initialize();
         save();
     }
@@ -33,7 +33,7 @@ public class JournalEditor extends AppCompatActivity {
     }
 
     public void initialize(){
-        Intent   intent   = getIntent();
+        Intent intent = getIntent();
         noteID = intent.getIntExtra("noteID", -1);  //default value is -1 (in case of intent error)
 
         if(noteID != -1) {
@@ -41,15 +41,14 @@ public class JournalEditor extends AppCompatActivity {
         }
 
         else {
+            ShowJournals.journal.add("");
             noteID = ShowJournals.journal.size() - 1;
             ShowJournals.arrayAdapter.notifyDataSetChanged();
         }
     }
 
     public void save(){
-        editText.addTextChangedListener(new TextWatcher()
-        {
-            {
+        editText.addTextChangedListener(new TextWatcher() {
             @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
