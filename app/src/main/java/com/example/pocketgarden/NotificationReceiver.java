@@ -21,15 +21,11 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Intent repeating_intent = new Intent (context, Notifications.class);
-        repeating_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 1, repeating_intent, PendingIntent.FLAG_UPDATE_CURRENT);
         buildNotification(context);
         displayNotification(context);
     }
 
-    private void buildNotification (Context context) {
+    public void buildNotification (Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription(CHANNEL_DESC);
@@ -37,7 +33,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             manager.createNotificationChannel(channel);
         }
     }
-    private void displayNotification(Context context) {
+    public void displayNotification(Context context) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         builder.setContentTitle("Pocket Garden")
                 .setContentText("Water your Plant!")

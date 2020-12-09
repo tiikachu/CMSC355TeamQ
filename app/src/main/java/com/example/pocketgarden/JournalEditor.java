@@ -69,7 +69,4 @@ public class JournalEditor extends AppCompatActivity {
                 }
             });
         }
-
-
-
 }
