@@ -1,4 +1,4 @@
-package com.example.pocketgarden;
+package com.example.pocketgarden.notifications;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -12,6 +12,8 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+
+import com.example.pocketgarden.R;
 
 public class NotificationReceiver extends BroadcastReceiver {
 

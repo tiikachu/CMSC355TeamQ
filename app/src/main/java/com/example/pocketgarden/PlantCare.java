@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pocketgarden.notifications.Notifications;
+
 public class PlantCare extends AppCompatActivity implements View.OnClickListener {
 
     public CardView plant1, plant2, plant3, plant4;
