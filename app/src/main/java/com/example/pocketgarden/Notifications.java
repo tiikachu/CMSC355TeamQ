@@ -55,17 +55,6 @@ public class Notifications extends AppCompatActivity implements CompoundButton.O
 
         textView = findViewById(R.id.plant);
 
-
-//
-//        never.setOnClickListener(this);
-//        every1day.setOnClickListener(this);
-//        every2days.setOnClickListener(this);
-//        every3days.setOnClickListener(this);
-//        every4days.setOnClickListener(this);
-//        every5days.setOnClickListener(this);
-//        every6days.setOnClickListener(this);
-//        every7days.setOnClickListener(this);
-
         preferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         editor = preferences.edit();
 
@@ -89,9 +78,12 @@ public class Notifications extends AppCompatActivity implements CompoundButton.O
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), editor.toString(), Toast.LENGTH_SHORT).show();
+                ;
+                Toast.makeText(getApplicationContext(), "Preferences saved", Toast.LENGTH_SHORT).show();
             }
         });
+
+        loadPlantObjects();
 
     }
 
@@ -99,35 +91,38 @@ public class Notifications extends AppCompatActivity implements CompoundButton.O
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-        // frequencyResult = new ArrayList<>();
         switch (buttonView.getId()) {
             case R.id.sunday:
+                createAlarm();
                 editor.putBoolean("sunday", sunday.isChecked());
-                String value = preferences.toString();
-                //    Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
+                 //    Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.monday:
+                createAlarm();
                 editor.putBoolean("monday", monday.isChecked());
                 break;
             case R.id.tuesday:
+                createAlarm();
                 editor.putBoolean("tuesday", tuesday.isChecked());
                 break;
             case R.id.wednesday:
+                createAlarm();
                 editor.putBoolean("wednesday", wednesday.isChecked());
                 break;
             case R.id.thursday:
+                createAlarm();
                 editor.putBoolean("thursday", thursday.isChecked());
                 break;
             case R.id.friday:
+                createAlarm();
                 editor.putBoolean("friday", friday.isChecked());
                 break;
             case R.id.saturday:
+                createAlarm();
                 editor.putBoolean("saturday", saturday.isChecked());
                 break;
         }
         editor.apply();
-        createAlarm();
-        notificationReceiver.displayNotification(getApplicationContext());
     }
 
     public void loadPlantObjects() {
@@ -146,9 +141,12 @@ public class Notifications extends AppCompatActivity implements CompoundButton.O
     }
 
     public void createCardView() {
+
     }
 
     public void createAlarm() {
+        Toast.makeText(getApplicationContext(), "create alarm", Toast.LENGTH_SHORT).show();
+
         calendar = Calendar.getInstance();
         // If it is Sunday and user checked "every sunday" then set calendar to build notification
         if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY && preferences.getBoolean("sunday", true)) {
@@ -177,8 +175,8 @@ public class Notifications extends AppCompatActivity implements CompoundButton.O
     public void setCalendar(int weekNumber) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_WEEK, weekNumber);
-        calendar.set(Calendar.HOUR_OF_DAY, 7);
-        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.HOUR_OF_DAY, 22);
+        calendar.set(Calendar.MINUTE, 55);
         calendar.set(Calendar.SECOND, 0);
     }
 }
