@@ -91,5 +91,12 @@
     <string name="Indoor_plant_msg">This is a indoor plant.</string>
     <string name="add_new_note">add new note</string>
     <string name="add_new">Button to add new note</string>
+    <string name="plant_photo_description">picture of plant pulled from Trefle API</string>
+    <string name="plant_name">Plant Name</string>
+    <string name="age">Age</string>
+    <string name="interval">Interval</string>
+    <string name="new_plant_button">New Plant</string>
+    <string name="new_note">New note</string>
+    <string name="sample">Sample Text</string>
 
 </resources>

@@ -2,7 +2,6 @@ package com.example.pocketgarden;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -12,17 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.util.Scanner;
-
 import plant.*;
 
 public class MakePlant extends AppCompatActivity {
 
-    private Button submit;
     private EditText plantName;
     private EditText plantAge;
     private CheckBox indoor;
@@ -35,14 +27,10 @@ public class MakePlant extends AppCompatActivity {
     private String nameInput;
     private String imageURL;
 
-    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String SHARED_PREFS = "com.pocketgarden.plants";
     public static final String TEXT = "text";
 
     private String name;
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,37 +38,30 @@ public class MakePlant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_plant);
 
-        submit = (Button) findViewById(R.id.submit);
-        plantName = (EditText) findViewById(R.id.plantName);
-        plantAge = (EditText) findViewById(R.id.plantAge);
-        EditText interval = (EditText) findViewById(R.id.wateringint);
-        indoor = (CheckBox) findViewById(R.id.indoorcheck);
-        potted = (CheckBox) findViewById(R.id.potted);
+        Button submit = findViewById(R.id.submit);
+        plantName = findViewById(R.id.plantName);
+        plantAge = findViewById(R.id.plantAge);
+        EditText interval = findViewById(R.id.wateringInt);
+        indoor = findViewById(R.id.indoorcheck);
+        potted = findViewById(R.id.potted);
 
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nameInput = plantName.getText().toString();
-                if (Integer.parseInt(plantAge.getText().toString()) > 0) {
-                    ageInput = Integer.parseInt(plantAge.getText().toString());
-                } else {
-                    ageInput = 0;
-                }
+        submit.setOnClickListener(view -> {
+            nameInput = plantName.getText().toString();
+            ageInput = Math.max(Integer.parseInt(plantAge.getText().toString()), 0);
 
-                getData(nameInput);
+            getData(nameInput);
 
-                indoorInput = indoor.isChecked();
-                pottedInput = potted.isChecked();
-                String inputtedInterval = interval.getText().toString();
-                if(isInteger(inputtedInterval)){
-                    intervalInput = Integer.parseInt(inputtedInterval);
-                }
-
-                PlantObject newPlant = new PlantObject(nameInput, ageInput, intervalInput, null, indoorInput, pottedInput,  imageURL);
-                saveData(newPlant);
-                loadData();
+            indoorInput = indoor.isChecked();
+            pottedInput = potted.isChecked();
+            String inputtedInterval = interval.getText().toString();
+            if(isInteger(inputtedInterval)){
+                intervalInput = Integer.parseInt(inputtedInterval);
             }
+
+            PlantObject newPlant = new PlantObject(nameInput, ageInput, intervalInput, null, indoorInput, pottedInput,  imageURL);
+            saveData(newPlant);
+            loadData();
         });
 
 
@@ -132,12 +113,12 @@ public class MakePlant extends AppCompatActivity {
 
         name = mPref.getString(TEXT,"");
 
-        TextView textView = (TextView) findViewById(R.id.textView);
+        TextView textView = findViewById(R.id.textView);
         textView.setText(name);
     }
 
     public void updateView(){
-        TextView textView = (TextView) findViewById(R.id.textView);
+        TextView textView = findViewById(R.id.textView);
         textView.setText(name);
     }
 

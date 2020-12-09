@@ -22,15 +22,15 @@ public class PlantCare extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plantcare);
 
-        plant1 = (CardView) findViewById(R.id.plant1);
-        plant2 = (CardView) findViewById(R.id.plant2);
-        plant3 = (CardView) findViewById(R.id.plant3);
-        plant4 = (CardView) findViewById(R.id.plant4);
+        plant1 = findViewById(R.id.plant1);
+        plant2 = findViewById(R.id.plant2);
+        plant3 = findViewById(R.id.plant3);
+        plant4 = findViewById(R.id.plant4);
 
-        textView1 = (TextView) findViewById(R.id.plant1text);
-        textView2 = (TextView) findViewById(R.id.plant2text);
-        textView3 = (TextView) findViewById(R.id.plant3text);
-        textView4 = (TextView) findViewById(R.id.plant4text);
+        textView1 = findViewById(R.id.plant1text);
+        textView2 = findViewById(R.id.plant2text);
+        textView3 = findViewById(R.id.plant3text);
+        textView4 = findViewById(R.id.plant4text);
 
 
 
@@ -74,8 +74,7 @@ public class PlantCare extends AppCompatActivity implements View.OnClickListener
     }
 
     public String getPlantId(TextView tw) {
-        String plantString = (String) tw.getText();
-        return plantString;
+        return (String) tw.getText();
     }
 
 
