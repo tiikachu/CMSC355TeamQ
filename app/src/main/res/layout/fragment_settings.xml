@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/text_margin"
                     android:layout_marginTop="10dp"
-                    android:text="My plant"
+                    android:text="My Plant"
                     android:textColor="#014421"
                     android:textSize="14sp" />
 

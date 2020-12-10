@@ -5,7 +5,7 @@
 
     <!-- Strings used for fragments for navigation -->
 
-    <string name="my_dashboard">MY DASHBOARD (BACK)</string>
+    <string name="my_dashboard">My Dashboard</string>
 
     <!--tile titles -->
     <string name="basics">Basics</string>
