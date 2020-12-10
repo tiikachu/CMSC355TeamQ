@@ -22,7 +22,7 @@ public class JournalEditor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_editor);
 
-        editText = findViewById(R.id.EditText);
+        editText = findViewById(R.id.content);
         initialize();
         save();
     }

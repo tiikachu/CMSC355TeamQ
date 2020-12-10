@@ -1,11 +1,11 @@
 <resources>
     <!-- activity titles -->
     <string name="app_name">Pocket Garden</string>
-    <string name="title_activity_view_journals">View Journals</string>
+    <string name="title_activity_view_journals">VIEW JOURNALS (BACK)</string>
 
     <!-- Strings used for fragments for navigation -->
 
-    <string name="my_dashboard">My Dashboard</string>
+    <string name="my_dashboard">MY DASHBOARD (BACK)</string>
 
     <!--tile titles -->
     <string name="basics">Basics</string>
