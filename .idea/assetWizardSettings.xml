@@ -91,7 +91,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\chris\AndroidStudioProjects\CMSC355TeamQ\app\src\main\res\drawable\refresh-removebg-preview.png" />
+                                                <entry key="imagePath" value="C:\Users\chris\AndroidStudioProjects\CMSC355TeamQ\app\src\main\res\drawable\icons8-storm-80.png" />
                                                 <entry key="scalingPercent" value="67" />
                                               </map>
                                             </option>
@@ -124,8 +124,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundAssetType" value="CLIP_ART" />
-                                      <entry key="outputName" value="refresh" />
+                                      <entry key="outputName" value="thunderstorm" />
                                     </map>
                                   </option>
                                 </PersistentState>
