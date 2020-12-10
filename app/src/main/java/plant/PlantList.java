@@ -2,7 +2,7 @@ package plant;
 
 //one masterlist
 //other lists for each room or how have you
-//list will be made of plant objects
+//list will be made of Plant objects
 //lists will need list identifier?
 //list will need master length
 
@@ -134,6 +134,10 @@ public class PlantList{
             System.out.println("Plant " + i + " : " + this.plantList[i].getName());
         }
         return "end";  //note this is not good syntax
+    }
+
+    public PlantObject[] getPlantList() {
+        return plantList;
     }
 
 }

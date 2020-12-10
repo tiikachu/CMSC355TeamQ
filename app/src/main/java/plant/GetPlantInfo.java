@@ -1,6 +1,6 @@
 package plant;
 
-import android.content.res.Resources;
+import android.content.Context;
 import com.example.pocketgarden.R;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,13 +10,16 @@ import javax.net.ssl.HttpsURLConnection;
 
 //need to create your own account with
 public class GetPlantInfo {
-  private static final String apiRequest = Resources.getSystem().getString(R.string.trefle_api_url);
-  private static final String token = Resources.getSystem().getString(R.string.trefle_token);
-  private static HttpsURLConnection connection;
-  private static StringBuilder responseContent;
+  private final String apiRequest;
+  private final String token;
+  private HttpsURLConnection connection;
+  private StringBuilder responseContent;
 
-  public GetPlantInfo(){
-    this.responseContent = new StringBuilder();
+  public GetPlantInfo(Context context){
+    apiRequest = context.getResources().getString(R.string.trefle_api_url);
+    token = context.getResources().getString(R.string.trefle_token);
+    responseContent = new StringBuilder();
+
   }
 
   /**
@@ -41,8 +44,8 @@ public class GetPlantInfo {
    * @param scientificName scientific name to search in Trefle API
    * @return location- a URL that queries the trefle API for the scientific name
    */
-  public String makeUrlSci(String scientificName) {
-    return apiRequest + "/species" + scientificName + "?" + token;
+  private String makeUrlSci(String scientificName) {
+    return apiRequest + "species/" + scientificName.replace(' ', '-') + "?" + token;
   }
 
   /**
@@ -50,7 +53,7 @@ public class GetPlantInfo {
    * @return status of connection attempt after one is successful
    * @throws IOException if the location URL is incorrect
    */
-  public int makeConnection(String location) throws IOException {
+  private int makeConnection(String location) throws IOException {
     int status = 201;
     int count = 0;
     int numAttempts = 5;
@@ -68,30 +71,29 @@ public class GetPlantInfo {
 
 
   /**
-   * @param commonName common name for a plant, e.g. strawberry
+   * @param commonName common name for a Plant, e.g. strawberry
    * @return scientific name, e.g. Fragaria chiloensis
    */
-  public String getSciName(String commonName) {
+  public String getCommonNameInfo(String commonName) {
     String location = makeUrlCommon(commonName);
 
     try {
       int status = makeConnection(location);
       responseContent = parseUrl(status);
-      parseUrl(status);
 
     } catch (IOException e) {
       e.printStackTrace();
     }
     connection.disconnect();
-    return responseContent.toString();
+    return parseCommon(responseContent.toString());
   }
 
   /**
-   * @param commonName text input of a plant's common name, e.g. strawberry
+   * @param commonName text input of a Plant's common name, e.g. strawberry
    * @return a link to a trefle API query searching for the common name
    */
-  public String makeUrlCommon(String commonName) {
-    return apiRequest + "/plants/search?" + token + "&" + process(commonName);
+  private String makeUrlCommon(String commonName) {
+    return apiRequest + "plants/search?q=" + commonName.replace(' ', '-') + "&" + token;
   }
 
   /**
@@ -99,7 +101,7 @@ public class GetPlantInfo {
    * @return responseContent all the data from the trefle API url
    * @throws IOException if the URL is invalid
    */
-  private static StringBuilder parseUrl(int status) throws IOException {
+  private StringBuilder parseUrl(int status) throws IOException {
     String line;
     responseContent.setLength(0); //clear responseContent just in case
     BufferedReader reader;
@@ -118,20 +120,36 @@ public class GetPlantInfo {
     return responseContent;
   }
 
-  /**
-   *  * @param input - plain text URL
-   * @return valid HTML URL
-   */
-  public static String process(String input) {
-    String[] words = input.split(" ");
-    StringBuilder output = new StringBuilder();
-
-    for (String word : words) {
-      output.append(word).append("%20");
+  private String parseCommon(String input){
+    int sciNameIndex = input.indexOf("scientific_name") + 18;
+    if(sciNameIndex == 17){
+      throw new IndexOutOfBoundsException();
     }
-
-    return output.substring(0, output.length() - 2);
+    int endIndex = input.indexOf("\"", sciNameIndex);
+    return getSciNameInfo(input.substring(sciNameIndex, endIndex));
   }
 
+  /**
+   *
+   * @param JSON output from getCommonNameInfo in a string format
+   * @return a String array of length 3, array[0] is the common name, array[1] a range of min-max precipitation in mm (e.g. "140-500 mm"), array[2] is a url to an image of the Plant
+   */
+  public String[] parseJSON(String JSON){
+    String[] output = new String[3];
+    int[] commonNameIndex = {JSON.indexOf("common_name") + 14, JSON.indexOf("slug")-3};
+    output[0] = JSON.substring(commonNameIndex[0], commonNameIndex[1]);
+
+    int[] wateringIndices = new int[4];
+    wateringIndices[0] = JSON.indexOf("minimum_precipitation") + 29;
+    wateringIndices[1] = JSON.indexOf("}",wateringIndices[0]);
+    wateringIndices[2] = wateringIndices[1] + 32;
+    wateringIndices[3] = JSON.indexOf("}", wateringIndices[2]);
+    output[1] = JSON.substring(wateringIndices[0],wateringIndices[1]) + "-" + JSON.substring(wateringIndices[2],wateringIndices[3]);
+
+    int[] urlIndex = {JSON.indexOf("image_url") + 12, JSON.indexOf("genus", JSON.indexOf("genus") + 1) - 3};
+    output[2] = JSON.substring(urlIndex[0], urlIndex[1]);
+
+    return output;
+  }
 
 }

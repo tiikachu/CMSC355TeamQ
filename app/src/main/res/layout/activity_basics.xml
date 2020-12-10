@@ -55,13 +55,12 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/title"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="@string/let_s_get_back_to_the_basics"
+                android:text="@string/plant_basics_header"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="#040303"
                 android:textSize="30sp" />
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="354dp"
                 android:layout_height="205dp"
                 android:layout_marginTop="10dp"
@@ -69,7 +68,7 @@
                 app:srcCompat="@drawable/plants" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/plant_type_prompt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -80,7 +79,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/plant_age_prompt"
                 android:layout_width="359dp"
                 android:layout_height="234dp"
                 android:layout_marginTop="10dp"
@@ -88,7 +87,6 @@
                 android:text="Find the right lighting!\n\nFull Sun: Most house plants do not like the full sun and will become very damaged or will not survive very long when they receive too much direct sunlight. Bright light or full sun is experienced from a south facing window.\n\nPartial sunlight and shade: Indirect light can be found in places with an west or east facing window so the plane will receive morning or evening sun.\n\nLow light: A north facing window provides full shade, but low light can depend on the size or amount of windows in a room " />
 
             <TextView
-                android:id="@+id/textView5"
                 android:layout_width="359dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="10dp"
@@ -97,18 +95,16 @@
 \n\t-Brown, dry patches on the leaves
 \n\t-Leaves turn pale or yellow
 \n\t-Leaf yellowing may not affect the leaf veins initially
-\n\t-Wilting, particularly of younger foliage"/>
+\n\t-Wilting, particularly of younger foliage" />
 
             <ImageView
-                android:id="@+id/imageView3"
                 android:layout_width="190dp"
                 android:layout_height="250dp"
-                android:scaleType="fitXY"
                 android:layout_gravity="center"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/watering_plants" />
 
             <TextView
-                android:id="@+id/textView6"
                 android:layout_width="359dp"
                 android:layout_height="320dp"
                 android:layout_marginTop="10dp"
@@ -116,7 +112,6 @@
                 android:text="Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. " />
 
             <ImageView
-                android:id="@+id/imageView2"
                 android:layout_width="190dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -124,7 +119,6 @@
                 app:srcCompat="@drawable/soil" />
 
             <TextView
-                android:id="@+id/textView7"
                 android:layout_width="359dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="10dp"
@@ -133,13 +127,12 @@
 Good potting soil (never use regular garden soil in containers) promotes healthy roots by providing a balance of proper aeration, nutrition and moisture-holding capability. Nurseries and garden centers carry an excellent selection of packaged potting soils." />
 
             <TextView
-                android:id="@+id/textView8"
                 android:layout_width="359dp"
                 android:layout_height="130dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text="Aim to keep the plant in a warm environment with some air circulation, and rotate its face!\n\n
-Almost all houseplants need a minimum temperature of 55ºF to survive. Keep plants away from areas of cold drafts in the winter. The warmer it gets for houseplants, the happier they are!"/>
+Almost all houseplants need a minimum temperature of 55ºF to survive. Keep plants away from areas of cold drafts in the winter. The warmer it gets for houseplants, the happier they are!" />
 
         </LinearLayout>
     </ScrollView>

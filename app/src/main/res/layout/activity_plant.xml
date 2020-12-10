@@ -5,58 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#77c567"
-    tools:context=".plant">
+    tools:context=".Plant">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="95dp">
+    <ScrollView
+        android:layout_width="299dp"
+        android:layout_height="187dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/plantPhoto"
             android:layout_width="match_parent"
-            android:layout_height="326dp"
-            app:srcCompat="@drawable/plant" />
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/plant_photo_description"
+            android:scaleType="centerCrop" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="411dp"
+        android:layout_height="403dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.993">
+
 
         <TextView
             android:id="@+id/plantName"
             android:layout_width="match_parent"
             android:layout_height="59dp"
-            android:textSize="32dp"
             android:gravity="center"
-            android:text="Plant Name" />
+            android:text="@string/plant_name"
+            android:textSize="32sp" />
 
         <TextView
             android:id="@+id/plantAge"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:textSize="26dp"
-            android:text="Age" />
+            android:text="@string/age"
+            android:textSize="26sp" />
 
         <TextView
-            android:id="@+id/wateringint"
+            android:id="@+id/wateringInt"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:textSize="26dp"
-            android:text="Interval" />
+            android:text="@string/interval"
+            android:textSize="26sp" />
 
         <TextView
-            android:id="@+id/Indoor"
+            android:id="@+id/indoor"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:textSize="26dp"
-            android:text="Indoor" />
+            android:text="@string/indoor"
+            android:textSize="26sp" />
 
         <TextView
             android:id="@+id/potted"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:textSize="26dp"
-            android:text="TextView" />
+            android:text="@string/potted"
+            android:textSize="26sp" />
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

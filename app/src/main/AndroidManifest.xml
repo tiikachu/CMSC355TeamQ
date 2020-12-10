@@ -4,7 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <application
+        android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
@@ -14,21 +16,22 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PlantCare" />
         <activity android:name=".Basics"/>
-        <activity android:name=".Weather"/>
+        <activity android:name=".weather.Weather"/>
+        <activity android:name=".ShowJournals"/>
         <activity
-            android:name=".plant_listing"
+            android:name=".PlantListing"
             android:label="@string/title_activity_plant_listing"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".make_plant"
+            android:name=".MakePlant"
             android:label="@string/title_activity_make_plant"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".plant"
+            android:name=".Plant"
             android:label="@string/title_activity_plant"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".JournalEditor" />
-        <activity android:name=".Notifications" />
+        <activity android:name=".notifications.Notifications" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

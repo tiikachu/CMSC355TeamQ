@@ -1,7 +1,7 @@
 package plant;
 //This class maintains the list of Plant lists
 
-//must have 1 master list of all plant lists
+//must have 1 master list of all Plant lists
 import java.util.Arrays;
 
 
