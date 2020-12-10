@@ -11,7 +11,7 @@
     tools:context=".weather.Weather">
 
     <LinearLayout
-        android:id="@+id/weather_container"
+        android:id="@+id/weatherContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -23,28 +23,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom|end"
-            android:paddingRight="12dp"
+            android:paddingEnd="12dp"
             android:text="F"
             android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
             android:gravity="center_horizontal"
-            android:text="77"
+            android:text="60"
             android:textColor="@android:color/white"
-            android:textSize="73sp" />
+            android:textSize="90sp" />
 
         <TextView
             android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="London"
+            android:text="Richmond"
             android:textColor="@android:color/white"
-            android:textSize="36sp" />
+            android:textSize="40sp" />
 
         <TextView
             android:id="@+id/weatherCondition"
@@ -53,13 +52,13 @@
             android:layout_marginTop="4dp"
             android:text="Sunny"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <ImageView
             android:id="@+id/weatherConditionIcon"
             android:layout_width="225dp"
             android:layout_height="114dp"
-            app:srcCompat="@drawable/sun" />
+            app:srcCompat="@drawable/sunny" />
 
     </LinearLayout>
 
@@ -85,11 +84,11 @@
             android:layout_height="wrap_content"
             android:layout_weight=".75"
             android:backgroundTint="@android:color/white"
-            android:hint="weatherHint"
+            android:hint="Enter Location"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@android:color/white"
-            android:textColorHint="@android:color/transparent"
+            android:textColorHint="@android:color/white"
             android:textSize="18sp"
             />
 
