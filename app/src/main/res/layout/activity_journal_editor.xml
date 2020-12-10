@@ -5,8 +5,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/leaf_middle_adjacent"
+    android:background="#CDF7D2"
     tools:context=".JournalEditor">
+
+    <FrameLayout
+        android:id="@+id/appheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backgroundheader"/>
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="290dp"
+            android:src="@drawable/logo_circle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Edit Journals"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+    </FrameLayout>
 
     <EditText
         android:id="@+id/content"
@@ -25,13 +56,15 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <com.google.android.material.appbar.AppBarLayout
-
         android:id="@+id/appBarLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_below="@id/appheader"
+        android:layout_marginTop="260dp"
         android:background="@color/pocket_accent"
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

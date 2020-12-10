@@ -4,49 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#99C863"
+    android:background="#CDF7D2"
     tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/appheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backgroundheader" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="290dp"
+            android:src="@drawable/logo_circle" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basics"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+    </FrameLayout>
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/appheader"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="-7dp">
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/backgroundheader" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="290dp"
-                android:src="@drawable/logo_circle" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/my_dashboard"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="#FFFFFF"
-                android:textSize="34sp" />
-        </FrameLayout>
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginBottom="-132dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -73,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-medium"
-                android:text="Here are some quick tips for taking care of your plants!"
+                android:text="LIGHTING"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -84,7 +89,7 @@
                 android:layout_height="234dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="Find the right lighting!\n\nFull Sun: Most house plants do not like the full sun and will become very damaged or will not survive very long when they receive too much direct sunlight. Bright light or full sun is experienced from a south facing window.\n\nPartial sunlight and shade: Indirect light can be found in places with an west or east facing window so the plane will receive morning or evening sun.\n\nLow light: A north facing window provides full shade, but low light can depend on the size or amount of windows in a room " />
+                android:text="Full Sun: Most house plants do not like the full sun and will become very damaged or will not survive very long when they receive too much direct sunlight. Bright light or full sun is experienced from a south facing window.\n\nPartial sunlight and shade: Indirect light can be found in places with an west or east facing window so the plane will receive morning or evening sun.\n\nLow light: A north facing window provides full shade, but low light can depend on the size or amount of windows in a room " />
 
             <TextView
                 android:layout_width="359dp"
@@ -103,13 +108,23 @@
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/watering_plants" />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="WATERING"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="25sp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="359dp"
-                android:layout_height="320dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="Watering: Different plants like different moisture conditions \n\nPlant pot matters!\n\nPlants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer. \nWater the soil not the leaves, thoroughly and evenly. \nWater evenly all around the pot until water drips out the bottom. \n\nDump out any excess water.\nWhen a plant's roots sit in saturated soil for too long, they will eventually rot. " />
+                android:text="Different plants like different moisture conditions Water evenly all around the pot until water drips out the bottom. Dump out any excess water. When a plant's roots sit in saturated soil for too long, they will eventually rot. " />
+
+
 
             <ImageView
                 android:layout_width="190dp"
@@ -117,14 +132,22 @@
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/soil" />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="POTTING AND SOIL"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="25sp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="359dp"
-                android:layout_height="120dp"
+                android:layout_height="350dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="Use good-quality potting soil.\n\n
-Good potting soil (never use regular garden soil in containers) promotes healthy roots by providing a balance of proper aeration, nutrition and moisture-holding capability. Nurseries and garden centers carry an excellent selection of packaged potting soils." />
+                android:text="Plant pot matters! Plants that are kept in the grower's pot long-term become root bound, which inhibits their growth, making it harder to water properly and more susceptible to disease. To keep your plants healthy, they need pots that are the correct size and have drainage holes to help the soil dry after watering and should be on a saucer.
+                \n\n Use good-quality potting soil. Good potting soil (never use regular garden soil in containers) promotes healthy roots by providing a balance of proper aeration, nutrition and moisture-holding capability. Nurseries and garden centers carry an excellent selection of packaged potting soils." />
 
             <TextView
                 android:layout_width="359dp"

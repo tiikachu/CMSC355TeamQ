@@ -4,14 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/leaf_middle_adjacent"
+    android:background="#CDF7D2"
     tools:context=".ShowJournals">
+
+    <FrameLayout
+        android:id="@+id/appheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backgroundheader" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="290dp"
+            android:src="@drawable/logo_circle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/journal"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+    </FrameLayout>
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/SJappbar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_below="@+id/appheader"
+        android:layout_marginTop="5dp"
         android:background="@color/pocket_accent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         app:contentInsetStartWithNavigation="0dp">
 
         <LinearLayout
@@ -26,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="goBack"
                 android:text="@string/my_dashboard"
-                android:textColor="@color/leaf_mid__adj_accent" />
+                android:textColor="#FFFFFF" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -34,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="makeNewNote"
                 android:text="@string/new_note"
-                android:textColor="@color/leaf_mid__adj_accent" />
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
