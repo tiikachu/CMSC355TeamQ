@@ -23,7 +23,7 @@ public class ShowJournals extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_journals);
 
-        ListView listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.journalList);
 
         initialize(listView);
         setOnClick(listView);
@@ -40,11 +40,12 @@ public class ShowJournals extends AppCompatActivity {
             if(tempSet != null && journal.size() != tempSet.size()){
                 journal.addAll(tempSet);
             }
-
-            listView.setAdapter(new ArrayAdapter<>(this,
-                    R.layout.listview_content_format,
-                    journal));
         }; new Thread(runnable).start();
+
+        arrayAdapter = new ArrayAdapter<>(this,
+                R.layout.listview_content_format,
+                journal);
+        listView.setAdapter(arrayAdapter);
     }
 
     public void setOnClick(ListView listView){

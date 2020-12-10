@@ -21,7 +21,6 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/DashboardButton"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,7 +29,6 @@
                 android:textColor="@color/leaf_mid__adj_accent" />
 
             <Button
-                android:id="@+id/NewJournalButton"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,7 +41,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/journalList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/SJappbar"

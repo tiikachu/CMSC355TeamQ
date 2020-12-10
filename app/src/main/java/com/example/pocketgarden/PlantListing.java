@@ -22,7 +22,7 @@ public class PlantListing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_listing);
 
-        ListView listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.plantList);
 
 
     }

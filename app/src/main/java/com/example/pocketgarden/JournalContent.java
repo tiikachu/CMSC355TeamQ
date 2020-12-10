@@ -1,7 +1,9 @@
 package com.example.pocketgarden;
 
+import org.jetbrains.annotations.NotNull;
+
 public class JournalContent {
-    private StringBuilder[] content;
+    private final StringBuilder[] content;
 
     public JournalContent(){
         content = new StringBuilder[2];
@@ -18,9 +20,17 @@ public class JournalContent {
         content[1] = new StringBuilder(body);
     }
 
+    @NotNull
+    @Override
     public String toString(){
         return content[0].toString();
     }
 
+    public void updateTitle(String s){
+        content[0] = new StringBuilder(s);
+    }
 
+    public void updateContent(String s){
+        content[1] = new StringBuilder(s);
+    }
 }

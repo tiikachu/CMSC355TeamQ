@@ -16,12 +16,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/plantPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/plant_photo_description" />
+            android:contentDescription="@string/plant_photo_description"
+            android:scaleType="centerCrop" />
     </ScrollView>
 
     <LinearLayout
