@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = view.getId();
 
         if(id == R.id.My_Plants)
-            intent = new Intent(this, Plant.class);
+            intent = new Intent(this, PlantListing.class);
         else if(id == R.id.Basics)
             intent = new Intent(this, Basics.class);
         else if(id== R.id.Weather)

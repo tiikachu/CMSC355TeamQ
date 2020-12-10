@@ -23,7 +23,7 @@ public class ShowJournals extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_journals);
 
-        ListView listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.journalList);
 
         initialize(listView);
         setOnClick(listView);
@@ -33,21 +33,26 @@ public class ShowJournals extends AppCompatActivity {
 
     public void initialize(ListView listView){
         Runnable runnable = () -> {
-            SharedPreferences sp = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
+            SharedPreferences sp = getApplicationContext().getSharedPreferences(
+                    "com.pocketgarden.journal.notes",
+                    Context.MODE_PRIVATE);
             Set<String> tempSet = sp.getStringSet("notes", null);
             if(tempSet != null && journal.size() != tempSet.size()){
                 journal.addAll(tempSet);
             }
-
-            arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, journal);
-            listView.setAdapter(arrayAdapter);
         }; new Thread(runnable).start();
+
+        arrayAdapter = new ArrayAdapter<>(this,
+                R.layout.listview_content_format,
+                journal);
+        listView.setAdapter(arrayAdapter);
     }
 
     public void setOnClick(ListView listView){
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(getApplicationContext(), JournalEditor.class);
-            intent.putExtra("noteID", position); //to tell us which row of listView was tapped
+            intent.putExtra("noteID",
+                    position); //to tell us which row of listView was tapped
             startActivity(intent);
         });
     }
@@ -68,7 +73,9 @@ public class ShowJournals extends AppCompatActivity {
                     .show();
 
             Runnable runnable = () ->{
-            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.pocketgarden.journal.notes", Context.MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getApplicationContext().
+                    getSharedPreferences("com.pocketgarden.journal.notes",
+                            Context.MODE_PRIVATE);
             HashSet<String> set = new HashSet<>(ShowJournals.journal);
             sharedPreferences.edit().putStringSet("notes", set).apply();};
             new Thread(runnable).start();

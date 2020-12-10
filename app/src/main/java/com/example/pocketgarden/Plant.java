@@ -4,13 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.util.Log;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.annotation.GlideModule;
-import com.bumptech.glide.module.AppGlideModule;
-import com.bumptech.glide.module.LibraryGlideModule;
 
 
 import java.io.IOException;
@@ -37,10 +32,10 @@ public class Plant extends AppCompatActivity{
         TextView plantAge = (TextView) findViewById(R.id.plantAge);
         plantAge.setText("This Plant is " + my_plant_2.getAge() + " weeks old.");
 
-        TextView plantInt = (TextView) findViewById(R.id.wateringint);
+        TextView plantInt = (TextView) findViewById(R.id.wateringInt);
         plantInt.setText("Water this Plant every " + my_plant_2.getInterval() + " day(s).");
 
-        TextView plantIn = (TextView) findViewById(R.id.Indoor);
+        TextView plantIn = (TextView) findViewById(R.id.indoor);
         if(my_plant_2.isIndoor()){
             plantIn.setText(R.string.Indoor_plant_msg);
         }
@@ -56,19 +51,13 @@ public class Plant extends AppCompatActivity{
             planted.setText(R.string.not_potted_msg);
         }
 
-
-
-
-        //Drawable myDrawable = getResources().getDrawable(R.drawable.Plant);
-        //ImageView iv = (ImageView) findViewById(R.id.plantPhoto);
-        //iv.setImageDrawable(myDrawable);
-        imgReqs imgReq = new imgReqs();
-        Thread thread = new Thread(imgReq);
-        imgReq.setImageURL(my_plant_2.getImgURL());
-        thread.start();
-
-        ImageView iv = (ImageView) findViewById(R.id.plantPhoto);
-        iv.setImageBitmap(imgReq.getMyBitmap());
+//        imgReqs imgReq = new imgReqs();
+//        Thread thread = new Thread(imgReq);
+//        imgReq.setImageURL(my_plant_2.getImgURL());
+//        thread.start();
+//
+//        ImageView iv = findViewById(R.id.plantPhoto);
+//        iv.setImageBitmap(imgReq.getMyBitmap());
 
     }
 
@@ -76,20 +65,27 @@ public class Plant extends AppCompatActivity{
         Bitmap myBitmap;
         String imageURL;
 
+        public imgReqs(String imageURL){
+            this.imageURL = imageURL;
+        }
+
         @Override
         public void run() {
-            URL urlConnection;
-            HttpURLConnection connection;
-            InputStream finalInput = null;
             try {
-                urlConnection = new URL(imageURL);
-                connection = (HttpURLConnection) urlConnection.openConnection();
-                InputStream input;
-                input = connection.getInputStream();
-                finalInput = input;
-            } catch (IOException e) { e.printStackTrace(); }
+                Log.e("imageURL", imageURL);
+                URL urlConnection = new URL(imageURL);
+                HttpURLConnection connection = (HttpURLConnection) urlConnection.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream finalInput = connection.getInputStream();
+                myBitmap = BitmapFactory.decodeStream(finalInput);
+                Log.e("Bitmap", "returned");
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.e("Exception", e.getMessage());
+            }
 
-            myBitmap = BitmapFactory.decodeStream(finalInput);
+
         }
 
         public Bitmap getMyBitmap(){
