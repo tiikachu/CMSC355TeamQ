@@ -1,4 +1,4 @@
-package com.example.pocketgarden;
+package com.example.pocketgarden.notifications;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
@@ -14,6 +14,10 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pocketgarden.R;
+import com.example.pocketgarden.notifications.NotificationReceiver;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -78,7 +82,7 @@ public class Notifications extends AppCompatActivity implements CompoundButton.O
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ;
+
                 Toast.makeText(getApplicationContext(), "Preferences saved", Toast.LENGTH_SHORT).show();
             }
         });

@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PlantCare" />
         <activity android:name=".Basics"/>
-        <activity android:name=".Weather"/>
+        <activity android:name=".weather.Weather"/>
         <activity android:name=".ShowJournals"/>
         <activity
             android:name=".PlantListing"
@@ -31,7 +31,7 @@
             android:label="@string/title_activity_plant"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".JournalEditor" />
-        <activity android:name=".Notifications" />
+        <activity android:name=".notifications.Notifications" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
